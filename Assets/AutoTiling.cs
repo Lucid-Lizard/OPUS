@@ -14,6 +14,10 @@ public class AutoTiling : MonoBehaviour
 
     private SpriteRenderer spriteRenderer; // Add a reference to the SpriteRenderer component
 
+    public bool Autumn;
+
+    public int Frame;
+
     //Dictionary<string, string>
 
     public string TileCode;
@@ -104,6 +108,17 @@ public class AutoTiling : MonoBehaviour
                     CTNCode = GetTileCode(TileCode, 0);
                 }
 
+        }
+        else if (Tile.name == "OakLeaves")
+        {
+            if (Autumn)
+            {
+                CTNCode = GetTileCode(TileCode, 1);
+            }
+            else
+            {
+                CTNCode = GetTileCode(TileCode, 0);
+            }
         }
         else
         {

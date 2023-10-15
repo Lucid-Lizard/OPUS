@@ -330,7 +330,7 @@ MonoBehaviour:
   chunkSize: 16
   dirtLayerHeight: 15
   surfaceValue: 0.25
-  worldSize: 100
+  worldSize: 500
   heightMultiplier: 25
   heightAddition: 25
   caveFreq: 0.08

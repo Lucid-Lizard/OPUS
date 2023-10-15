@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
   m_Name: OakLeaves
   m_EditorClassIdentifier: 
-  tileName: 
-  tileSprite: {fileID: 0}
-  tileTexture: {fileID: 0}
-  AutoTile: 0
-  siblings: []
+  tileName: OakLeaves
+  tileSprite: {fileID: 21300000, guid: ba6b040239dcbb5439b8e9bdfe87ecbe, type: 3}
+  AutoTile: 1
+  siblings:
+  - OakLeaves
+  - Log

@@ -212,7 +212,7 @@ public class TerrainGeneration : MonoBehaviour
                             {
 
                                 GenerateTree(x, y + 1, GetCurrentBiome(x, y));
-                                TreeCooldown = 0;
+                                TreeCooldown = 6;
 
                             }
 
@@ -285,10 +285,21 @@ public class TerrainGeneration : MonoBehaviour
         
         if (biomeType.biomeName == "Grassland" || biomeType.biomeName == "Forest")
         {
+            bool AutumnShould;
+            float AutumnChance = Random.Range(0, 3);
+            Debug.Log(AutumnChance);
+            if (AutumnChance >= 1)
+            {
+                
+                AutumnShould = true;
+            } else
+            {
+                AutumnShould = false;
+            }
             foreach (Vector2 position in GrasslandTops)
             {
                 
-                 PlaceTile(biomeType.tileAtlas.leaf, (int)position.x, (int)position.y, TreeParent);
+                 PlaceTile(biomeType.tileAtlas.leaf, (int)position.x, (int)position.y, TreeParent, AutumnShould);
                 
                 
             }
@@ -312,7 +323,7 @@ public class TerrainGeneration : MonoBehaviour
         
     }
 
-    public void PlaceTile(TileClass Tile, int x, int y, GameObject Parent)
+    public void PlaceTile(TileClass Tile, int x, int y, GameObject Parent, bool Autumn = false)
     {
         if (worldTiles.ContainsKey(new Vector2(x,y)))
         {
@@ -344,18 +355,24 @@ public class TerrainGeneration : MonoBehaviour
                 newTile.GetComponent<AutoTiling>().AddSiblings(Tile.siblings);
                 newTile.GetComponent<AutoTiling>().worldTiles = worldTiles;
                 newTile.GetComponent<AutoTiling>().randomTileSprite = Random.Range(0, 3);
-            } else
+                if (Autumn)
+                {
+                    newTile.GetComponent<AutoTiling>().Autumn = true;
+                }
+                
+            }
+            else
             {
                 newTile.GetComponent<SpriteRenderer>().sprite = Tile.tileSprite;
             }
 
             if (!worldTiles.ContainsKey(new Vector2(x, y)))
             {
-                Debug.Log(x + " " + y);
+                
                 
                 worldTiles.Add(new Vector2(x,y), newTile);
 
-                Debug.Log(worldTiles[new Vector2(x, y)]);
+                
             }
             
         }
