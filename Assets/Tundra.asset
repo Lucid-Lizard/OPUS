@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c290faa960813284c8cb2f373f0ec272, type: 3}
+  m_Name: Tundra
+  m_EditorClassIdentifier: 
+  dirt: {fileID: 11400000, guid: d9ad8e37c8758fc488cc886e7252c419, type: 2}
+  grass: {fileID: 11400000, guid: a934b8297a770e44f99f97981669d032, type: 2}
+  stone: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
+  log: {fileID: 11400000, guid: 9db4a444f6e0e3a48bc7f3926d1ee09f, type: 2}
+  leaf: {fileID: 11400000, guid: 8a8e847dc2442494782e01ecf49575a3, type: 2}
+  snow: {fileID: 11400000, guid: a934b8297a770e44f99f97981669d032, type: 2}
+  sand: {fileID: 0}
+  coal: {fileID: 11400000, guid: b922f68c116163a47b49d9469f66cdb5, type: 2}
+  copper: {fileID: 11400000, guid: 25ff89d410f35584b9825343631e4a48, type: 2}
