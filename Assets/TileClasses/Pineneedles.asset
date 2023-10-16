@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
-  m_Name: Pineneedle
+  m_Name: Pineneedles
   m_EditorClassIdentifier: 
-  tileName: Pineneedle
+  tileName: Pineneedles
   tileSprite: {fileID: 21300000, guid: 7289062ae83b5f343a5e233597464bd3, type: 3}
-  tileTexture: {fileID: 0}
-  AutoTile: 0
-  siblings: []
+  AutoTile: 1
+  siblings:
+  - Pineneedles

@@ -103,7 +103,7 @@ public class TerrainGeneration : MonoBehaviour
         {
             for (int y = 0; y < biomeMap.height; y++)
             {
-                float v = Mathf.PerlinNoise((x + seed + Mathf.Sin(y) * 0.5f) * biomeFrequency, (y + seed) * biomeFrequency);
+                float v = Mathf.PerlinNoise((x + seed + Mathf.Sin(y) * 0.5f) * biomeFrequency, seed * biomeFrequency);
                 Color col = biomeGradient.Evaluate(v);
                 biomeMap.SetPixel(x, y, col);
 

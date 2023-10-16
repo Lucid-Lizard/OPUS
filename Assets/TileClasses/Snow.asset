@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Snow
   tileSprite: {fileID: 21300000, guid: 8acd248182c35c74abc0d060e93c6ed5, type: 3}
-  tileTexture: {fileID: 0}
   AutoTile: 1
   siblings:
   - Permafrost
   - Grass
+  - Dirt
