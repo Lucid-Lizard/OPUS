@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool onGround;
-
-    public float horizontal;
     private SpriteRenderer SpriteRenderer;
     private Rigidbody2D rb;
 
@@ -30,9 +28,24 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //do stuff
-        horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("Horizontal");
+        float jump = Input.GetAxis("Jump");
+        float vertical = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+        Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+
+        if (horizontal > 0)
+            transform.localScale = new Vector3(8, 8, 1);
+        else if (horizontal < 0)
+            transform.localScale = new Vector3(-8, 8, 1);
+
+        if (vertical > 0.1f || jump > 0.1f)
+        {
+            if (onGround)
+                movement.y = jumpForce;
+        }
+
+        rb.velocity = movement;
     }
         
 }
