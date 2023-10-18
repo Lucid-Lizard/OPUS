@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class TerrainGeneration : MonoBehaviour
 {
-    public Tilemap TileMap;
+
     public BiomeClass[] biomes;
 
     [Header("Tile Atlas")]
@@ -49,7 +48,7 @@ public class TerrainGeneration : MonoBehaviour
 
     private GameObject[] worldChunks;
     //private List<Vector2> worldTiles = new List<Vector2>();
-    public IDictionary<Vector2, TileClass> worldTiles = new Dictionary<Vector2, TileClass>();
+    public IDictionary<Vector2, GameObject> worldTiles = new Dictionary<Vector2, GameObject>();
     private BiomeClass curBiome;
 
 
@@ -157,7 +156,7 @@ public class TerrainGeneration : MonoBehaviour
                 
                 
 
-                /*if (y < height - dirtLayerHeight)
+                if (y < height - dirtLayerHeight)
                 {
 
                     if (GetCurrentBiome(x, y).ores[0].spreadTexture.GetPixel(x, y).r > 0.5f && height - y <= GetCurrentBiome(x, y).ores[0].maxSpawnHeight)
@@ -195,16 +194,16 @@ public class TerrainGeneration : MonoBehaviour
                         tile = GetCurrentBiome(x, y).tileAtlas.grass;
                     }
                     TreeCooldown -= 1;
-                }*/
+                }
                 
                 if (GetCurrentBiome(x, y).caveNoiseTexture.GetPixel(x, y).r > GetCurrentBiome(x, y).surfaceValue)
                 {
-                    tile = tileAtlas.dirt;
-                    PlaceTile(tile, x, y);
+                    
+                    PlaceTile(tile, x, y, null);
                     
                     
 
-                    /*if (y >= height - 1)
+                    if (y >= height - 1)
                     {
                         int t = Random.Range(0, GetCurrentBiome(x, y).treeChance);
                         if (t == 1)
@@ -218,7 +217,7 @@ public class TerrainGeneration : MonoBehaviour
                             }
 
                         }
-                    }*/
+                    }
                 }
 
                 
@@ -271,50 +270,60 @@ public class TerrainGeneration : MonoBehaviour
             for (int i = 0; i < treeHeight; i++)
             {
                 Debug.Log("GenTree: About to log");
-                PlaceTile(biomeType.tileAtlas.log, x, y + i);
+                PlaceTile(biomeType.tileAtlas.log, x, y + i, TreeParent);
                 Debug.Log("GenTree: did log");
             }
         }
         else if (biomeType.biomeName == "Tundra")
         {
 
-            PlaceTile(biomeType.tileAtlas.log, x, y);
-            PlaceTile(biomeType.tileAtlas.log, x, y+2);
-            PlaceTile(biomeType.tileAtlas.log, x, y+4);
+            PlaceTile(biomeType.tileAtlas.log, x, y, TreeParent);
+            PlaceTile(biomeType.tileAtlas.log, x, y+2, TreeParent);
+            PlaceTile(biomeType.tileAtlas.log, x, y+4, TreeParent);
 
         } 
         
         if (biomeType.biomeName == "Grassland" || biomeType.biomeName == "Forest")
         {
-            
+            bool AutumnShould;
+            float AutumnChance = Random.Range(0, 3);
+            Debug.Log(AutumnChance);
+            if (AutumnChance >= 1)
+            {
+                
+                AutumnShould = true;
+            } else
+            {
+                AutumnShould = false;
+            }
             foreach (Vector2 position in GrasslandTops)
             {
                 
-                 PlaceTile(biomeType.tileAtlas.leaf, (int)position.x, (int)position.y);
+                 PlaceTile(biomeType.tileAtlas.leaf, (int)position.x, (int)position.y, TreeParent, AutumnShould);
                 
                 
             }
         } else if (biomeType.biomeName == "Tundra")
         {
-            PlaceTile(biomeType.tileAtlas.leaf, x - 2, y + 1);
-            PlaceTile(biomeType.tileAtlas.leaf, x - 1, y + 1);
-            PlaceTile(biomeType.tileAtlas.leaf, x, y + 1);
-            PlaceTile(biomeType.tileAtlas.leaf, x + 1, y + 1);
-            PlaceTile(biomeType.tileAtlas.leaf, x + 2, y + 1);
+            PlaceTile(biomeType.tileAtlas.leaf, x - 2, y + 1, TreeParent);
+            PlaceTile(biomeType.tileAtlas.leaf, x - 1, y + 1, TreeParent);
+            PlaceTile(biomeType.tileAtlas.leaf, x, y + 1, TreeParent);
+            PlaceTile(biomeType.tileAtlas.leaf, x + 1, y + 1, TreeParent);
+            PlaceTile(biomeType.tileAtlas.leaf, x + 2, y + 1, TreeParent);
 
 
-            PlaceTile(biomeType.tileAtlas.leaf, x - 1, y + 3);
-            PlaceTile(biomeType.tileAtlas.leaf, x, y + 3);
-            PlaceTile(biomeType.tileAtlas.leaf, x + 1, y + 3);
+            PlaceTile(biomeType.tileAtlas.leaf, x - 1, y + 3, TreeParent);
+            PlaceTile(biomeType.tileAtlas.leaf, x, y + 3, TreeParent);
+            PlaceTile(biomeType.tileAtlas.leaf, x + 1, y + 3, TreeParent);
 
-            PlaceTile(biomeType.tileAtlas.leaf, x, y + 5);
+            PlaceTile(biomeType.tileAtlas.leaf, x, y + 5, TreeParent);
             
 
         }
         
     }
 
-    public void PlaceTile(TileClass Tile, int x, int y)
+    public void PlaceTile(TileClass Tile, int x, int y, GameObject Parent, bool Autumn = false)
     {
         if (worldTiles.ContainsKey(new Vector2(x,y)))
         {
@@ -322,9 +331,49 @@ public class TerrainGeneration : MonoBehaviour
             return;
         } else
         {
+            GameObject newTile = new GameObject();
 
-            TileMap.SetTile(new Vector3Int(x, y, 0), Tile.RuleTile);
-            worldTiles.Add(new Vector2(x, y), Tile);
+            if(Parent == null)
+            {
+                float chunkCoord = (Mathf.Round(x / chunkSize) * chunkSize);
+                chunkCoord /= chunkSize;
+                newTile.transform.parent = worldChunks[(int)chunkCoord].transform;
+            } else
+            {
+                newTile.transform.parent = Parent.transform;
+            }
+
+            newTile.AddComponent<SpriteRenderer>();
+            
+            newTile.name = Tile.name;
+            newTile.transform.position = new Vector2(x, y);
+            if (Tile.AutoTile)
+            {
+                newTile.AddComponent<AutoTiling>();
+                newTile.GetComponent<AutoTiling>().TileType = Tile.name;
+                newTile.GetComponent<AutoTiling>().Tile = newTile;
+                newTile.GetComponent<AutoTiling>().AddSiblings(Tile.siblings);
+                newTile.GetComponent<AutoTiling>().worldTiles = worldTiles;
+                newTile.GetComponent<AutoTiling>().randomTileSprite = Random.Range(0, 3);
+                if (Autumn)
+                {
+                    newTile.GetComponent<AutoTiling>().Autumn = true;
+                }
+                
+            }
+            else
+            {
+                newTile.GetComponent<SpriteRenderer>().sprite = Tile.tileSprite;
+            }
+
+            if (!worldTiles.ContainsKey(new Vector2(x, y)))
+            {
+                
+                
+                worldTiles.Add(new Vector2(x,y), newTile);
+
+                
+            }
             
         }
 
