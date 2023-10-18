@@ -8,7 +8,7 @@ public class TileClass : ScriptableObject
     public string tileName;
     public Sprite tileSprite;
     public bool AutoTile = false;
-    [Header("Sublings")]
+    [Header("Siblings")]
     public List<string> siblings = new List<string>();
 }
 
