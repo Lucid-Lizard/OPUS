@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: StoneTile
+  m_Name: GrassTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 5376247285775213358, guid: a0c77c806ee5b4c458947d2b50d54e38, type: 3}
+  m_DefaultSprite: {fileID: -6629455176997799434, guid: 9ec5200341480aa44a2ce2f93fa597ca, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
