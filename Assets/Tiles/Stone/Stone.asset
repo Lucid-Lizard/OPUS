@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Stone
   tileSprite: {fileID: 21300000, guid: 4028299eaa5d8474da5154c5c0a8ae56, type: 3}
-  tileTexture: {fileID: 0}
+  ruleTile: {fileID: 11400000, guid: f281698b27bea3640a463fc0bb6520e6, type: 2}
   AutoTile: 1
   siblings:
   - Dirt

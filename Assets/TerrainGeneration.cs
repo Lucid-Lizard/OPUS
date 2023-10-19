@@ -155,7 +155,13 @@ public class TerrainGeneration : MonoBehaviour
                
 
                 
-                
+                if(y < height - dirtLayerHeight)
+                {
+                    tile = tileAtlas.stone;
+                } else
+                {
+                    tile = tileAtlas.dirt;
+                }
 
                 /*if (y < height - dirtLayerHeight)
                 {
@@ -199,7 +205,7 @@ public class TerrainGeneration : MonoBehaviour
                 
                 if (GetCurrentBiome(x, y).caveNoiseTexture.GetPixel(x, y).r > GetCurrentBiome(x, y).surfaceValue)
                 {
-                    tile = tileAtlas.dirt;
+                    
                     PlaceTile(tile, x, y, null);
                     
                     
