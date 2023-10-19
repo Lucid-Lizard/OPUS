@@ -606,7 +606,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797184745}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.050000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -664,6 +664,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!20 &1868402294 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4778038217124159951, guid: 7b449f3f5a2f6e546a227a3c33f5c097, type: 3}
+  m_PrefabInstance: {fileID: 4778038216395449771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1872081901
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +684,7 @@ GameObject:
   - component: {fileID: 1872081903}
   - component: {fileID: 1872081902}
   - component: {fileID: 1872081908}
+  - component: {fileID: 1872081909}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Player
@@ -843,6 +849,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1872081909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872081901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e45a3f711abae43bc55681cdcd8e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 1868402294}
+  Player: {fileID: 1872081901}
+  PlayerHead: {fileID: 1797184745}
 --- !u!1001 &4778038216395449771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,6 +874,10 @@ PrefabInstance:
     - target: {fileID: 4778038217124159945, guid: 7b449f3f5a2f6e546a227a3c33f5c097, type: 3}
       propertyPath: m_Name
       value: Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778038217124159945, guid: 7b449f3f5a2f6e546a227a3c33f5c097, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4778038217124159949, guid: 7b449f3f5a2f6e546a227a3c33f5c097, type: 3}
       propertyPath: playerTransform
