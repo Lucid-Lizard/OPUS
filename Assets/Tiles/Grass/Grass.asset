@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Grass
   tileSprite: {fileID: 21300000, guid: 0f5b252eee5ee8d4584c01b156161f2f, type: 3}
-  tileTexture: {fileID: 0}
+  ruleTile: {fileID: 11400000, guid: 01b87fdaa4347f44b87a0445af089fad, type: 2}
   AutoTile: 0
   siblings:
   - Dirt

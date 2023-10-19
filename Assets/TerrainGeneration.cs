@@ -158,9 +158,12 @@ public class TerrainGeneration : MonoBehaviour
                 if(y < height - dirtLayerHeight)
                 {
                     tile = tileAtlas.stone;
-                } else
+                } else if (y <  height - 1)
                 {
                     tile = tileAtlas.dirt;
+                } else
+                {
+                    tile = tileAtlas.grass;
                 }
 
                 /*if (y < height - dirtLayerHeight)
