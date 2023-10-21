@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Grassland
   m_EditorClassIdentifier: 
   dirt: {fileID: 11400000, guid: 434f15b1778a41e49a7f36b1155a111d, type: 2}
+  dirtw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
   grass: {fileID: 11400000, guid: a883de476c53f88458a12d9ec69a8e69, type: 2}
+  grassw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
   stone: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
-  log: {fileID: 11400000, guid: 9db4a444f6e0e3a48bc7f3926d1ee09f, type: 2}
+  stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
+  log: {fileID: 11400000, guid: dbcde3866b7c9734b8251ed3a0e228b7, type: 2}
+  root: {fileID: 11400000, guid: 96786e1aa318b5b4ab74a4469e20d839, type: 2}
+  branch: {fileID: 11400000, guid: eb57014c4671fdd41b6100cc724b120f, type: 2}
   leaf: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
   snow: {fileID: 0}
   sand: {fileID: 0}

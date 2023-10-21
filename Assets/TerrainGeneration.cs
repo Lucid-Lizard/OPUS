@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 public class TerrainGeneration : MonoBehaviour
 {
     public Tilemap worldTileMap;
+    public Tilemap worldWallMap;
+    public Tilemap worldTreeMap;
     public BiomeClass[] biomes;
 
     [Header("Tile Atlas")]
@@ -50,6 +52,7 @@ public class TerrainGeneration : MonoBehaviour
     private GameObject[] worldChunks;
     //private List<Vector2> worldTiles = new List<Vector2>();
     public IDictionary<Vector2, TileClass> worldTiles = new Dictionary<Vector2, TileClass>();
+    public IDictionary<Vector2, TileClass> worldWalls = new Dictionary<Vector2, TileClass>();
     private BiomeClass curBiome;
 
 
@@ -59,7 +62,8 @@ public class TerrainGeneration : MonoBehaviour
         seed = Random.Range(-10000, 10000);
         DrawTextures();
 
-        CreateChunks();
+        //CreateChunks();
+        GenerateWalls();
         GenerateTerrain();
 
         
@@ -164,6 +168,7 @@ public class TerrainGeneration : MonoBehaviour
                 } else
                 {
                     tile = tileAtlas.grass;
+                    TreeCooldown -= 1;
                 }
 
                 /*if (y < height - dirtLayerHeight)
@@ -213,7 +218,7 @@ public class TerrainGeneration : MonoBehaviour
                     
                     
 
-                    /*if (y >= height - 1)
+                    if (y >= height - 1)
                     {
                         int t = Random.Range(0, GetCurrentBiome(x, y).treeChance);
                         if (t == 1)
@@ -227,7 +232,7 @@ public class TerrainGeneration : MonoBehaviour
                             }
 
                         }
-                    }*/
+                    }
                 }
 
                 
@@ -236,104 +241,93 @@ public class TerrainGeneration : MonoBehaviour
         }
     }
 
-
-    /*void GenerateTree(int x, int y, BiomeClass biomeType)
+    private void GenerateTree(int x, int y, BiomeClass biomeClass)
     {
-        int treeHeight = Random.Range(biomeType.minTreeHeight, biomeType.maxTreeHeight);
-
-        GameObject TreeParent = new GameObject();
-
-        Vector2[] GrasslandTops = new Vector2[]
+        int treeHeight = Random.Range(minTreeHeight, maxTreeHeight);
+        for (int i = 0; i < treeHeight; i++)
         {
-            new Vector2(x - 2, y + treeHeight),
-            new Vector2(x - 2, y + treeHeight + 1),
+            PlaceTile(tileAtlas.log, x, y + i, worldTreeMap);
 
-            new Vector2(x - 1, y + treeHeight),
-            new Vector2(x - 1, y + treeHeight + 1),
-            new Vector2(x - 1, y + treeHeight + 2),
-            new Vector2(x - 1, y + treeHeight + 3),
-
-            new Vector2(x, y + treeHeight),
-            new Vector2(x, y + treeHeight + 1),
-            new Vector2(x, y + treeHeight + 2),
-            new Vector2(x, y + treeHeight + 3),
-
-            new Vector2(x + 1, y + treeHeight),
-            new Vector2(x + 1, y + treeHeight + 1),
-            new Vector2(x + 1, y + treeHeight + 2),
-            new Vector2(x + 1, y + treeHeight + 3),
-
-            new Vector2(x + 2, y + treeHeight),
-            new Vector2(x + 2, y + treeHeight + 1)
-        };
-
-        float chunkCoord = (Mathf.Round(x / chunkSize) * chunkSize);
-        chunkCoord /= chunkSize;
-        TreeParent.transform.parent = worldChunks[(int)chunkCoord].transform;
-        TreeParent.name = biomeType.biomeName + " Tree";
-        TreeParent.transform.position = new Vector2(x, y);
-
-        Debug.Log("GenTree: " + treeHeight);
-        if (biomeType.biomeName == "Grassland" || biomeType.biomeName == "Forest" || biomeType.biomeName == "Desert")
-        {
-            Debug.Log("GenTree: Biome is " + biomeType.biomeName) ;
-            for (int i = 0; i < treeHeight; i++)
+            if (i > 1)
             {
-                Debug.Log("GenTree: About to log");
-                PlaceTile(biomeType.tileAtlas.log, x, y + i, TreeParent);
-                Debug.Log("GenTree: did log");
+                if (Random.Range(0, 5) <= 1)
+                {
+                    PlaceTile(tileAtlas.branch, x - 1, y + i, worldTreeMap);
+                }
+                if (Random.Range(0, 5) <= 1)
+                {
+                    PlaceTile(tileAtlas.branch, x + 1, y + i, worldTreeMap);
+                }
             }
         }
-        else if (biomeType.biomeName == "Tundra")
+
+        if(!worldTiles.ContainsKey(new Vector2(x - 1, y)))
         {
 
-            PlaceTile(biomeType.tileAtlas.log, x, y, TreeParent);
-            PlaceTile(biomeType.tileAtlas.log, x, y+2, TreeParent);
-            PlaceTile(biomeType.tileAtlas.log, x, y+4, TreeParent);
-
-        } 
-        
-        if (biomeType.biomeName == "Grassland" || biomeType.biomeName == "Forest")
-        {
-            bool AutumnShould;
-            float AutumnChance = Random.Range(0, 3);
-            Debug.Log(AutumnChance);
-            if (AutumnChance >= 1)
-            {
-                
-                AutumnShould = true;
-            } else
-            {
-                AutumnShould = false;
-            }
-            foreach (Vector2 position in GrasslandTops)
-            {
-                
-                 PlaceTile(biomeType.tileAtlas.leaf, (int)position.x, (int)position.y, TreeParent, AutumnShould);
-                
-                
-            }
-        } else if (biomeType.biomeName == "Tundra")
-        {
-            PlaceTile(biomeType.tileAtlas.leaf, x - 2, y + 1, TreeParent);
-            PlaceTile(biomeType.tileAtlas.leaf, x - 1, y + 1, TreeParent);
-            PlaceTile(biomeType.tileAtlas.leaf, x, y + 1, TreeParent);
-            PlaceTile(biomeType.tileAtlas.leaf, x + 1, y + 1, TreeParent);
-            PlaceTile(biomeType.tileAtlas.leaf, x + 2, y + 1, TreeParent);
-
-
-            PlaceTile(biomeType.tileAtlas.leaf, x - 1, y + 3, TreeParent);
-            PlaceTile(biomeType.tileAtlas.leaf, x, y + 3, TreeParent);
-            PlaceTile(biomeType.tileAtlas.leaf, x + 1, y + 3, TreeParent);
-
-            PlaceTile(biomeType.tileAtlas.leaf, x, y + 5, TreeParent);
-            
-
+            PlaceTile(tileAtlas.root, x -1 , y, worldTreeMap);
         }
-        
-    }*/
 
-    public void PlaceTile(TileClass Tile, int x, int y, GameObject Parent, bool Autumn = false)
+        if (!worldTiles.ContainsKey(new Vector2(x + 1, y)))
+        {
+            PlaceTile(tileAtlas.root, x + 1, y, worldTreeMap);
+        }
+
+        PlaceTile(tileAtlas.leaf, x - 2, y + treeHeight, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x - 2, y + treeHeight + 1, worldTreeMap);
+
+        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight + 2, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight + 3, worldTreeMap);
+
+        PlaceTile(tileAtlas.leaf, x, y + treeHeight, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x, y + treeHeight + 2, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x, y + treeHeight + 3, worldTreeMap);
+
+        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight + 2, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight + 3, worldTreeMap);
+
+        PlaceTile(tileAtlas.leaf, x + 2, y + treeHeight, worldTreeMap);
+        PlaceTile(tileAtlas.leaf, x + 2, y + treeHeight + 1, worldTreeMap);
+    }
+
+
+    public void GenerateWalls()
+    {
+        TileClass tile;
+        for (int x = 0; x < worldSize; x++)
+        {
+            float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
+            for (int y = 0; y < height; y++)
+            {
+
+
+
+                if (y < height - dirtLayerHeight)
+                {
+                    tile = tileAtlas.stonew;
+                }
+                else if (y < height - 1)
+                {
+                    tile = tileAtlas.dirtw;
+                }
+                else
+                {
+                    tile = tileAtlas.grassw;
+                }
+
+                PlaceWall(tile, x, y, null);
+            }
+        }
+    }
+
+
+    
+
+    public void PlaceTile(TileClass Tile, int x, int y, Tilemap Parent, bool Autumn = false)
     {
         if (worldTiles.ContainsKey(new Vector2(x,y)))
         {
@@ -341,50 +335,53 @@ public class TerrainGeneration : MonoBehaviour
             return;
         } else
         {
-            /*GameObject newTile = new GameObject();
-
-            if(Parent == null)
-            {
-                float chunkCoord = (Mathf.Round(x / chunkSize) * chunkSize);
-                chunkCoord /= chunkSize;
-                newTile.transform.parent = worldChunks[(int)chunkCoord].transform;
-            } else
-            {
-                newTile.transform.parent = Parent.transform;
-            }
-
-            newTile.AddComponent<SpriteRenderer>();
-            
-            newTile.name = Tile.name;
-            newTile.transform.position = new Vector2(x, y);
-            if (Tile.AutoTile)
-            {
-                newTile.AddComponent<AutoTiling>();
-                newTile.GetComponent<AutoTiling>().TileType = Tile.name;
-                newTile.GetComponent<AutoTiling>().Tile = newTile;
-                newTile.GetComponent<AutoTiling>().AddSiblings(Tile.siblings);
-                newTile.GetComponent<AutoTiling>().worldTiles = worldTiles;
-                newTile.GetComponent<AutoTiling>().randomTileSprite = Random.Range(0, 3);
-                if (Autumn)
-                {
-                    newTile.GetComponent<AutoTiling>().Autumn = true;
-                }
-                
-            }
-            else
-            {
-                newTile.GetComponent<SpriteRenderer>().sprite = Tile.tileSprite;
-            }*/
+           
 
             if (!worldTiles.ContainsKey(new Vector2(x, y)))
             {
-
-                worldTileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-                worldTiles.Add(new Vector2(x,y), Tile);
-
+                if (Parent == null)
+                {
+                    worldTileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                    worldTiles.Add(new Vector2(x, y), Tile);
+                }
+                else
+                {
+                    Parent.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                    worldTiles.Add(new Vector2(x, y), Tile);
+                }
                 
+
+
             }
             
+
+            
+
+            
+            
+        }
+
+    }
+
+    public void PlaceWall(TileClass Tile, int x, int y, GameObject Parent, bool Autumn = false)
+    {
+        if (worldWalls.ContainsKey(new Vector2(x, y)))
+        {
+            Debug.Log("World contains wall");
+            return;
+        }
+        else
+        {
+            
+            if (!worldTiles.ContainsKey(new Vector2(x, y)))
+            {
+
+                worldWallMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                worldWalls.Add(new Vector2(x, y), Tile);
+
+
+            }
+
         }
 
     }
