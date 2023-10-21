@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OakBranches
   m_EditorClassIdentifier: 
   tileName: OakBranches
-  tileSprite: {fileID: 0}
+  tileSprite: {fileID: -3393394188124149227, guid: c5dc068ea3e6b8e48b19a7d2023e5375, type: 3}
   ruleTile: {fileID: 11400000, guid: 1db9255248a453f44ada23517e5dcb65, type: 2}
   AutoTile: 0
   siblings: []

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sand
   m_EditorClassIdentifier: 
   tileName: 
-  tileSprite: {fileID: 21300000, guid: 40714d9eba48e9847abdcaf8f9a377b1, type: 3}
-  tileTexture: {fileID: 0}
+  tileSprite: {fileID: -51768659254253517, guid: 24944745e082f394c9390e6eb6a22cb9, type: 3}
+  ruleTile: {fileID: 11400000, guid: 60d5c3f6439bdfb4bae701c1cd406739, type: 2}
   AutoTile: 1
   siblings:
   - Sandstone

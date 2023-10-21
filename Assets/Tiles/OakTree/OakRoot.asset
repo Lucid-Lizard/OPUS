@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OakRoot
   m_EditorClassIdentifier: 
   tileName: OakRoot
-  tileSprite: {fileID: 0}
+  tileSprite: {fileID: 500019704881857345, guid: 089b6affa816804409e986d574b50ec0, type: 3}
   ruleTile: {fileID: 11400000, guid: 0c2d7596957963e4eb3e0664ab16fb9a, type: 2}
   AutoTile: 0
   siblings: []

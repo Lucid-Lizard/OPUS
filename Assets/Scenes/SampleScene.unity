@@ -123,73 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &63230195
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 825211143}
-    m_Modifications:
-    - target: {fileID: 709738079986036964, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_Name
-      value: PlayerRoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
---- !u!1 &63230196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 709738079986036964, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-  m_PrefabInstance: {fileID: 63230195}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &63230197 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
-  m_PrefabInstance: {fileID: 63230195}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &240873570
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,21 +301,21 @@ Tilemap:
       e12: 2e-43
       e13: 2e-43
       e20: 1.3838231e-15
-      e21: -4.742242e-10
-      e22: -9.395912
-      e23: -4.742242e-10
+      e21: -4.737464e-10
+      e22: -10.8218155
+      e23: -4.737464e-10
       e30: 4.5904e-41
       e31: 7.16e-43
       e32: 7.13e-43
       e33: 7.16e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: -4.700951e-10, g: -4.700951e-10, b: -4.700951e-10, a: -4.700951e-10}
+    m_Data: {r: -4.7758775e-10, g: -4.7758775e-10, b: -4.7758775e-10, a: -4.7758775e-10}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 30, y: 31, z: 1}
+  m_Size: {x: 37, y: 52, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -542,7 +475,6 @@ GameObject:
   m_Component:
   - component: {fileID: 825211143}
   - component: {fileID: 825211142}
-  - component: {fileID: 825211144}
   m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
@@ -727,26 +659,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 63230197}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &825211144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825211141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84cbd1603f76cba418c332c2df423b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 63230196}
-  worldSize: 0
-  spawnHeight: 5
 --- !u!1 &826213685
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +676,8 @@ GameObject:
   - component: {fileID: 826213687}
   - component: {fileID: 826213689}
   - component: {fileID: 826213690}
+  - component: {fileID: 826213692}
+  - component: {fileID: 826213691}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Ground
@@ -879,7 +797,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
@@ -895,11 +813,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2b0d43e697f3f4e8843daf8ad61e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TG: {fileID: 825211141}
   tilemap: {fileID: 826213688}
   cam: {fileID: 540233150}
   Selected: {fileID: 0}
   MousePos: {x: 0, y: 0, z: 0}
   Cursor: {fileID: 1829902416}
+  CursorTexture: {fileID: 21300000, guid: a5c177db5ffb4c44693ace060e6a0bd8, type: 3}
+--- !u!66 &826213691
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826213685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 826213689}
+    m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &826213692
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826213685}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &829704773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1169,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: a5c177db5ffb4c44693ace060e6a0bd8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

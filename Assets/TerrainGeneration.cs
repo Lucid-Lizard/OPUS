@@ -161,13 +161,13 @@ public class TerrainGeneration : MonoBehaviour
                 
                 if(y < height - dirtLayerHeight)
                 {
-                    tile = tileAtlas.stone;
+                    tile = GetCurrentBiome(x, y).tileAtlas.stone;
                 } else if (y <  height - 1)
                 {
-                    tile = tileAtlas.dirt;
+                    tile = GetCurrentBiome(x, y).tileAtlas.dirt;
                 } else
                 {
-                    tile = tileAtlas.grass;
+                    tile = GetCurrentBiome(x, y).tileAtlas.grass;
                     TreeCooldown -= 1;
                 }
 

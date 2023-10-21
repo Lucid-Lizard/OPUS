@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: 
   tileName: Dirt
-  tileSprite: {fileID: 21300000, guid: 54e7bc9be9aaa6c4dbdce45584b07054, type: 3}
+  tileSprite: {fileID: -6324567428539652501, guid: 5969b0bf373fa1e459b456d2328850c1, type: 3}
   ruleTile: {fileID: 11400000, guid: b15cac87b34f9a14cbd79436df47824d, type: 2}
   AutoTile: 1
   siblings:

@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Desert
   m_EditorClassIdentifier: 
   dirt: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
+  dirtw: {fileID: 0}
   grass: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
-  stone: {fileID: 11400000, guid: 6c5621a6d19ea5846bf8474c08e07ef3, type: 2}
-  log: {fileID: 11400000, guid: 14c38dea6feb1b844922ce817b48e40f, type: 2}
+  grassw: {fileID: 0}
+  stone: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
+  stonew: {fileID: 0}
+  log: {fileID: 11400000, guid: dbcde3866b7c9734b8251ed3a0e228b7, type: 2}
+  root: {fileID: 0}
+  branch: {fileID: 0}
   leaf: {fileID: 0}
   snow: {fileID: 0}
   sand: {fileID: 0}
