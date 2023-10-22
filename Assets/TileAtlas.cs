@@ -17,6 +17,13 @@ public class TileAtlas : ScriptableObject
     public TileClass leaf;
     public TileClass snow;
     public TileClass sand;
+    public TileClass red;
+    public TileClass orange;
+    public TileClass yellow;
+    public TileClass green;
+    public TileClass blue;
+    public TileClass purple;
+    public TileClass OakPlanks;
 
     [Header("Ores")]
     public TileClass coal;

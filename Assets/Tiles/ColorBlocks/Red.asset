@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
+  m_Name: Red
+  m_EditorClassIdentifier: 
+  tileName: Red
+  tileSprite: {fileID: 5078468448194340868, guid: 2666207f823893f4e8bbaad8e9b810c2, type: 3}
+  ruleTile: {fileID: 11400000, guid: c56c251f019137941ba3c7dfd5a05aa7, type: 2}
+  AutoTile: 0
+  siblings: []

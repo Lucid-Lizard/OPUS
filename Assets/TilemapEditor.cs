@@ -21,7 +21,7 @@ public class TilemapEditor : MonoBehaviour
     {
         MousePos = new Vector3Int(Mathf.FloorToInt(cam.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(cam.ScreenToWorldPoint(Input.mousePosition).y), 0);
         Cursor.transform.position = MousePos + (Vector3.one / 2);
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
             if(Selected != null)
             {

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
+  m_Name: Blue
+  m_EditorClassIdentifier: 
+  tileName: Blue
+  tileSprite: {fileID: -6614846632450278658, guid: d3941ffc5e530714b98330a9e8d48dd9, type: 3}
+  ruleTile: {fileID: 11400000, guid: 58e319a221a02ab4bac4f842b56bb124, type: 2}
+  AutoTile: 0
+  siblings: []

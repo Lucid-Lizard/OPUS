@@ -65,6 +65,7 @@ public class TerrainGeneration : MonoBehaviour
         //CreateChunks();
         GenerateWalls();
         GenerateTerrain();
+        GenerateExtras();
 
         
     }
@@ -246,17 +247,17 @@ public class TerrainGeneration : MonoBehaviour
         int treeHeight = Random.Range(minTreeHeight, maxTreeHeight);
         for (int i = 0; i < treeHeight; i++)
         {
-            PlaceTile(tileAtlas.log, x, y + i, worldTreeMap);
+            PlaceTile(biomeClass.tileAtlas.log, x, y + i, worldTreeMap);
 
             if (i > 1)
             {
                 if (Random.Range(0, 5) <= 1)
                 {
-                    PlaceTile(tileAtlas.branch, x - 1, y + i, worldTreeMap);
+                    PlaceTile(biomeClass.tileAtlas.branch, x - 1, y + i, worldTreeMap);
                 }
                 if (Random.Range(0, 5) <= 1)
                 {
-                    PlaceTile(tileAtlas.branch, x + 1, y + i, worldTreeMap);
+                    PlaceTile(biomeClass.tileAtlas.branch, x + 1, y + i, worldTreeMap);
                 }
             }
         }
@@ -264,34 +265,34 @@ public class TerrainGeneration : MonoBehaviour
         if(!worldTiles.ContainsKey(new Vector2(x - 1, y)))
         {
 
-            PlaceTile(tileAtlas.root, x -1 , y, worldTreeMap);
+            PlaceTile(biomeClass.tileAtlas.root, x -1 , y, worldTreeMap);
         }
 
         if (!worldTiles.ContainsKey(new Vector2(x + 1, y)))
         {
-            PlaceTile(tileAtlas.root, x + 1, y, worldTreeMap);
+            PlaceTile(biomeClass.tileAtlas.root, x + 1, y, worldTreeMap);
         }
 
-        PlaceTile(tileAtlas.leaf, x - 2, y + treeHeight, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x - 2, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x - 2, y + treeHeight, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x - 2, y + treeHeight + 1, worldTreeMap);
 
-        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight + 1, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight + 2, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x - 1, y + treeHeight + 3, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 2, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 3, worldTreeMap);
 
-        PlaceTile(tileAtlas.leaf, x, y + treeHeight, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x, y + treeHeight + 1, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x, y + treeHeight + 2, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x, y + treeHeight + 3, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 2, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 3, worldTreeMap);
 
-        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight + 1, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight + 2, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x + 1, y + treeHeight + 3, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 2, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 3, worldTreeMap);
 
-        PlaceTile(tileAtlas.leaf, x + 2, y + treeHeight, worldTreeMap);
-        PlaceTile(tileAtlas.leaf, x + 2, y + treeHeight + 1, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x + 2, y + treeHeight, worldTreeMap);
+        PlaceTile(biomeClass.tileAtlas.leaf, x + 2, y + treeHeight + 1, worldTreeMap);
     }
 
 
@@ -308,15 +309,15 @@ public class TerrainGeneration : MonoBehaviour
 
                 if (y < height - dirtLayerHeight)
                 {
-                    tile = tileAtlas.stonew;
+                    tile = GetCurrentBiome(x, y).tileAtlas.stonew;
                 }
                 else if (y < height - 1)
                 {
-                    tile = tileAtlas.dirtw;
+                    tile = GetCurrentBiome(x, y).tileAtlas.dirtw;
                 }
                 else
                 {
-                    tile = tileAtlas.grassw;
+                    tile = GetCurrentBiome(x, y).tileAtlas.grassw;
                 }
 
                 PlaceWall(tile, x, y, null);
@@ -327,37 +328,34 @@ public class TerrainGeneration : MonoBehaviour
 
     
 
-    public void PlaceTile(TileClass Tile, int x, int y, Tilemap Parent, bool Autumn = false)
+    public void PlaceTile(TileClass Tile, int x, int y, Tilemap Parent)
     {
-        if (worldTiles.ContainsKey(new Vector2(x,y)))
+        if (worldTiles.ContainsKey(new Vector2(x, y)))
         {
             Debug.Log("World contains tile");
             return;
         } else
         {
-           
-
-            if (!worldTiles.ContainsKey(new Vector2(x, y)))
+            if (Tile != null)
             {
-                if (Parent == null)
+
+                if (!worldTiles.ContainsKey(new Vector2(x, y)))
                 {
-                    worldTileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-                    worldTiles.Add(new Vector2(x, y), Tile);
+                    if (Parent == null)
+                    {
+                        worldTileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                        worldTiles.Add(new Vector2(x, y), Tile);
+                    }
+                    else
+                    {
+                        Parent.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                        worldTiles.Add(new Vector2(x, y), Tile);
+                    }
+
+
+
                 }
-                else
-                {
-                    Parent.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-                    worldTiles.Add(new Vector2(x, y), Tile);
-                }
-                
-
-
-            }
-            
-
-            
-
-            
+            }  
             
         }
 
@@ -401,5 +399,16 @@ public class TerrainGeneration : MonoBehaviour
             }
         }
         noiseTexture.Apply();
+    }
+
+    public void GenerateExtras()
+    {
+        PlaceTile(tileAtlas.red, -1, heightAddition, null);
+        PlaceTile(tileAtlas.orange, -1, heightAddition + 1, null);
+        PlaceTile(tileAtlas.yellow, -1, heightAddition + 2, null);
+        PlaceTile(tileAtlas.green, -1, heightAddition + 3, null);
+        PlaceTile(tileAtlas.blue, -1, heightAddition + 4, null);
+        PlaceTile(tileAtlas.purple, -1, heightAddition + 5, null);
+        PlaceTile(tileAtlas.OakPlanks, -1, heightAddition + 6, null);
     }
 }

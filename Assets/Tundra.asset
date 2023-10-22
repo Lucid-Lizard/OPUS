@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: Tundra
   m_EditorClassIdentifier: 
   dirt: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
-  dirtw: {fileID: 0}
+  dirtw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
   grass: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
-  grassw: {fileID: 0}
+  grassw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
   stone: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
-  stonew: {fileID: 0}
+  stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
   log: {fileID: 11400000, guid: 434f15b1778a41e49a7f36b1155a111d, type: 2}
   root: {fileID: 0}
   branch: {fileID: 0}
   leaf: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
   snow: {fileID: 11400000, guid: a934b8297a770e44f99f97981669d032, type: 2}
   sand: {fileID: 0}
+  red: {fileID: 0}
+  orange: {fileID: 0}
+  yellow: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  purple: {fileID: 0}
   coal: {fileID: 11400000, guid: b922f68c116163a47b49d9469f66cdb5, type: 2}
   copper: {fileID: 11400000, guid: 25ff89d410f35584b9825343631e4a48, type: 2}

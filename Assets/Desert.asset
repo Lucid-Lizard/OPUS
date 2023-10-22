@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: Desert
   m_EditorClassIdentifier: 
   dirt: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
-  dirtw: {fileID: 0}
+  dirtw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
   grass: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
-  grassw: {fileID: 0}
+  grassw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
   stone: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
-  stonew: {fileID: 0}
+  stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
   log: {fileID: 11400000, guid: dbcde3866b7c9734b8251ed3a0e228b7, type: 2}
   root: {fileID: 0}
   branch: {fileID: 0}
   leaf: {fileID: 0}
   snow: {fileID: 0}
   sand: {fileID: 0}
+  red: {fileID: 0}
+  orange: {fileID: 0}
+  yellow: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  purple: {fileID: 0}
   coal: {fileID: 11400000, guid: b922f68c116163a47b49d9469f66cdb5, type: 2}
   copper: {fileID: 11400000, guid: 25ff89d410f35584b9825343631e4a48, type: 2}
