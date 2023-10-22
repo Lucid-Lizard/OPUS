@@ -6,6 +6,9 @@ using UnityEngine.Tilemaps;
 public class SemiSolidScript : MonoBehaviour
 {
     public GameObject Player;
+    public Vector2 storedPos;
+    public IDictionary<Vector2, TileClass> worldTiles;
+    public GameObject Handler;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +18,21 @@ public class SemiSolidScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Vertical") != 0 || Input.GetKey(KeyCode.Space) || Mathf.Abs(Player.GetComponent<Rigidbody2D>().velocity.y) >= .25f)
-        {
-            GetComponent<TilemapCollider2D>().enabled = false;
+        if (Player.transform.position.y <= transform.position.y + .7f) {
+            GetComponent<BoxCollider2D>().enabled = false;
         } else
         {
-            GetComponent<TilemapCollider2D>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if(Input.GetKey(KeyCode.S))
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        if (!worldTiles.ContainsKey(storedPos))
+        {
+            Destroy(Handler);
         }
     }
 }

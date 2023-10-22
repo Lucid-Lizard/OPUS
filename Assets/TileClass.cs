@@ -10,6 +10,7 @@ public class TileClass : ScriptableObject
     public RuleTile ruleTile;
     public bool AutoTile = false;
     public bool Semisolid = false;
+    public bool Slope = false;
     public bool Wall = false;
     public bool Tree = false;
     [Header("Siblings")]

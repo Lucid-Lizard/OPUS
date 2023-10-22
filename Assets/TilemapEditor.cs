@@ -5,7 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class TilemapEditor : MonoBehaviour
 {
-
+    public PhysicsMaterial2D SlopeFM;
+    public GameObject Player;
     public GameObject TG;
     public Tilemap tileMap;
     public Tilemap semiSolidMap;
@@ -62,15 +63,50 @@ public class TilemapEditor : MonoBehaviour
                         {
                             worldTiles.Add(new Vector2(MousePos.x, MousePos.y), Selected);
                             semiSolidMap.SetTile(MousePos, Selected.ruleTile);
+                            GameObject PlatformCol = new GameObject();
+                            PlatformCol.name = "PlatformCol";
+                            PlatformCol.AddComponent<SemiSolidScript>();
+                            PlatformCol.AddComponent<BoxCollider2D>();
+                            PlatformCol.GetComponent<SemiSolidScript>().Player = Player;
+                            PlatformCol.GetComponent<SemiSolidScript>().worldTiles = worldTiles;
+                            PlatformCol.GetComponent<SemiSolidScript>().storedPos = new Vector2(MousePos.x, MousePos.y);
+                            PlatformCol.GetComponent<SemiSolidScript>().Handler = PlatformCol;
+                            PlatformCol.GetComponent<BoxCollider2D>().size = new Vector2(1,0.01f);
+                            PlatformCol.GetComponent<BoxCollider2D>().tag = "Ground";
+                            
+                            PlatformCol.transform.position = MousePos + (Vector3.one * 0.5f) + new Vector3(0,0.5f,0);
 
                         }
+
+                        else if (Selected.Slope)
+                        {
+                            worldTiles.Add(new Vector2(MousePos.x, MousePos.y), Selected);
+                            tileMap.SetTile(MousePos, Selected.ruleTile);
+                            GameObject SlopeCol = new GameObject();
+                            SlopeCol.name = "PlatformCol";
+                            SlopeCol.AddComponent<SlopeHandler>();
+                            SlopeCol.AddComponent<EdgeCollider2D>();
+                            SlopeCol.GetComponent<SlopeHandler>().worldTiles = worldTiles;
+                            SlopeCol.GetComponent<SlopeHandler>().storedPos = new Vector2(MousePos.x, MousePos.y);
+                            SlopeCol.GetComponent<SlopeHandler>().Handler = SlopeCol;
+                            SlopeCol.GetComponent<EdgeCollider2D>().sharedMaterial = SlopeFM;
+                            
+                            SlopeCol.GetComponent<EdgeCollider2D>().tag = "Ground";
+
+                            SlopeCol.transform.position = MousePos;
+                        }
                         
+                        else if (Selected.Tree)
+                        {
+                            worldTiles.Add(new Vector2(MousePos.x, MousePos.y), Selected);
+                            treeMap.SetTile(MousePos, Selected.ruleTile);
+                        }
+
                         else
                         {
                             worldTiles.Add(new Vector2(MousePos.x, MousePos.y), Selected);
                             tileMap.SetTile(MousePos, Selected.ruleTile);
                         }
-
 
                     }
                 } else
@@ -87,10 +123,13 @@ public class TilemapEditor : MonoBehaviour
             {
                 if(SelectedLayer != wallMap)
                 {
+                    
                     worldTiles.Remove(new Vector2(MousePos.x, MousePos.y));
+                    
                     SelectedLayer.SetTile(MousePos, null);
                 } else
                 {
+
                     worldWalls.Remove(new Vector2(MousePos.x, MousePos.y));
                     wallMap.SetTile(MousePos, null);
                 }

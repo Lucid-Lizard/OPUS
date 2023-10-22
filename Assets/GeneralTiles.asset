@@ -17,13 +17,13 @@ MonoBehaviour:
   grass: {fileID: 0}
   grassw: {fileID: 0}
   stone: {fileID: 0}
-  stonew: {fileID: 0}
+  stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
   log: {fileID: 0}
   root: {fileID: 0}
   branch: {fileID: 0}
   leaf: {fileID: 0}
   snow: {fileID: 0}
-  sand: {fileID: 0}
+  sand: {fileID: 11400000, guid: 5f39a0c5844c32c4a93e664445f24d0f, type: 2}
   red: {fileID: 11400000, guid: 2adef3642a75566479a1a0485e59376a, type: 2}
   orange: {fileID: 11400000, guid: dc7cf9af548b103438c84ab33795a4e5, type: 2}
   yellow: {fileID: 11400000, guid: 52ae6b0b4dd85ab4fa34625cccb9bf32, type: 2}

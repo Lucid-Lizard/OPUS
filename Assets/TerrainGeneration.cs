@@ -412,5 +412,7 @@ public class TerrainGeneration : MonoBehaviour
         PlaceTile(tileAtlas.purple, -3, heightAddition + 5, null);
         PlaceTile(tileAtlas.OakPlanks, -3, heightAddition + 6, null);
         PlaceTile(tileAtlas.OakPlatform, -3, heightAddition + 7, worldSemiSolidMap);
+        PlaceTile(tileAtlas.stonew, -4, heightAddition , worldSemiSolidMap);
+        PlaceTile(tileAtlas.sand, -4, heightAddition + 1, worldSemiSolidMap);
     }
 }

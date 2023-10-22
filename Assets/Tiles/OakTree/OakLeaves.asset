@@ -16,6 +16,9 @@ MonoBehaviour:
   tileSprite: {fileID: -8362877577660253713, guid: 86468ab813e498f40961cb8c3c9890ca, type: 3}
   ruleTile: {fileID: 11400000, guid: ddb7c4d6174bcda4989995a86406204b, type: 2}
   AutoTile: 1
+  Semisolid: 0
+  Wall: 0
+  Tree: 1
   siblings:
   - OakLeaves
   - Log
