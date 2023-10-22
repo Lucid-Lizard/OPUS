@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
-  m_Name: StoneWall
+  m_Name: OakPlatform
   m_EditorClassIdentifier: 
-  tileName: StpneWall
-  tileSprite: {fileID: 0}
-  ruleTile: {fileID: 11400000, guid: af43349eb0bbf59498902d48e0cec6f3, type: 2}
+  tileName: OakPlatforms
+  tileSprite: {fileID: 3696969358981108386, guid: ea7934eb23435984985d1fedad6b37b2, type: 3}
+  ruleTile: {fileID: 11400000, guid: 9c1ba68a98a362945898518d7447cfd0, type: 2}
   AutoTile: 0
-  Semisolid: 0
-  Wall: 1
+  Semisolid: 1
   siblings: []

@@ -8,6 +8,7 @@ public class TerrainGeneration : MonoBehaviour
     public Tilemap worldTileMap;
     public Tilemap worldWallMap;
     public Tilemap worldTreeMap;
+    public Tilemap worldSemiSolidMap;
     public BiomeClass[] biomes;
 
     [Header("Tile Atlas")]
@@ -403,12 +404,13 @@ public class TerrainGeneration : MonoBehaviour
 
     public void GenerateExtras()
     {
-        PlaceTile(tileAtlas.red, -1, heightAddition, null);
-        PlaceTile(tileAtlas.orange, -1, heightAddition + 1, null);
-        PlaceTile(tileAtlas.yellow, -1, heightAddition + 2, null);
-        PlaceTile(tileAtlas.green, -1, heightAddition + 3, null);
-        PlaceTile(tileAtlas.blue, -1, heightAddition + 4, null);
-        PlaceTile(tileAtlas.purple, -1, heightAddition + 5, null);
-        PlaceTile(tileAtlas.OakPlanks, -1, heightAddition + 6, null);
+        PlaceTile(tileAtlas.red, -3, heightAddition, null);
+        PlaceTile(tileAtlas.orange, -3, heightAddition + 1, null);
+        PlaceTile(tileAtlas.yellow, -3, heightAddition + 2, null);
+        PlaceTile(tileAtlas.green, -3, heightAddition + 3, null);
+        PlaceTile(tileAtlas.blue, -3, heightAddition + 4, null);
+        PlaceTile(tileAtlas.purple, -3, heightAddition + 5, null);
+        PlaceTile(tileAtlas.OakPlanks, -3, heightAddition + 6, null);
+        PlaceTile(tileAtlas.OakPlatform, -3, heightAddition + 7, worldSemiSolidMap);
     }
 }

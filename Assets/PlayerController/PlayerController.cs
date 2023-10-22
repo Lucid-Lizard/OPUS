@@ -38,9 +38,9 @@ public class PlayerController : MonoBehaviour
         Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
 
         if (horizontal > 0)
-            transform.localScale = new Vector3(8, 8, 1);
+            transform.localScale = new Vector3(7, 7, 1);
         else if (horizontal < 0)
-            transform.localScale = new Vector3(-8, 8, 1);
+            transform.localScale = new Vector3(-7, 7, 1);
 
         if (vertical > 0.1f || jump > 0.1f)
         {

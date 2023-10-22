@@ -16,4 +16,6 @@ MonoBehaviour:
   tileSprite: {fileID: -4242764942532761954, guid: 977a4fc186f9e844a804d78c5a7056c4, type: 3}
   ruleTile: {fileID: 11400000, guid: 857cb1e5f2e064f43bc36cd4761f50f9, type: 2}
   AutoTile: 0
+  Semisolid: 0
+  Wall: 1
   siblings: []

@@ -31,5 +31,6 @@ MonoBehaviour:
   blue: {fileID: 11400000, guid: a5a14485abdbfd841b99a9d7b328b0fb, type: 2}
   purple: {fileID: 11400000, guid: bed091bd35254314fa95817ee1e36e23, type: 2}
   OakPlanks: {fileID: 11400000, guid: f3cac2801ed252048adacefdf807994d, type: 2}
+  OakPlatform: {fileID: 11400000, guid: 4d95c995ee318e941971642cf87c0731, type: 2}
   coal: {fileID: 0}
   copper: {fileID: 0}
