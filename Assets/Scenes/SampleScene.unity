@@ -335,6 +335,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &279285566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279285568}
+  - component: {fileID: 279285567}
+  m_Layer: 0
+  m_Name: TileEditManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &279285567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279285566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1804a7dfdef904544b50b75709e25ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMap: {fileID: 826213688}
+  semiSolidMap: {fileID: 1266524618}
+  treeMap: {fileID: 240873573}
+  wallMap: {fileID: 829704776}
+--- !u!4 &279285568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279285566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 243.5177, y: 49.609634, z: -533.0895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &460248564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -400,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120477087132019837, guid: 0d879756c64a3fa4ba22d79e3bcb2784, type: 3}
       propertyPath: orthographic size
-      value: 6.658064
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 120477087132019839, guid: 0d879756c64a3fa4ba22d79e3bcb2784, type: 3}
       propertyPath: smoothTimeX
@@ -446,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainGeneration: {fileID: 825211142}
+  tileEditManager: {fileID: 279285567}
 --- !u!4 &485933832
 Transform:
   m_ObjectHideFlags: 0
@@ -499,95 +547,11 @@ MonoBehaviour:
   worldTreeMap: {fileID: 240873573}
   worldSemiSolidMap: {fileID: 1266524618}
   biomes:
-  - biomeName: Grassland
-    biomeColor: {r: 1, g: 1, b: 1, a: 1}
-    tileAtlas: {fileID: 11400000, guid: 1df5692c711a64044b1c0cdf7760e030, type: 2}
-    caveFreq: 0.05
-    terrainFreq: 0.05
-    caveNoiseTexture: {fileID: 0}
-    dirtLayerHeight: 15
-    surfaceValue: 0.25
-    heightMultiplier: 6
-    foliageSprites:
-    - {fileID: 21300000, guid: b4521a8b23bfee1478b47aa03b048174, type: 3}
-    - {fileID: 21300000, guid: 96e805a4b9e70e14c87cfbd7482b65b5, type: 3}
-    - {fileID: 21300000, guid: 0092eec3f218ca345b09322214c0c72c, type: 3}
-    foliageChance: 3
-    treeChance: 10
-    minTreeHeight: 4
-    maxTreeHeight: 6
-    ores:
-    - name: coal
-      rarity: 0.1
-      size: 0.8
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
-    - name: copper
-      rarity: 0.1
-      size: 0.8
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
-  - biomeName: Tundra
-    biomeColor: {r: 0, g: 0, b: 0, a: 1}
-    tileAtlas: {fileID: 11400000, guid: 40f3d535b88726249aa5b926f9d42178, type: 2}
-    caveFreq: 0.05
-    terrainFreq: 0.05
-    caveNoiseTexture: {fileID: 0}
-    dirtLayerHeight: 15
-    surfaceValue: 0.25
-    heightMultiplier: 4
-    foliageSprites:
-    - {fileID: 21300000, guid: 1e8d253d7b2c7e040b9904c2945e32b1, type: 3}
-    - {fileID: 21300000, guid: e6d911ca239001946a55260f1b9df9e0, type: 3}
-    - {fileID: 21300000, guid: 7edfe3e3cc30aef4db8a9395caa1a1c4, type: 3}
-    foliageChance: 3
-    treeChance: 14
-    minTreeHeight: 5
-    maxTreeHeight: 5
-    ores:
-    - name: coal
-      rarity: 0.1
-      size: 0.8
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
-    - name: copper
-      rarity: 0.09
-      size: 0.8
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
-    - name: snow
-      rarity: 0.17
-      size: 0.55
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
-  - biomeName: Desert
-    biomeColor: {r: 1, g: 0, b: 0, a: 1}
-    tileAtlas: {fileID: 11400000, guid: 20964f00f43e54642be9399542b8b6c4, type: 2}
-    caveFreq: 0
-    terrainFreq: 0.05
-    caveNoiseTexture: {fileID: 0}
-    dirtLayerHeight: 15
-    surfaceValue: 0.25
-    heightMultiplier: 4
-    foliageSprites:
-    - {fileID: 21300000, guid: 8b036f75aa0b61a4590059cde6b1a77f, type: 3}
-    - {fileID: 21300000, guid: 08128002557a5f34683437d40603566a, type: 3}
-    - {fileID: 21300000, guid: 324b72f12e9a4b344b035c39cdcc9f4e, type: 3}
-    foliageChance: 3
-    treeChance: 8
-    minTreeHeight: 4
-    maxTreeHeight: 6
-    ores:
-    - name: coal
-      rarity: 0.1
-      size: 0.8
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
-    - name: copper
-      rarity: 0.1
-      size: 0.8
-      maxSpawnHeight: 1000
-      spreadTexture: {fileID: 0}
+  - {fileID: 11400000, guid: 5a931fc4211d21e4e84ee6a37d2f51f6, type: 2}
+  - {fileID: 11400000, guid: dd826663627ea4949bb0c66d0f5e76f3, type: 2}
+  - {fileID: 11400000, guid: a9afc698867c0e94ea61dae10548767d, type: 2}
+  - {fileID: 11400000, guid: be6bddb60eaa6d849a142f4d37bb3f9a, type: 2}
+  defaultBiome: {fileID: 11400000, guid: be6bddb60eaa6d849a142f4d37bb3f9a, type: 2}
   tileAtlas: {fileID: 11400000, guid: 734fc788e8ad05e4f947a73ef26e2097, type: 2}
   treeChance: 12
   minTreeHeight: 4
@@ -824,24 +788,24 @@ Tilemap:
   - m_RefCount: 0
     m_Data:
       e00: 1.084227e-19
-      e01: -986004
-      e02: -985949
-      e03: -985949
-      e10: 7.15e-43
-      e11: 2e-43
-      e12: 2e-43
-      e13: 2e-43
+      e01: 3.123602e+25
+      e02: 3.123399e+25
+      e03: 3.123399e+25
+      e10: 6.81e-43
+      e11: 1.85e-43
+      e12: 1.85e-43
+      e13: 1.85e-43
       e20: 1.3838231e-15
-      e21: -4.6586734e-10
-      e22: -18.79036
-      e23: -4.6586734e-10
+      e21: -1.0460266e+10
+      e22: -8.148109
+      e23: -1.0460266e+10
       e30: 4.5904e-41
-      e31: 7.16e-43
-      e32: 7.13e-43
-      e33: 7.16e-43
+      e31: 6.82e-43
+      e32: 6.8e-43
+      e33: 6.82e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: -4.659828e-10, g: -4.659828e-10, b: -4.659828e-10, a: -4.659828e-10}
+    m_Data: {r: -1.0463461e+10, g: -1.0463461e+10, b: -1.0463461e+10, a: -1.0463461e+10}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -896,11 +860,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlopeFM: {fileID: 6200000, guid: 31daedada4d68bc4ea292a5e4d8471f2, type: 2}
   Player: {fileID: 2046906575}
-  TG: {fileID: 825211141}
-  tileMap: {fileID: 826213688}
-  semiSolidMap: {fileID: 1266524618}
-  treeMap: {fileID: 240873573}
-  wallMap: {fileID: 829704776}
   cam: {fileID: 540233150}
   Selected: {fileID: 0}
   MousePos: {x: 0, y: 0, z: 0}
@@ -1316,6 +1275,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 709738078507106011, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 709738078741575832, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 709738078806816483, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 709738078846101009, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 709738079927787490, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d97a64835dc103458b6b8d995ddbf8f, type: 3}
+    - target: {fileID: 709738079927787491, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709738079927787491, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0893
+      objectReference: {fileID: 0}
     - target: {fileID: 709738079986036964, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
       propertyPath: m_Name
       value: PlayerRoot
@@ -1326,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709738079986036967, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 709738079986036967, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
       propertyPath: moveSpeed
@@ -1342,11 +1329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 709738079986036986, guid: ff117f327325d0d49a18cc6807727bd2, type: 3}
       propertyPath: m_LocalScale.z

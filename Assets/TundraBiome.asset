@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf56a7bc3d37d04abec693e2865d89d, type: 3}
+  m_Name: TundraBiome
+  m_EditorClassIdentifier: 
+  biomeName: Tundra
+  biomeColor: {r: 1, g: 0, b: 0, a: 1}
+  tileAtlas: {fileID: 11400000, guid: 40f3d535b88726249aa5b926f9d42178, type: 2}
+  caveFreq: 0.05
+  terrainFreq: 0.05
+  caveNoiseTexture: {fileID: 0}
+  dirtLayerHeight: 15
+  surfaceValue: 0.25
+  heightMultiplier: 4
+  startGenX: 66
+  endGenX: 90
+  startGenY: 0
+  endGenY: 100
+  foliageSprites: []
+  foliageChance: 6
+  treeChance: 10
+  minTreeHeight: 4
+  maxTreeHeight: 6
+  ores: []

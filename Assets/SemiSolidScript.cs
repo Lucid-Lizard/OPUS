@@ -7,7 +7,7 @@ public class SemiSolidScript : MonoBehaviour
 {
     public GameObject Player;
     public Vector2 storedPos;
-    public IDictionary<Vector2, TileClass> worldTiles;
+
     public GameObject Handler;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class SemiSolidScript : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        if (!worldTiles.ContainsKey(storedPos))
+        if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(storedPos))
         {
             Destroy(Handler);
         }

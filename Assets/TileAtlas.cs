@@ -25,6 +25,7 @@ public class TileAtlas : ScriptableObject
     public TileClass purple;
     public TileClass OakPlanks;
     public TileClass OakPlatform;
+    public TileClass Furnace;
 
     [Header("Ores")]
     public TileClass coal;

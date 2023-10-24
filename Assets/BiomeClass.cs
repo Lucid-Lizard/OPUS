@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class BiomeClass
+
+[CreateAssetMenu(fileName = "BiomeClass", menuName = "Biome Class")]
+
+public class BiomeClass : ScriptableObject
 {
     public string biomeName;
     
@@ -20,6 +22,10 @@ public class BiomeClass
     [Header("Generation Settings")]
     public float surfaceValue = 0.25f;
     public float heightMultiplier = 4f;
+    public float startGenX;
+    public float endGenX;
+    public float startGenY;
+    public float endGenY;
 
 
 

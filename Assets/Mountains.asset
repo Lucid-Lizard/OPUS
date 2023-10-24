@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c290faa960813284c8cb2f373f0ec272, type: 3}
+  m_Name: Mountains
+  m_EditorClassIdentifier: 
+  dirt: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
+  dirtw: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
+  grass: {fileID: 11400000, guid: a934b8297a770e44f99f97981669d032, type: 2}
+  grassw: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
+  stone: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
+  stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
+  log: {fileID: 0}
+  root: {fileID: 0}
+  branch: {fileID: 0}
+  leaf: {fileID: 0}
+  snow: {fileID: 0}
+  sand: {fileID: 0}
+  red: {fileID: 0}
+  orange: {fileID: 0}
+  yellow: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  purple: {fileID: 0}
+  OakPlanks: {fileID: 0}
+  OakPlatform: {fileID: 0}
+  Furnace: {fileID: 0}
+  coal: {fileID: 0}
+  copper: {fileID: 0}

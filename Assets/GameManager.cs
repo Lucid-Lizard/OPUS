@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     // Reference to the TerrainGeneration component
     public TerrainGeneration terrainGeneration;
 
+    public TileEditManager tileEditManager;
+
 
     private void Awake()
     {

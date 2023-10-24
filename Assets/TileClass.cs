@@ -13,6 +13,8 @@ public class TileClass : ScriptableObject
     public bool Slope = false;
     public bool Wall = false;
     public bool Tree = false;
+    public bool multiTile = false;
+    public Vector2 multiTileSize = new Vector2(1, 1);
     [Header("Siblings")]
     public List<string> siblings = new List<string>();
 }
