@@ -22,7 +22,7 @@ public class TilemapEditor : MonoBehaviour
         Cursor.transform.position = MousePos + (Vector3.one / 2);
         if(Input.GetMouseButtonDown(0))
         {
-            if(GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
+            if (GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
             {
                 if (GameManager.Instance.tileEditManager.worldTiles[new Vector2(MousePos.x, MousePos.y)].Semisolid)
                 {
@@ -34,29 +34,37 @@ public class TilemapEditor : MonoBehaviour
                 {
                     SelectedLayer = GameManager.Instance.tileEditManager.tileMap;
                 }
-            } else if(GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
+            } else if (GameManager.Instance.tileEditManager.worldWalls.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
             {
                 SelectedLayer = GameManager.Instance.tileEditManager.wallMap;
             } else
             {
-                if (Selected.Wall)
+                if(Selected != null)
                 {
-                    SelectedLayer = GameManager.Instance.tileEditManager.wallMap;
-                } else
-                {
-                    if (Selected.Semisolid)
+                    if (Selected.Wall)
                     {
-                        SelectedLayer = GameManager.Instance.tileEditManager.semiSolidMap;
-                    }
-                    else if (Selected.Tree)
-                    {
-                        SelectedLayer = GameManager.Instance.tileEditManager.treeMap;
+                        SelectedLayer = GameManager.Instance.tileEditManager.wallMap;
                     }
                     else
                     {
-                        SelectedLayer = GameManager.Instance.tileEditManager.tileMap;
+                        if (Selected.Semisolid)
+                        {
+                            SelectedLayer = GameManager.Instance.tileEditManager.semiSolidMap;
+                        }
+                        else if (Selected.Tree)
+                        {
+                            SelectedLayer = GameManager.Instance.tileEditManager.treeMap;
+                        }
+                        else
+                        {
+                            SelectedLayer = GameManager.Instance.tileEditManager.tileMap;
+                        }
                     }
+                } else
+                {
+                    SelectedLayer = GameManager.Instance.tileEditManager.tileMap;
                 }
+                
             }
             Debug.Log(SelectedLayer.name);
         }
@@ -188,8 +196,8 @@ public class TilemapEditor : MonoBehaviour
                 
             } else
             {
-                GameManager.Instance.tileEditManager.RemoveTile(MousePos.x, MousePos.y);
-                /*if(SelectedLayer != GameManager.Instance.tileEditManager.wallMap)
+                //GameManager.Instance.tileEditManager.RemoveTile(MousePos.x, MousePos.y);
+                if(SelectedLayer != GameManager.Instance.tileEditManager.wallMap)
                 {
 
                     GameManager.Instance.tileEditManager.worldTiles.Remove(new Vector2(MousePos.x, MousePos.y));
@@ -200,7 +208,7 @@ public class TilemapEditor : MonoBehaviour
 
                     GameManager.Instance.tileEditManager.worldWalls.Remove(new Vector2(MousePos.x, MousePos.y));
                     GameManager.Instance.tileEditManager.wallMap.SetTile(MousePos, null);
-                }*/
+                }
                 
             }
             

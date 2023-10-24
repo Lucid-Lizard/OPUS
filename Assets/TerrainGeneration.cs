@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class TerrainGeneration : MonoBehaviour
 {
+    public Texture2D StructureText;
     public Tilemap worldTileMap;
     public Tilemap worldWallMap;
     public Tilemap worldTreeMap;
@@ -404,16 +405,66 @@ public class TerrainGeneration : MonoBehaviour
 
     public void GenerateRooms()
     {
+
+        StructureText = GenerateStructureTexture(50, 300, StructureText); 
+        
         for (int x = 0; x < worldSize; x++)
         {
+            
             float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
-            for (int y = 0; y < worldSize; y++)
+            for (int y = 0; y < height - 10; y++)
             {
-                if(Random.Range(0,5) <= 1)
+                if(StructureText.GetPixel(x,y).r >= 1f)
                 {
-                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.OakPlanks, new Vector2(x, y), new Vector2(10, 6), GameManager.Instance.tileEditManager.tileMap, false, true);
+                    Vector2 RoomSize = new Vector2(Random.Range(7, 10), Random.Range(6, 8));
+                    //GameManager.Instance.tileEditManager.PlaceTileRect(null, new Vector2(x, y), new Vector2(10, 6), GameManager.Instance.tileEditManager.tileMap, true, true);
+                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.OakPlanks, new Vector2(x, y), RoomSize, GameManager.Instance.tileEditManager.tileMap, false, true, true);
+                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.OakPlankWall, new Vector2(x, y + 2),RoomSize - new Vector2(0, 3), GameManager.Instance.tileEditManager.wallMap, true, true);
+                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.stonew, new Vector2(x, y), new Vector2(RoomSize.x, 2), GameManager.Instance.tileEditManager.wallMap, true, true);
+                    
                 }
+                
+
+
             }
+
+            
         }
+    }
+
+    public Texture2D GenerateStructureTexture(int radius,int numWhitePixels, Texture2D texture2D)
+
+    {
+        texture2D = new Texture2D(worldSize, worldSize);
+
+        // Set the background color to black
+        Color[] pixels = new Color[worldSize * worldSize];
+        for (int i = 0; i < pixels.Length; i++)
+        {
+            pixels[i] = Color.black;
+        }
+
+        // Generate random white pixels
+        for (int i = 0; i < numWhitePixels; i++)
+        {
+            Vector2Int randomPos = RandomPositionWithinRadius(worldSize, radius);
+            int index = randomPos.x + randomPos.y * worldSize;
+            pixels[index] = Color.white;
+        }
+
+        // Apply the pixel data to the texture
+        texture2D.SetPixels(pixels);
+        texture2D.Apply();
+        return texture2D;
+    }
+
+    Vector2Int RandomPositionWithinRadius(int textureSize, int radius)
+    {
+        Vector2Int randomPos;
+        do
+        {
+            randomPos = new Vector2Int(Random.Range(0, textureSize), Random.Range(0, textureSize));
+        } while (Vector2Int.Distance(randomPos, new Vector2Int(textureSize / 2, textureSize / 2)) < radius);
+        return randomPos;
     }
 }

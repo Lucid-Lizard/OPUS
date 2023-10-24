@@ -24,6 +24,7 @@ public class TileAtlas : ScriptableObject
     public TileClass blue;
     public TileClass purple;
     public TileClass OakPlanks;
+    public TileClass OakPlankWall;
     public TileClass OakPlatform;
     public TileClass Furnace;
 

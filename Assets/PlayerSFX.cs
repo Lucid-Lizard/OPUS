@@ -11,5 +11,7 @@ public class PlayerSFX : MonoBehaviour
     {
         Quaternion rotation = Quaternion.Euler(0, 0, Input.GetAxis("Horizontal") * -4);
         Player.transform.rotation = rotation;
+
+        
     }
 }

@@ -45,14 +45,49 @@ public class TileEditManager : MonoBehaviour
 
                     }
 
+                    
+
                     if (tileMap.GetTile(tilePosition) == null)
                     {
-                        PlaceTile(Tile, (int)Origin.x + x, (int)Origin.y + y);
+                        if(Tile == null)
+                        {
+                            PlaceTile(null, (int)Origin.x + x, (int)Origin.y + y);
+                        } else
+                        {
+                            PlaceTile(Tile, (int)Origin.x + x, (int)Origin.y + y);
+                        }
+                        
+                    }
+                } else
+                {
+                    if (FillAir)
+                    {
+                        if (x != 0 || x != Size.x - 1 || y != 0 || y != Size.y - 1)
+                        {
+                            if (Tile.Wall)
+                            {
+                                worldWalls.Remove(new Vector2(tilePosition.x, tilePosition.y));
+                                wallMap.SetTile(tilePosition, null);
+                            }
+                            else
+                            {
+                                worldTiles.Remove(new Vector2(tilePosition.x, tilePosition.y));
+
+                                semiSolidMap.SetTile(tilePosition, null);
+
+                                treeMap.SetTile(tilePosition, null);
+
+                                tileMap.SetTile(tilePosition, null);
+
+                            }
+                        }
                     }
                 }
             }
         }
     }
+
+    
 
     public void PlaceTile(TileClass Tile, int x, int y)
     {
