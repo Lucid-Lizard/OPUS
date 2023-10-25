@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: 
   tileName: Cactus
-  tileSprite: {fileID: 21300000, guid: 0f495b5b2e1f27c4784d60d71d6f15ec, type: 3}
-  tileTexture: {fileID: 0}
+  tileSprite: {fileID: -2650737326432602788, guid: e483896f2b714c74d8f3ff042f35d2c7, type: 3}
+  ruleTile: {fileID: 11400000, guid: a6ebf9f1a1fa4cd4d8e5bc77246bcdbf, type: 2}
   AutoTile: 0
+  Semisolid: 0
+  Slope: 0
+  Wall: 0
+  Tree: 1
+  multiTile: 0
+  multiTileSize: {x: 1, y: 1}
   siblings: []

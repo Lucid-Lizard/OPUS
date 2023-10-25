@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
   m_Name: CactusBranch
   m_EditorClassIdentifier: 
-  tileName: 
-  tileSprite: {fileID: 0}
-  ruleTile: {fileID: 0}
+  tileName: CactusBranch
+  tileSprite: {fileID: -4176498573896994034, guid: e483896f2b714c74d8f3ff042f35d2c7, type: 3}
+  ruleTile: {fileID: 11400000, guid: d0c974da42d2c2243a14a672996baab6, type: 2}
   AutoTile: 0
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Tree: 1
   multiTile: 0
   multiTileSize: {x: 1, y: 1}
   siblings: []
