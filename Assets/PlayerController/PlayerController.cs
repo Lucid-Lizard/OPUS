@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Player;
 
     private  float horizontal;
-
+    public bool hit;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+        Debug.Log(Input.GetMouseButton(0));
+        hit = Input.GetMouseButton(0);
 
         if (horizontal > 0)
         {
@@ -65,5 +67,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         anim.SetFloat("horizontal", horizontal);
+        anim.SetBool("hit", hit);
     }
 }
