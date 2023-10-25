@@ -28,7 +28,7 @@ MonoBehaviour:
   orange: {fileID: 11400000, guid: dc7cf9af548b103438c84ab33795a4e5, type: 2}
   yellow: {fileID: 11400000, guid: 52ae6b0b4dd85ab4fa34625cccb9bf32, type: 2}
   green: {fileID: 11400000, guid: 16ad83d38329eeb4cbe85a2a0f312832, type: 2}
-  blue: {fileID: 11400000, guid: a5a14485abdbfd841b99a9d7b328b0fb, type: 2}
+  blue: {fileID: 11400000, guid: e2bf689b6f7847f49a0a0bf20048abad, type: 2}
   purple: {fileID: 11400000, guid: bed091bd35254314fa95817ee1e36e23, type: 2}
   OakPlanks: {fileID: 11400000, guid: f3cac2801ed252048adacefdf807994d, type: 2}
   OakPlankWall: {fileID: 11400000, guid: 30447f4dca4471b4dad91a448b0b9dd0, type: 2}
