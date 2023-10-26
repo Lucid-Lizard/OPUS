@@ -15,16 +15,10 @@ MonoBehaviour:
   tileName: Sand
   tileSprite: {fileID: -51768659254253517, guid: 24944745e082f394c9390e6eb6a22cb9, type: 3}
   ruleTile: {fileID: 11400000, guid: 60d5c3f6439bdfb4bae701c1cd406739, type: 2}
-  AutoTile: 1
+  tileItem: {fileID: 11400000, guid: 2a9ab0026bd16ce4ca916ea480e64fba, type: 2}
   Semisolid: 0
   Slope: 0
   Wall: 0
   Tree: 0
   multiTile: 0
   multiTileSize: {x: 1, y: 1}
-  siblings:
-  - Sandstone
-  - Dirt
-  - Permafrost
-  - Stone
-  - Sand

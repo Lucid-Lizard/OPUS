@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
-  m_Name: OakPlanks
+  m_Name: NewTileTemplate 1
   m_EditorClassIdentifier: 
-  tileName: OakPlanks
-  tileSprite: {fileID: -2477580463036514489, guid: 7b7c5dc18e36a8a49b49938ee96067ff, type: 3}
-  ruleTile: {fileID: 11400000, guid: 038363352931a9945b1897f185285ded, type: 2}
-  tileItem: {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  tileName: NewTileTemplate
+  tileSprite: {fileID: 3024720217221060665, guid: 238ef0691b719a64e967581cb4a0a78f, type: 3}
+  ruleTile: {fileID: 11400000, guid: f629a4e1782b13644b728da53fe08cf3, type: 2}
+  AutoTile: 0
   Semisolid: 0
   Slope: 0
   Wall: 0
   Tree: 0
   multiTile: 0
   multiTileSize: {x: 1, y: 1}
+  siblings: []

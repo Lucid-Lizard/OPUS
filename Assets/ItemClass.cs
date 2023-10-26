@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "newItemClass", menuName = "Item Class")]
 public class ItemClass : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Item Stuff")]
+    public string ItemName;
+    public Sprite ItemSprite;
+    public bool Placeable;
+    public TileClass ItemTile;
+    public bool CanBreak;
 }

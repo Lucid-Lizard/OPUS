@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public TileEditManager tileEditManager;
 
+    public InventoryManager inventoryManager;
+
 
     private void Awake()
     {

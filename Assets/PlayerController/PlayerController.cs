@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
-        Debug.Log(Input.GetMouseButton(0));
+        //Debug.Log(Input.GetMouseButton(0));
         hit = Input.GetMouseButton(0);
 
         if (horizontal > 0)

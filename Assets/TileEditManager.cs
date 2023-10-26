@@ -8,6 +8,8 @@ public class TileEditManager : MonoBehaviour
     public IDictionary<Vector2, TileClass> worldTiles = new Dictionary<Vector2, TileClass>();
     public IDictionary<Vector2, TileClass> worldWalls = new Dictionary<Vector2, TileClass>();
 
+    public GameObject Player;
+
     public Tilemap tileMap;
     public Tilemap semiSolidMap;
     public Tilemap treeMap;
@@ -138,9 +140,29 @@ public class TileEditManager : MonoBehaviour
         if (worldTiles.ContainsKey(new Vector2(x, y)))
         {
             Tile = worldTiles[new Vector2(x, y)];
+        } else if (worldWalls.ContainsKey(new Vector2(x, y)))
+        {
+            Tile = worldWalls[new Vector2(x, y)];
         } else
         {
             Tile = null;
+        }
+
+        if(Tile != null)
+        {
+            if (Tile.tileItem != null)
+            {
+                GameObject NewItem = new GameObject();
+                NewItem.name = Tile.tileItem.ItemName;
+                NewItem.AddComponent<SpriteRenderer>();
+                NewItem.GetComponent<SpriteRenderer>().sprite = Tile.tileItem.ItemSprite;
+                NewItem.AddComponent<Rigidbody2D>();
+                NewItem.AddComponent<BoxCollider2D>();
+                NewItem.AddComponent<ItemCode>();
+                NewItem.GetComponent<ItemCode>().itemClass = Tile.tileItem;
+                NewItem.GetComponent<ItemCode>().This = NewItem;
+                NewItem.transform.position = new Vector2(x + 0.5f, y + 0.5f);
+            }
         }
         
         

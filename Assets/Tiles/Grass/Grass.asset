@@ -15,10 +15,9 @@ MonoBehaviour:
   tileName: Grass
   tileSprite: {fileID: 3507300215076468567, guid: 9ec5200341480aa44a2ce2f93fa597ca, type: 3}
   ruleTile: {fileID: 11400000, guid: 01b87fdaa4347f44b87a0445af089fad, type: 2}
-  AutoTile: 0
-  siblings:
-  - Dirt
-  - Stone
-  - Grass
-  - Permafrost
-  - Snow
+  Semisolid: 0
+  Slope: 0
+  Wall: 0
+  Tree: 0
+  multiTile: 0
+  multiTileSize: {x: 1, y: 1}
