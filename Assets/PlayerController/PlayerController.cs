@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
         if (col.CompareTag("Ground"))
             onGround = false;
     }
+
+    
     private void FixedUpdate()
     {
         //do stuff

@@ -30,4 +30,7 @@ MonoBehaviour:
   treeChance: 10
   minTreeHeight: 4
   maxTreeHeight: 6
+  GenTrees: 0
+  tops: 1
+  roots: 1
   ores: []

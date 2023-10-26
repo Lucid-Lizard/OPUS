@@ -249,9 +249,12 @@ public class TerrainGeneration : MonoBehaviour
                         {
                             if (TreeCooldown <= 0)
                             {
-
-                                GenerateTree(x, y + 1, GetCurrentBiome(x, y));
-                                TreeCooldown = 6;
+                                if (GetCurrentBiome(x, y).GenTrees)
+                                {
+                                    GenerateTree(x, y + 1, GetCurrentBiome(x, y));
+                                    TreeCooldown = 6;
+                                }
+                                
 
                             }
 

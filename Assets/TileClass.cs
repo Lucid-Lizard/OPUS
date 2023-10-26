@@ -10,6 +10,7 @@ public class TileClass : ScriptableObject
     public Sprite tileSprite;
     public RuleTile ruleTile;
     public ItemClass tileItem;
+    public bool Indestructable = false;
     [Header("Tile Type")]
     public bool Semisolid = false;
     public bool Slope = false;

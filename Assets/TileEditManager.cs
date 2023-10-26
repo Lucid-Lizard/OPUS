@@ -148,26 +148,22 @@ public class TileEditManager : MonoBehaviour
             Tile = null;
         }
 
-        if(Tile != null)
+        if(worldTiles.ContainsKey(new Vector2(x,y+1))) {
+            if(worldTiles[new Vector2(x,y+1)].Tree)
+            {
+                return;
+            }
+        }
+
+        if (Tile != null)
         {
             if (Tile.tileItem != null)
             {
-                GameObject NewItem = new GameObject();
-                NewItem.name = Tile.tileItem.ItemName;
-                NewItem.AddComponent<SpriteRenderer>();
-                NewItem.GetComponent<SpriteRenderer>().sprite = Tile.tileItem.ItemSprite;
-                NewItem.AddComponent<Rigidbody2D>();
-                NewItem.AddComponent<BoxCollider2D>();
-                NewItem.AddComponent<ItemCode>();
-                NewItem.GetComponent<ItemCode>().itemClass = Tile.tileItem;
-                NewItem.GetComponent<ItemCode>().This = NewItem;
-                NewItem.transform.position = new Vector2(x + 0.5f, y + 0.5f);
-                NewItem.transform.localScale = new Vector2(0.7f,0.7f);
-                NewItem.transform.parent = ItemParent.transform;
+                GameManager.Instance.itemManager.SpawnItem(Tile.tileItem, new Vector2(x, y), new Vector2(0, 2));
             }
         }
-        
-        
+
+
         if (Tile != null)
         {
             if (Tile.Wall)
@@ -194,5 +190,6 @@ public class TileEditManager : MonoBehaviour
                 }
             }
         }
+
     }
 }

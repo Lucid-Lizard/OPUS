@@ -38,6 +38,7 @@ public class BiomeClass : ScriptableObject
     public int treeChance = 10;
     public int minTreeHeight = 4;
     public int maxTreeHeight = 6;
+    public bool GenTrees = true;
     public bool tops = true;
     public bool roots = true;
 

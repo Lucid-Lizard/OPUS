@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 240873571}
   - component: {fileID: 240873573}
   - component: {fileID: 240873572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trees
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659706228}
   - component: {fileID: 659706226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ItemManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,6 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Children: []
+  ItemParent: {fileID: 659706225}
 --- !u!4 &659706228
 Transform:
   m_ObjectHideFlags: 0
@@ -738,7 +739,7 @@ GameObject:
   - component: {fileID: 826213690}
   - component: {fileID: 826213692}
   - component: {fileID: 826213691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1020,7 +1021,7 @@ GameObject:
   - component: {fileID: 829704774}
   - component: {fileID: 829704776}
   - component: {fileID: 829704775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149768150}
   - component: {fileID: 1149768149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1573,7 @@ GameObject:
   - component: {fileID: 1266524612}
   - component: {fileID: 1266524618}
   - component: {fileID: 1266524617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SemiSolids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1784,6 +1785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289aa3687b16d5d4bb1fc7c45245fcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1359413538}
   InventorySize: 9
   Hotbar: {fileID: 1595639670}
   HotbarSprite: {fileID: 21300000, guid: f26858e333ce69441a7360261bc0ae4f, type: 3}

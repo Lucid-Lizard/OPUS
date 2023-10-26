@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+
+    public GameObject Player;
     public int InventorySize = 9;
     public GameObject Hotbar;
     public Sprite HotbarSprite;
@@ -117,7 +119,6 @@ public class InventoryManager : MonoBehaviour
                 SelectedSlot = SelectedSlot;
             }
 
-            
         }
         Selector.transform.position = InventoryBars[SelectedSlot].transform.position - new Vector3(0, 1.5f, 0);
     }
