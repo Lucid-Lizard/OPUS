@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1804a7dfdef904544b50b75709e25ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   tileMap: {fileID: 826213688}
   semiSolidMap: {fileID: 1266524618}
   treeMap: {fileID: 240873573}

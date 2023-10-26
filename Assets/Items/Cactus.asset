@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f1e1ea073d82964ab0bb128b643bc1c, type: 3}
-  m_Name: OakPlanks
+  m_Name: Cactus
   m_EditorClassIdentifier: 
-  ItemName: Oak Planks
-  ItemSprite: {fileID: 21300000, guid: d4cd75a545453a64ea22a85619f5c1ac, type: 3}
+  ItemName: Cactus
+  ItemSprite: {fileID: 21300000, guid: 2b86101ac05a522438a29705401d93f9, type: 3}
   Placeable: 1
-  ItemTile: {fileID: 11400000, guid: f3cac2801ed252048adacefdf807994d, type: 2}
+  ItemTile: {fileID: 11400000, guid: 250d7398d7e0cf142877be1d19895d0a, type: 2}
   CanBreak: 0

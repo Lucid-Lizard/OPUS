@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
-  m_Name: Cactus
+  m_Name: CactusWood
   m_EditorClassIdentifier: 
-  tileName: Cactus
-  tileSprite: {fileID: -2650737326432602788, guid: e483896f2b714c74d8f3ff042f35d2c7, type: 3}
-  ruleTile: {fileID: 11400000, guid: a6ebf9f1a1fa4cd4d8e5bc77246bcdbf, type: 2}
+  tileName: Cactus Wood
+  tileSprite: {fileID: -7352308243140953725, guid: 3b04459c7705c204390b37e56c970fab, type: 3}
+  ruleTile: {fileID: 11400000, guid: 87dad8e71b978c84bb675b857f94be10, type: 2}
   tileItem: {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 1
+  Tree: 0
   multiTile: 0
   multiTileSize: {x: 1, y: 1}

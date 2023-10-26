@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using UnityEngine.Tilemaps;
 
 public class TerrainGeneration : MonoBehaviour
@@ -266,55 +267,119 @@ public class TerrainGeneration : MonoBehaviour
 
     private void GenerateTree(int x, int y, BiomeClass biomeClass)
     {
+
         int treeHeight = Random.Range(minTreeHeight, maxTreeHeight);
+        List<Vector2> tileToTrack = new List<Vector2>();
+
+        GameObject newTree = new GameObject();
+        newTree.name = biomeClass.biomeName + " Tree";
+        
+        newTree.transform.position = new Vector3(x, y, 0);
+
         for (int i = 0; i < treeHeight; i++)
         {
             GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.log, x, y + i);
+            tileToTrack.Add( new Vector2(x, y + i)); 
+            
 
             if (i > 1)
             {
                 if (Random.Range(0, 5) <= 1)
                 {
                     GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.branch, x - 1, y + i);
+                    //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 1, y + i));
+                    tileToTrack.Add(new Vector2(x -1 , y + i));
                 }
                 if (Random.Range(0, 5) <= 1)
                 {
                     GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.branch, x + 1, y + i);
+                    //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x + 1, y + i));
+                    tileToTrack.Add(new Vector2(x + 1, y + i));
                 }
             }
         }
-
-        if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x - 1, y)))
+        if (biomeClass.roots)
         {
+            if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x - 1, y)))
+            {
 
-            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.root, x - 1, y);
+                GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.root, x - 1, y);
+                //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 1, y));
+                tileToTrack.Add(new Vector2(x - 1, y));
+            }
+
+            if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x + 1, y)))
+            {
+                GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.root, x + 1, y);
+                //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x + 1, y));
+                tileToTrack.Add(new Vector2(x + 1, y));
+            }
         }
 
-        if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x + 1, y)))
+        if (biomeClass.tops)
         {
-            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.root, x + 1, y);
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 2, y + treeHeight);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 2, y + treeHeight));
+            tileToTrack.Add(new Vector2(x - 2, y + treeHeight));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 2, y + treeHeight + 1);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 2, y + treeHeight + 1));
+            tileToTrack.Add(new Vector2(x - 2, y + treeHeight + 1));
+
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 1, y + treeHeight));
+            tileToTrack.Add(new Vector2(x - 1, y + treeHeight));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 1);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 1, y + treeHeight + 1));
+            tileToTrack.Add(new Vector2(x - 1, y + treeHeight + 1));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 2);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 1, y + treeHeight + 2));
+            tileToTrack.Add(new Vector2(x - 1, y + treeHeight + 2));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 3);
+            // newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x - 1, y + treeHeight + 3));
+            tileToTrack.Add(new Vector2(x - 1, y + treeHeight + 3));
+
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight);
+            //  newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x, y + treeHeight));
+            tileToTrack.Add(new Vector2(x, y + treeHeight));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 1);
+            //  newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x, y + treeHeight + 1));
+            tileToTrack.Add(new Vector2(x, y + treeHeight + 1));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 2);
+            //  newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x, y + treeHeight + 2));
+            tileToTrack.Add(new Vector2(x, y + treeHeight + 2));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 3);
+            //  newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x , y + treeHeight + 3));
+            tileToTrack.Add(new Vector2(x, y + treeHeight + 3));
+
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight);
+            // newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x +1, y + treeHeight));
+            tileToTrack.Add(new Vector2(x + 1, y + treeHeight));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 1);
+            // newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x +1, y + treeHeight + 1));
+            tileToTrack.Add(new Vector2(x + 1, y + treeHeight + 1));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 2);
+            // newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x +1, y + treeHeight + 2));
+            tileToTrack.Add(new Vector2(x + 1, y + treeHeight + 2));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 3);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x +1, y + treeHeight + 3));
+            tileToTrack.Add(new Vector2(x + 1, y + treeHeight + 3));
+
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 2, y + treeHeight);
+            // newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x + 2, y + treeHeight));
+            tileToTrack.Add(new Vector2(x + 2, y + treeHeight));
+            GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 2, y + treeHeight + 1);
+            //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x + 2, y + treeHeight + 1));
+            tileToTrack.Add(new Vector2(x + 2, y + treeHeight + 1));
         }
 
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 2, y + treeHeight);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 2, y + treeHeight + 1);
 
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 1);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 2);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x - 1, y + treeHeight + 3);
 
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 1);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 2);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x, y + treeHeight + 3);
+        newTree.AddComponent<TreeHandler>();
+        newTree.GetComponent<TreeHandler>().origin = new Vector2(x, y);
+        newTree.GetComponent<TreeHandler>().trackedTiles = tileToTrack ;
+        newTree.GetComponent<TreeHandler>().startTrack = true;
 
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 1);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 2);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 1, y + treeHeight + 3);
 
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 2, y + treeHeight);
-        GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.leaf, x + 2, y + treeHeight + 1);
     }
 
 
