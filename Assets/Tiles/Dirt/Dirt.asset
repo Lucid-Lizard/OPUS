@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileName: Dirt
   tileSprite: {fileID: -6324567428539652501, guid: 5969b0bf373fa1e459b456d2328850c1, type: 3}
-  ruleTile: {fileID: 11400000, guid: b15cac87b34f9a14cbd79436df47824d, type: 2}
-  AutoTile: 1
-  siblings:
-  - Stone
-  - Grass
-  - Dirt
-  - Permafrost
-  - Sand
-  - Snow
+  ruleTile: {fileID: 11400000, guid: 548c90dd4cd65ee47bd10ce39910dff7, type: 2}
+  tileItem: {fileID: 0}
+  Semisolid: 0
+  Slope: 0
+  Wall: 0
+  Tree: 0
+  multiTile: 0
+  multiTileSize: {x: 1, y: 1}
