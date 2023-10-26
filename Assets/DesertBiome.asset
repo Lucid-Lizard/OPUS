@@ -31,4 +31,5 @@ MonoBehaviour:
   minTreeHeight: 4
   maxTreeHeight: 6
   tops: 0
+  roots: 0
   ores: []

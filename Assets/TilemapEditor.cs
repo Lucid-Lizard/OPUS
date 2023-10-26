@@ -34,7 +34,6 @@ public class TilemapEditor : MonoBehaviour
             
         if(Input.GetMouseButton(0))
         {
-            Debug.Log(InventorySlots[SelectedSlot]);
             if(InventorySlots[SelectedSlot] != null)
             {
                 if (InventorySlots[SelectedSlot].Placeable)
@@ -169,6 +168,8 @@ public class TilemapEditor : MonoBehaviour
                 
                 else if (InventorySlots[SelectedSlot].CanBreak)
                 {
+                    
+                    
                     GameManager.Instance.tileEditManager.RemoveTile(MousePos.x, MousePos.y);
                 }
             } 

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public InventoryManager inventoryManager;
 
+    public ItemManager itemManager;
+
 
     private void Awake()
     {

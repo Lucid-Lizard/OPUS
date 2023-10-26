@@ -17,7 +17,7 @@ public class TreeHandler : MonoBehaviour
     {
         if (startTrack)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 Debug.Log("Left clicked");
                 if (GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot].CanBreak)

@@ -16,4 +16,4 @@ MonoBehaviour:
   ItemSprite: {fileID: -51768659254253517, guid: 24944745e082f394c9390e6eb6a22cb9, type: 3}
   Placeable: 1
   ItemTile: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
-  CanBreak: 1
+  CanBreak: 0

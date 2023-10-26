@@ -14,7 +14,7 @@ public class TileEditManager : MonoBehaviour
     public Tilemap semiSolidMap;
     public Tilemap treeMap;
     public Tilemap wallMap;
-
+    public GameObject ItemParent;
     public void PlaceTileRect(TileClass Tile, Vector2 Origin, Vector2 Size, Tilemap tileMap, bool Fill = true, bool Override = true, bool FillAir = false)
     {
         for (int x = 0; x < Size.x; x++)
@@ -163,6 +163,7 @@ public class TileEditManager : MonoBehaviour
                 NewItem.GetComponent<ItemCode>().This = NewItem;
                 NewItem.transform.position = new Vector2(x + 0.5f, y + 0.5f);
                 NewItem.transform.localScale = new Vector2(0.7f,0.7f);
+                NewItem.transform.parent = ItemParent.transform;
             }
         }
         
