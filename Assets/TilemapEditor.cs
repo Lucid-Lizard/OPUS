@@ -16,17 +16,17 @@ public class TilemapEditor : MonoBehaviour
 
     public TileClass[] SemiSolids;
 
-    private ItemClass[] InventorySlots;
-    private int SelectedSlot;
+    public ItemClass[] InventorySlots;
+    public int SelectedSlot;
 
     private void Start()
     {
-        InventorySlots = GameManager.Instance.inventoryManager.InventorySlots;
+        
         
     }
     private void Update()
     {
-
+        InventorySlots = GameManager.Instance.inventoryManager.InventorySlots;
         SelectedSlot = GameManager.Instance.inventoryManager.SelectedSlot;
         MousePos = new Vector3Int(Mathf.FloorToInt(cam.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(cam.ScreenToWorldPoint(Input.mousePosition).y), 0);
         
@@ -34,6 +34,7 @@ public class TilemapEditor : MonoBehaviour
             
         if(Input.GetMouseButton(0))
         {
+            Debug.Log(InventorySlots[SelectedSlot]);
             if(InventorySlots[SelectedSlot] != null)
             {
                 if (InventorySlots[SelectedSlot].Placeable)

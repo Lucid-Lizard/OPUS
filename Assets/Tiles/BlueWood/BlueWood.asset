@@ -15,11 +15,10 @@ MonoBehaviour:
   tileName: BlueWood
   tileSprite: {fileID: -5049252091633842211, guid: e51f9b30ebbcfe043af733e54ffcbd0b, type: 3}
   ruleTile: {fileID: 11400000, guid: cd35c05937eee1a4daf33f0c5d1eeb89, type: 2}
-  AutoTile: 0
+  tileItem: {fileID: 0}
   Semisolid: 0
   Slope: 0
   Wall: 0
   Tree: 0
   multiTile: 0
   multiTileSize: {x: 1, y: 1}
-  siblings: []

@@ -162,7 +162,7 @@ public class TileEditManager : MonoBehaviour
                 NewItem.GetComponent<ItemCode>().itemClass = Tile.tileItem;
                 NewItem.GetComponent<ItemCode>().This = NewItem;
                 NewItem.transform.position = new Vector2(x + 0.5f, y + 0.5f);
-                NewItem.transform.localScale = new Vector2(0.5f,0.5f);
+                NewItem.transform.localScale = new Vector2(0.7f,0.7f);
             }
         }
         
