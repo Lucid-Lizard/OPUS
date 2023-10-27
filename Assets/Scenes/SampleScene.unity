@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120477087132019837, guid: 0d879756c64a3fa4ba22d79e3bcb2784, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 120477087132019839, guid: 0d879756c64a3fa4ba22d79e3bcb2784, type: 3}
       propertyPath: smoothTimeX
