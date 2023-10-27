@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290faa960813284c8cb2f373f0ec272, type: 3}
   m_Name: Tundra
   m_EditorClassIdentifier: 
-  dirt: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
-  dirtw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
-  grass: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
-  grassw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
-  stone: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
+  dirt: {fileID: 11400000, guid: a5a14485abdbfd841b99a9d7b328b0fb, type: 2}
+  dirtw: {fileID: 11400000, guid: 30447f4dca4471b4dad91a448b0b9dd0, type: 2}
+  grass: {fileID: 11400000, guid: e2bf689b6f7847f49a0a0bf20048abad, type: 2}
+  grassw: {fileID: 11400000, guid: 30447f4dca4471b4dad91a448b0b9dd0, type: 2}
+  stone: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
   stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
-  log: {fileID: 11400000, guid: 434f15b1778a41e49a7f36b1155a111d, type: 2}
+  log: {fileID: 11400000, guid: 14c38dea6feb1b844922ce817b48e40f, type: 2}
   root: {fileID: 0}
   branch: {fileID: 0}
-  leaf: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
-  snow: {fileID: 11400000, guid: a934b8297a770e44f99f97981669d032, type: 2}
+  leaf: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
+  snow: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
   sand: {fileID: 0}
   red: {fileID: 0}
   orange: {fileID: 0}
@@ -30,5 +30,9 @@ MonoBehaviour:
   green: {fileID: 0}
   blue: {fileID: 0}
   purple: {fileID: 0}
+  OakPlanks: {fileID: 0}
+  OakPlankWall: {fileID: 0}
+  OakPlatform: {fileID: 0}
+  Furnace: {fileID: 0}
   coal: {fileID: 11400000, guid: b922f68c116163a47b49d9469f66cdb5, type: 2}
   copper: {fileID: 11400000, guid: 25ff89d410f35584b9825343631e4a48, type: 2}

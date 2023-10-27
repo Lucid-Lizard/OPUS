@@ -5,6 +5,7 @@ using System.Linq;
 
 public class TreeHandler : MonoBehaviour
 {
+    public GameObject This;
     public Vector2 origin;
     public List<Vector2> trackedTiles;
 
@@ -17,26 +18,46 @@ public class TreeHandler : MonoBehaviour
     {
         if (startTrack)
         {
+            for(int i = 0; i < trackedTiles.Count; i++)
+            {
+                if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(trackedTiles[i]))
+                {
+                    trackedTiles[i] = new Vector2(-420, -420);
+                }
+            }
             if (Input.GetMouseButton(0) && GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot] != null)
             {
-                Debug.Log("Left clicked");
+                
                 if (GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot].CanBreak)
                 {
-                    Debug.Log("holding pick");
+                    
                     
                         
                         Vector3Int MousePos = new Vector3Int(Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y), 0);
-                        Debug.Log(MousePos);
+                        
                         
                             
                             if (trackedTiles.Contains(new Vector2(MousePos.x, MousePos.y)))
                             {
-                                Debug.Log("Tile is being tracked");
+                                
                                 BreakTree(new Vector2(MousePos.x, MousePos.y));
+                                
                             }
                         
                     
                 }
+            }
+            bool Kill = true;
+            for(int i = 0; i < trackedTiles.Count; i++)
+            {
+                if (trackedTiles[i] != new Vector2(-420,-420))
+                {
+                    Kill = false;
+                }
+            }
+            if(Kill)
+            {
+                Destroy(This);
             }
         }
     }

@@ -7,6 +7,7 @@ public class MultiTileHandler : MonoBehaviour
 {
     public GameObject multiGO;
     public Vector2[] storedPositions;
+    public ItemClass Item;
     
     public Tilemap tileMap;
     void Start()
@@ -41,6 +42,7 @@ public class MultiTileHandler : MonoBehaviour
                 }
 
                 Destroy(multiGO);
+
             }
         }
     }

@@ -6,7 +6,19 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-
+    IDictionary<char, int> CharInt = new Dictionary<char, int>() {
+        { '0',0 }, 
+        { '1',1 }, 
+        { '2',2 }, 
+        { '3',3 }, 
+        { '4',4 }, 
+        { '5',5 }, 
+        { '6',6 }, 
+        { '7',7 }, 
+        { '8',8 }, 
+        { '9',9 }, 
+    
+    };
     public GameObject Player;
     public int InventorySize = 9;
     public GameObject Hotbar;
@@ -29,7 +41,7 @@ public class InventoryManager : MonoBehaviour
         SelectedSlot = 0;
         InventorySlots = new ItemClass[InventorySize];
         InventoryBars = new GameObject[InventorySize];
-        InventoryBarsQuant = new GameObject[InventorySize];
+        InventoryBarsQuant = new GameObject[InventorySize * 3];
         InventoryBarsRend = new GameObject[InventorySize];
         InventorySlotQuant = new int[InventorySize];
 
@@ -57,17 +69,48 @@ public class InventoryManager : MonoBehaviour
             GameObject SlotNum = new GameObject();
             SlotNum.transform.parent = NewSlot.transform;
             SlotNum.transform.position = NewSlot.transform.position + new Vector3(.75f, -.75f);
-            SlotNum.transform.localScale = new Vector2(0.25f,0.25f);
-            SlotNum.name = "Slot Text " + i.ToString();
+            SlotNum.transform.localScale = new Vector2(0.25f, 0.25f);
+            SlotNum.name = "Slot Text a" + i.ToString();
             SlotNum.AddComponent<SpriteRenderer>();
             SlotNum.GetComponent<SpriteRenderer>().sprite = Text[0];
             SlotNum.GetComponent<SpriteRenderer>().sortingOrder = 102;
 
+            InventoryBarsQuant.SetValue(SlotNum, i * 3);
+
+            GameObject SlotNum2 = new GameObject();
+            SlotNum2.transform.parent = NewSlot.transform;
+            SlotNum2.transform.position = NewSlot.transform.position + new Vector3(.30f, -.75f);
+            SlotNum2.transform.localScale = new Vector2(0.25f, 0.25f);
+            SlotNum2.name = "Slot Text b" + i.ToString();
+            SlotNum2.AddComponent<SpriteRenderer>();
+            SlotNum2.GetComponent<SpriteRenderer>().sprite = Text[0];
+            SlotNum2.GetComponent<SpriteRenderer>().sortingOrder = 102;
+
+            InventoryBarsQuant.SetValue(SlotNum2, (i * 3) + 1);
+
+            GameObject SlotNum3 = new GameObject();
+            SlotNum3.transform.parent = NewSlot.transform;
+            SlotNum3.transform.position = NewSlot.transform.position + new Vector3(-0.15f, -.75f);
+            SlotNum3.transform.localScale = new Vector2(0.25f, 0.25f);
+            SlotNum3.name = "Slot Text b" + i.ToString();
+            SlotNum3.AddComponent<SpriteRenderer>();
+            SlotNum3.GetComponent<SpriteRenderer>().sprite = Text[0];
+            SlotNum3.GetComponent<SpriteRenderer>().sortingOrder = 102;
+
+            InventoryBarsQuant.SetValue(SlotNum3, (i * 3) + 2);
+
             InventoryBars.SetValue(NewSlot, i);
             InventoryBarsRend.SetValue(NewSlotSpriteThing, i);
-            InventoryBarsQuant.SetValue(SlotNum, i);
+            
             InventorySlots.SetValue(null, i);
             InventorySlotQuant.SetValue(0, i);
+
+            UpdateText(0, i);
+        }
+
+        for(int i = 0; i < InventoryBarsQuant.Length; i++)
+        {
+            
         }
         foreach (ItemClass item in StartingGear)
         {
@@ -130,9 +173,9 @@ public class InventoryManager : MonoBehaviour
             InventorySlots[SlotID] = Item;
             InventoryBarsRend[SlotID].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
             InventorySlotQuant[SlotID] += 1;
-            if(InventorySlotQuant[SlotID] < 10)
+            if(InventorySlotQuant[SlotID] < 100)
             {
-                InventoryBarsQuant[SlotID].GetComponent<SpriteRenderer>().sprite = Text[InventorySlotQuant[SlotID]];
+                UpdateText(InventorySlotQuant[SlotID], SlotID);
             }
         }
     }
@@ -143,17 +186,16 @@ public class InventoryManager : MonoBehaviour
         {
             for (int Slot = 0; Slot < InventorySlots.Length; Slot++)
             {
-                Debug.Log(Slot);
-                Debug.Log(InventorySlots.Length);
+
                 if (InventorySlots[Slot] == null || InventorySlots[Slot] == Item)
                 {
-                    Debug.Log("Slot " + Slot + " Is available");
+
                     return Slot;
                 }
             }
         } 
         
-        Debug.Log("No Slot Is available");
+
         return 420;
     }
 
@@ -162,9 +204,9 @@ public class InventoryManager : MonoBehaviour
         if(InventorySlotQuant[Slot] != 0)
         {
             InventorySlotQuant[Slot] -= 1;
-            if (InventorySlotQuant[Slot] <= 9)
+            if (InventorySlotQuant[Slot] < 1000)
             {
-                InventoryBarsQuant[Slot].GetComponent<SpriteRenderer>().sprite = Text[InventorySlotQuant[Slot]];
+                UpdateText(InventorySlotQuant[Slot], Slot);
             }
 
 
@@ -175,5 +217,34 @@ public class InventoryManager : MonoBehaviour
             }
             
         } 
+    }
+
+    public void UpdateText(int num, int SlotID)
+    {
+
+        if (num.ToString().Length == 1)
+        {
+            InventoryBarsQuant[SlotID * 3].GetComponent<SpriteRenderer>().sprite = Text[num];
+            InventoryBarsQuant[SlotID * 3 + 1].SetActive(false);
+            InventoryBarsQuant[SlotID * 3 + 2].SetActive(false);
+        }
+        else if (num.ToString().Length == 2)
+        {
+            
+            char[] SplitNum = num.ToString().ToCharArray();
+            InventoryBarsQuant[SlotID * 3 + 1].SetActive(true);
+            InventoryBarsQuant[SlotID * 3].GetComponent<SpriteRenderer>().sprite = Text[CharInt[SplitNum[1]]];
+            InventoryBarsQuant[SlotID * 3 + 1].GetComponent<SpriteRenderer>().sprite = Text[CharInt[SplitNum[0]]];
+            InventoryBarsQuant[SlotID * 3 + 2].SetActive(false);
+        }
+        else if (num.ToString().Length == 3)
+        {
+            InventoryBarsQuant[SlotID * 3 + 1].SetActive(true);
+            InventoryBarsQuant[SlotID * 3 + 2].SetActive(true);
+            char[] SplitNum = num.ToString().ToCharArray();
+            InventoryBarsQuant[SlotID * 3].GetComponent<SpriteRenderer>().sprite = Text[CharInt[SplitNum[2]]];
+            InventoryBarsQuant[SlotID * 3 + 1].GetComponent<SpriteRenderer>().sprite = Text[CharInt[SplitNum[1]]];
+            InventoryBarsQuant[SlotID * 3 + 2].GetComponent<SpriteRenderer>().sprite = Text[CharInt[SplitNum[0]]];
+        }
     }
 }

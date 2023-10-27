@@ -110,6 +110,7 @@ public class TilemapEditor : MonoBehaviour
                     }
                     else
                     {
+                        
                         Vector2[] checkPos = new Vector2[(int)(InventorySlots[SelectedSlot].ItemTile.multiTileSize.x * InventorySlots[SelectedSlot].ItemTile.multiTileSize.y)];
                         Vector2[] sendPos = new Vector2[(int)(InventorySlots[SelectedSlot].ItemTile.multiTileSize.x * InventorySlots[SelectedSlot].ItemTile.multiTileSize.y)];
                         int index = 0;
@@ -159,10 +160,11 @@ public class TilemapEditor : MonoBehaviour
                             multiTile.GetComponent<MultiTileHandler>().storedPositions = sendPos;
                             multiTile.GetComponent<MultiTileHandler>().tileMap = GameManager.Instance.tileEditManager.tileMap;
                             multiTile.GetComponent<MultiTileHandler>().multiGO = multiTile;
+                            multiTile.GetComponent<MultiTileHandler>().Item = InventorySlots[SelectedSlot].ItemTile.tileItem;
                             multiTile.GetComponent<SpriteRenderer>().sprite = InventorySlots[SelectedSlot].ItemTile.tileSprite;
                         }
 
-
+                        GameManager.Instance.inventoryManager.RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
                     }
                 }
                 
