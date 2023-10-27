@@ -167,14 +167,14 @@ public class TileEditManager : MonoBehaviour
 
                         if (Random.Range(0, Tile.Loot[d].DropChance) == 0)
                         {
-                            GameManager.Instance.itemManager.SpawnItem(Tile.Loot[d], new Vector2(x, y), new Vector2(0, 2));
+                            GameManager.Instance.itemManager.SpawnItem(Tile.Loot[d], new Vector2(x, y), new Vector2(Random.Range(-1,1), Random.Range(-1, 1)));
                         }
 
 
                     }
                 } else
                 {
-                    GameManager.Instance.itemManager.SpawnItem(Tile.tileItem, new Vector2(x, y), new Vector2(0, 2));
+                    GameManager.Instance.itemManager.SpawnItem(Tile.tileItem, new Vector2(x, y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));
                 }
                 
                 

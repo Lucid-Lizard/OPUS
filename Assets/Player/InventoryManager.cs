@@ -173,7 +173,7 @@ public class InventoryManager : MonoBehaviour
             InventorySlots[SlotID] = Item;
             InventoryBarsRend[SlotID].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
             InventorySlotQuant[SlotID] += 1;
-            if(InventorySlotQuant[SlotID] < 100)
+            if(InventorySlotQuant[SlotID] < 1000)
             {
                 UpdateText(InventorySlotQuant[SlotID], SlotID);
             }
