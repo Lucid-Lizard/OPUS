@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Linq;
 
 public class TileEditManager : MonoBehaviour
 {
@@ -159,7 +160,24 @@ public class TileEditManager : MonoBehaviour
         {
             if (Tile.tileItem != null)
             {
-                GameManager.Instance.itemManager.SpawnItem(Tile.tileItem, new Vector2(x, y), new Vector2(0, 2));
+                if(Tile.MultipleLoot)
+                {
+                    for (int d = 0; d < Tile.Loot.Length; d++)
+                    {
+
+                        if (Random.Range(0, Tile.Loot[d].DropChance) == 0)
+                        {
+                            GameManager.Instance.itemManager.SpawnItem(Tile.Loot[d], new Vector2(x, y), new Vector2(0, 2));
+                        }
+
+
+                    }
+                } else
+                {
+                    GameManager.Instance.itemManager.SpawnItem(Tile.tileItem, new Vector2(x, y), new Vector2(0, 2));
+                }
+                
+                
             }
         }
 

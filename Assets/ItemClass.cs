@@ -10,5 +10,6 @@ public class ItemClass : ScriptableObject
     public Sprite ItemSprite;
     public bool Placeable;
     public TileClass ItemTile;
+    public int DropChance = 0;
     public bool CanBreak;
 }
