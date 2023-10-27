@@ -15,6 +15,8 @@ MonoBehaviour:
   tileName: Grass
   tileSprite: {fileID: 3507300215076468567, guid: 9ec5200341480aa44a2ce2f93fa597ca, type: 3}
   ruleTile: {fileID: 11400000, guid: 01b87fdaa4347f44b87a0445af089fad, type: 2}
+  tileItem: {fileID: 11400000, guid: d80d23ef55e39ca45b71e3543e19ac40, type: 2}
+  Indestructable: 0
   Semisolid: 0
   Slope: 0
   Wall: 0

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1e1ea073d82964ab0bb128b643bc1c, type: 3}
+  m_Name: Dirt
+  m_EditorClassIdentifier: 
+  ItemName: Dirt
+  ItemSprite: {fileID: -6324567428539652501, guid: 5969b0bf373fa1e459b456d2328850c1, type: 3}
+  Placeable: 1
+  ItemTile: {fileID: 11400000, guid: 434f15b1778a41e49a7f36b1155a111d, type: 2}
+  CanBreak: 0

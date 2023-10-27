@@ -15,7 +15,8 @@ MonoBehaviour:
   tileName: Dirt
   tileSprite: {fileID: -6324567428539652501, guid: 5969b0bf373fa1e459b456d2328850c1, type: 3}
   ruleTile: {fileID: 11400000, guid: 548c90dd4cd65ee47bd10ce39910dff7, type: 2}
-  tileItem: {fileID: 0}
+  tileItem: {fileID: 11400000, guid: d80d23ef55e39ca45b71e3543e19ac40, type: 2}
+  Indestructable: 0
   Semisolid: 0
   Slope: 0
   Wall: 0

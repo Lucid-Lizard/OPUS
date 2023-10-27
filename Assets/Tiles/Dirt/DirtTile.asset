@@ -676,7 +676,7 @@ MonoBehaviour:
   - m_Id: 31
     m_Sprites:
     - {fileID: 4281628574541242889, guid: d6eab4929b2c8dd41a00b0fba95effba, type: 3}
-    - {fileID: -5083361656744221160, guid: aceb0f0d2e4ecc643ae5b913f463429b, type: 3}
+    - {fileID: 1588288084842023477, guid: d6eab4929b2c8dd41a00b0fba95effba, type: 3}
     - {fileID: 4096023871117988016, guid: d6eab4929b2c8dd41a00b0fba95effba, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
@@ -1033,5 +1033,10 @@ MonoBehaviour:
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 0
   alwaysConnect: 1
-  tilesToConnect: []
+  tilesToConnect:
+  - {fileID: 11400000, guid: f281698b27bea3640a463fc0bb6520e6, type: 2}
+  - {fileID: 11400000, guid: 60d5c3f6439bdfb4bae701c1cd406739, type: 2}
+  - {fileID: 11400000, guid: 01b87fdaa4347f44b87a0445af089fad, type: 2}
+  - {fileID: 11400000, guid: 038363352931a9945b1897f185285ded, type: 2}
+  - {fileID: 11400000}
   checkSelf: 1
