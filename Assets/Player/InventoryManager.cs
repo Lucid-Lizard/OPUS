@@ -208,7 +208,7 @@ public class InventoryManager : MonoBehaviour
         {
             SelectedSlot = SelectedSlot % 9;
         }
-        Debug.Log(SelectedSlot);
+
         Selector.transform.position = InventoryBars[SelectedSlot].transform.position;
     }
 

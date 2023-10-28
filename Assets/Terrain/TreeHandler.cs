@@ -66,21 +66,22 @@ public class TreeHandler : MonoBehaviour
 
     public void BreakTree(Vector2 breakOrigin)
     {
-
+        Debug.Log("Start break tree");
             if (breakOrigin.x == origin.x)
             {
-
+            Debug.Log(breakOrigin.x == origin.x);
                 foreach (Vector2 pos in trackedTiles)
                 {
+                Debug.Log(pos);
                     if (pos != null && pos != new Vector2(-420, -420))
                     {
-
+                    Debug.Log(pos != null && pos != new Vector2(-420, -420));
 
                         if (pos.y >= breakOrigin.y)
                         {
-                            
+                        Debug.Log(pos.y >= breakOrigin.y);
                             GameManager.Instance.tileEditManager.RemoveTile((int)pos.x, (int)pos.y, "Axe");
-                            
+                        Debug.Log("removed Tile");
 
                         }
                     }

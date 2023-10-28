@@ -377,11 +377,11 @@ public class TerrainGeneration : MonoBehaviour
 
 
 
-        newTree.AddComponent<TreeHandler>();
+        /*newTree.AddComponent<TreeHandler>();
         newTree.GetComponent<TreeHandler>().origin = new Vector2(x, y);
         newTree.GetComponent<TreeHandler>().trackedTiles = tileToTrack ;
         newTree.GetComponent<TreeHandler>().startTrack = true;
-        newTree.GetComponent<TreeHandler>().This = newTree;
+        newTree.GetComponent<TreeHandler>().This = newTree;*/
 
 
     }
