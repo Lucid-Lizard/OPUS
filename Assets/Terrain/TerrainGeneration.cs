@@ -72,7 +72,7 @@ public class TerrainGeneration : MonoBehaviour
         GenerateWalls();
         GenerateTerrain();
         GenerateExtras();
-        GenerateRooms();
+
 
     }
 
@@ -472,34 +472,7 @@ public class TerrainGeneration : MonoBehaviour
         GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.Furnace, -5, heightAddition);
     }
 
-    public void GenerateRooms()
-    {
-
-        StructureText = GenerateStructureTexture(50, 300, StructureText); 
-        
-        for (int x = 0; x < worldSize; x++)
-        {
-            
-            float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
-            for (int y = 0; y < height - 10; y++)
-            {
-                if(StructureText.GetPixel(x,y).r >= 1f)
-                {
-                    Vector2 RoomSize = new Vector2(Random.Range(7, 10), Random.Range(6, 8));
-                    //GameManager.Instance.tileEditManager.PlaceTileRect(null, new Vector2(x, y), new Vector2(10, 6), GameManager.Instance.tileEditManager.tileMap, true, true);
-                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.OakPlanks, new Vector2(x, y), RoomSize, GameManager.Instance.tileEditManager.tileMap, false, true, true);
-                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.OakPlankWall, new Vector2(x, y + 2),RoomSize - new Vector2(0, 3), GameManager.Instance.tileEditManager.wallMap, true, true);
-                    GameManager.Instance.tileEditManager.PlaceTileRect(tileAtlas.stonew, new Vector2(x, y), new Vector2(RoomSize.x, 2), GameManager.Instance.tileEditManager.wallMap, true, true);
-                    
-                }
-                
-
-
-            }
-
-            
-        }
-    }
+    
 
     public Texture2D GenerateStructureTexture(int radius,int numWhitePixels, Texture2D texture2D)
 

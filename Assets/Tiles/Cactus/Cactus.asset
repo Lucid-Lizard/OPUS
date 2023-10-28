@@ -16,6 +16,9 @@ MonoBehaviour:
   tileSprite: {fileID: -2650737326432602788, guid: e483896f2b714c74d8f3ff042f35d2c7, type: 3}
   ruleTile: {fileID: 11400000, guid: a6ebf9f1a1fa4cd4d8e5bc77246bcdbf, type: 2}
   tileItem: {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
+  MultipleLoot: 0
+  Loot: []
+  TypeToBreak: Axe
   Semisolid: 0
   Slope: 0
   Wall: 0

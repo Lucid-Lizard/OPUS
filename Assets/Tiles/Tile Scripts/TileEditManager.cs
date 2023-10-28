@@ -6,8 +6,15 @@ using System.Linq;
 
 public class TileEditManager : MonoBehaviour
 {
+    public Sprite BreakSprite;
+    
     public IDictionary<Vector2, TileClass> worldTiles = new Dictionary<Vector2, TileClass>();
     public IDictionary<Vector2, TileClass> worldWalls = new Dictionary<Vector2, TileClass>();
+    public IDictionary<Vector2, GameObject> BreakObjs = new Dictionary<Vector2, GameObject>();
+    public IDictionary<Vector2, int> tileBreaks = new Dictionary<Vector2, int>();
+    public IDictionary<Vector2, int> wallBreaks = new Dictionary<Vector2, int>();
+
+    public List<Vector2> PlayerTiles;
 
     public GameObject Player;
 
@@ -16,6 +23,13 @@ public class TileEditManager : MonoBehaviour
     public Tilemap treeMap;
     public Tilemap wallMap;
     public GameObject ItemParent;
+
+    public bool CanPlace;
+    
+
+
+
+
     public void PlaceTileRect(TileClass Tile, Vector2 Origin, Vector2 Size, Tilemap tileMap, bool Fill = true, bool Override = true, bool FillAir = false)
     {
         for (int x = 0; x < Size.x; x++)
@@ -33,6 +47,7 @@ public class TileEditManager : MonoBehaviour
                         {
                             worldWalls.Remove(new Vector2(tilePosition.x, tilePosition.y));
                             wallMap.SetTile(tilePosition, null);
+                            
                         }
                         else
                         {
@@ -106,7 +121,7 @@ public class TileEditManager : MonoBehaviour
 
                         wallMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
                         worldWalls.Add(new Vector2(x, y), Tile);
-                    }
+                }
                 } else
                 {
                     
@@ -129,13 +144,17 @@ public class TileEditManager : MonoBehaviour
                             tileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
 
                         }
-                    }
-                }                
+
+
+                }
+                }      
+                
+
             }
         
     }
 
-    public void RemoveTile(int x, int y)
+    public void RemoveTile(int x, int y, string SpecType)
     {
         TileClass Tile;
         if (worldTiles.ContainsKey(new Vector2(x, y)))
@@ -156,7 +175,7 @@ public class TileEditManager : MonoBehaviour
             }
         }
 
-        if (Tile != null)
+        if (Tile != null && SpecType == Tile.TypeToBreak)
         {
             if (Tile.tileItem != null)
             {
@@ -180,28 +199,28 @@ public class TileEditManager : MonoBehaviour
                 
             }
         }
-
+        Debug.Log(SpecType + "    " + Tile.TypeToBreak);
 
         if (Tile != null)
         {
-            if (Tile.Wall)
+            if (SpecType == Tile.TypeToBreak && Tile.Wall)
             {
                 worldWalls.Remove(new Vector2(x, y));
                 wallMap.SetTile(new Vector3Int(x, y, 0), null);
             }
             else
             {
-                if (Tile.Semisolid)
+                if (SpecType == Tile.TypeToBreak && Tile.Semisolid)
                 {
                     worldTiles.Remove(new Vector2(x, y));
                     semiSolidMap.SetTile(new Vector3Int(x, y, 0), null);
                 }
-                else if (Tile.Tree)
+                else if (SpecType == Tile.TypeToBreak && Tile.Tree)
                 {
                     worldTiles.Remove(new Vector2(x, y));
                     treeMap.SetTile(new Vector3Int(x, y, 0), null);
                 }
-                else
+                else if (SpecType == Tile.TypeToBreak)
                 {
                     worldTiles.Remove(new Vector2(x, y));
                     tileMap.SetTile(new Vector3Int(x, y, 0), null);

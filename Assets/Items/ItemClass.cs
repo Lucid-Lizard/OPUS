@@ -10,6 +10,9 @@ public class ItemClass : ScriptableObject
     public Sprite ItemSprite;
     public bool Placeable;
     public TileClass ItemTile;
+    public int MaxStackSize = 99;
     public int DropChance = 0;
     public bool CanBreak;
+    public string BreakType = null;
+    public Vector2 ItemScaleInHand = new Vector2(.05f,.05f);
 }

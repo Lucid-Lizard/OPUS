@@ -14,7 +14,13 @@ public class ItemHolder : MonoBehaviour
     void Update()
     {
         if (GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot] != null)
+        {
+
             GetComponent<SpriteRenderer>().sprite = GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot].ItemSprite;
+            transform.localScale = GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot].ItemScaleInHand;
+
+        }
+
         else
             GetComponent<SpriteRenderer>().sprite = null;
     }

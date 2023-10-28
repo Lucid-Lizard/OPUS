@@ -20,6 +20,7 @@ MonoBehaviour:
   Loot:
   - {fileID: 11400000, guid: cb69f23eb6b5aec4686253ccb1d847eb, type: 2}
   - {fileID: 11400000, guid: 722f4044cd10ef847b601489abec651b, type: 2}
+  TypeToBreak: Axe
   Semisolid: 0
   Slope: 0
   Wall: 0

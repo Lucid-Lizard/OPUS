@@ -12,6 +12,8 @@ public class TileClass : ScriptableObject
     public ItemClass tileItem;
     public bool MultipleLoot;
     public ItemClass[] Loot;
+    [Header("Breakability Stuff")]
+    public string TypeToBreak = "Pickaxe";
     [Header("Tile Type")]
     public bool Semisolid = false;
     public bool Slope = false;

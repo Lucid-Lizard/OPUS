@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f1e1ea073d82964ab0bb128b643bc1c, type: 3}
-  m_Name: Sand
+  m_Name: WoodenAxe
   m_EditorClassIdentifier: 
-  ItemName: Sand
-  ItemSprite: {fileID: -51768659254253517, guid: 24944745e082f394c9390e6eb6a22cb9, type: 3}
-  Placeable: 1
-  ItemTile: {fileID: 11400000, guid: efd3458098f9d0640aac9d3370efa437, type: 2}
-  MaxStackSize: 99
+  ItemName: Wooden Axe
+  ItemSprite: {fileID: 21300000, guid: 9dc5ffed23f7ac3449b2d1647517207d, type: 3}
+  Placeable: 0
+  ItemTile: {fileID: 0}
+  MaxStackSize: 1
   DropChance: 0
-  CanBreak: 0
-  BreakType: 
-  ItemScaleInHand: {x: 0.05, y: 0.05}
+  CanBreak: 1
+  BreakType: Axe
+  ItemScaleInHand: {x: 0.1, y: 0.1}

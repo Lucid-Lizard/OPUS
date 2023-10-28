@@ -20,8 +20,12 @@ public class ItemCode : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // This object has collided with the Player object
-            GameManager.Instance.inventoryManager.AddItem(itemClass);
-            Destroy(This);
+            if(GameManager.Instance.inventoryManager.FindSlot(itemClass) != -420)
+            {
+                GameManager.Instance.inventoryManager.AddItem(itemClass);
+                Destroy(This);
+            }
+            
 
             // You can perform any actions or logic here when the collision occurs with the Player object.
         }

@@ -15,11 +15,13 @@ MonoBehaviour:
   tileName: OakPlankWall
   tileSprite: {fileID: 8798468633222915284, guid: 78592c3674fba9b488bc89c180f38b5d, type: 3}
   ruleTile: {fileID: 11400000, guid: 80bf4333e27af364cabc351c2f054927, type: 2}
-  AutoTile: 0
+  tileItem: {fileID: 0}
+  MultipleLoot: 0
+  Loot: []
+  TypeToBreak: Hammer
   Semisolid: 0
   Slope: 0
   Wall: 1
   Tree: 0
   multiTile: 0
   multiTileSize: {x: 1, y: 1}
-  siblings: []

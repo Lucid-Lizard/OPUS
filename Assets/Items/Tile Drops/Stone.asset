@@ -16,4 +16,8 @@ MonoBehaviour:
   ItemSprite: {fileID: 5376247285775213358, guid: a0c77c806ee5b4c458947d2b50d54e38, type: 3}
   Placeable: 1
   ItemTile: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
+  MaxStackSize: 99
+  DropChance: 0
   CanBreak: 0
+  BreakType: 
+  ItemScaleInHand: {x: 0.05, y: 0.05}

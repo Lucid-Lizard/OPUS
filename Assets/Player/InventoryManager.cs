@@ -32,6 +32,7 @@ public class InventoryManager : MonoBehaviour
 
     public int SelectedSlot;
     public GameObject Selector;
+    public bool ShowInventory;
 
     public ItemClass[] StartingGear;
     
@@ -45,14 +46,19 @@ public class InventoryManager : MonoBehaviour
         InventoryBarsRend = new GameObject[InventorySize];
         InventorySlotQuant = new int[InventorySize];
 
-        
+        ShowInventory = false;
 
+        int Row = 1;
         for (int i = 0; i < InventoryBars.Length; i++)
         {
+            if (i % 9 == 0)
+            {
+                Row++;
+            }
             Debug.Log(i);
             GameObject NewSlot = new GameObject();
             NewSlot.transform.parent = Hotbar.transform;
-            NewSlot.transform.position = new Vector3(-15.5f, 9.25f, 0) + new Vector3(i * 2, 0,0);
+            NewSlot.transform.position = new Vector3(-15.5f, 9.25f, 0) + new Vector3((i%9) * 2, -2 * (Row - 1),0);
             NewSlot.transform.localScale = new Vector2(2, 2);
             NewSlot.name = "Slot " + i.ToString();
             NewSlot.AddComponent<SpriteRenderer>();
@@ -107,11 +113,11 @@ public class InventoryManager : MonoBehaviour
 
             UpdateText(0, i);
         }
-
-        for(int i = 0; i < InventoryBarsQuant.Length; i++)
+        for (int s = 0; s < InventoryBars.Length; s++)
         {
-            
+            ShowSlot(ShowInventory, InventoryBars[s], 9);
         }
+        
         foreach (ItemClass item in StartingGear)
         {
             AddItem(item);
@@ -162,12 +168,59 @@ public class InventoryManager : MonoBehaviour
                 SelectedSlot = SelectedSlot;
             }
 
+            
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                if(ShowInventory)
+                {
+                    ShowInventory = false;
+                } else
+                {
+                    ShowInventory = true;
+                }
+                for (int s = 0; s < InventoryBars.Length; s++)
+                {
+                    ShowSlot(ShowInventory, InventoryBars[s], 9);
+                }
+            }
         }
-        Selector.transform.position = InventoryBars[SelectedSlot].transform.position - new Vector3(0, 1.5f, 0);
+
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            if (!ShowInventory)
+            {
+                if (SelectedSlot + Input.mouseScrollDelta.y >= 0 && SelectedSlot + Input.mouseScrollDelta.y <= 8)
+                {
+                    SelectedSlot += (int)Input.mouseScrollDelta.y;
+                }
+            } else
+            {
+                if (SelectedSlot + Input.mouseScrollDelta.y >= 0 && SelectedSlot + Input.mouseScrollDelta.y <= InventorySize - 1)
+                {
+                    SelectedSlot += (int)Input.mouseScrollDelta.y;
+                }
+            }
+        }
+
+        if(!ShowInventory && SelectedSlot >= 8)
+        {
+            SelectedSlot = SelectedSlot % 9;
+        }
+
+        Selector.transform.position = InventoryBars[SelectedSlot].transform.position;
+    }
+
+    public void ShowSlot(bool Show, GameObject Slot, int Min)
+    {
+        if (System.Array.IndexOf(InventoryBars, Slot) >= Min )
+        {
+            Slot.SetActive(Show);
+        }
     }
     public void AddItem(ItemClass Item)
     {
-        if(FindSlot(Item) != 420)
+        if(FindSlot(Item) != -420)
         {
             int SlotID = FindSlot(Item);
             InventorySlots[SlotID] = Item;
@@ -187,7 +240,7 @@ public class InventoryManager : MonoBehaviour
             for (int Slot = 0; Slot < InventorySlots.Length; Slot++)
             {
 
-                if (InventorySlots[Slot] == null || InventorySlots[Slot] == Item)
+                if (InventorySlots[Slot] == null || InventorySlots[Slot] == Item && InventorySlotQuant[Slot] < Item.MaxStackSize)
                 {
 
                     return Slot;
@@ -196,7 +249,7 @@ public class InventoryManager : MonoBehaviour
         } 
         
 
-        return 420;
+        return -420;
     }
 
     public void RemoveItem(ItemClass Item, int Slot)

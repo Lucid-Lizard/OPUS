@@ -28,23 +28,24 @@ public class TreeHandler : MonoBehaviour
             if (Input.GetMouseButton(0) && GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot] != null)
             {
                 
-                if (GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot].CanBreak)
+                if (GameManager.Instance.inventoryManager.InventorySlots[GameManager.Instance.inventoryManager.SelectedSlot].BreakType == "Axe")
                 {
                     
                     
                         
-                        Vector3Int MousePos = new Vector3Int(Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y), 0);
-                        
+                    Vector3Int MousePos = new Vector3Int(Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y), 0);
+
+
+
+                    if (trackedTiles.Contains(new Vector2(MousePos.x, MousePos.y)))
+                    {
                         
                             
-                            if (trackedTiles.Contains(new Vector2(MousePos.x, MousePos.y)))
-                            {
-                                
-                                BreakTree(new Vector2(MousePos.x, MousePos.y));
-                                
-                            }
+                            
+                            BreakTree(new Vector2(MousePos.x, MousePos.y));
+                            
                         
-                    
+                    }
                 }
             }
             bool Kill = true;
@@ -76,7 +77,7 @@ public class TreeHandler : MonoBehaviour
 
                         if (pos.y >= breakOrigin.y)
                         {
-                            GameManager.Instance.tileEditManager.RemoveTile((int)pos.x, (int)pos.y);
+                            GameManager.Instance.tileEditManager.RemoveTile((int)pos.x, (int)pos.y, "Axe");
                             
 
                         }
