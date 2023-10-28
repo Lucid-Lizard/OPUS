@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1e1ea073d82964ab0bb128b643bc1c, type: 3}
+  m_Name: StoneWall
+  m_EditorClassIdentifier: 
+  ItemName: Stone Wall
+  ItemSprite: {fileID: -669711239224879310, guid: 84b574f554a00984ba768adbcdb55a1b, type: 3}
+  Placeable: 1
+  ItemTile: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
+  MaxStackSize: 99
+  DropChance: 0
+  CanBreak: 0
+  BreakType: 
+  ItemScaleInHand: {x: 0.05, y: 0.05}

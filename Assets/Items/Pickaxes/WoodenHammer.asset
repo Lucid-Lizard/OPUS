@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1e1ea073d82964ab0bb128b643bc1c, type: 3}
+  m_Name: WoodenHammer
+  m_EditorClassIdentifier: 
+  ItemName: Wooden Hammer
+  ItemSprite: {fileID: 21300000, guid: db45b5d0da9917a499bf326a0a356b8d, type: 3}
+  Placeable: 0
+  ItemTile: {fileID: 0}
+  MaxStackSize: 1
+  DropChance: 0
+  CanBreak: 1
+  BreakType: Hammer
+  ItemScaleInHand: {x: 0.1, y: 0.1}

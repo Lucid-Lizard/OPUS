@@ -15,7 +15,7 @@ MonoBehaviour:
   tileName: StpneWall
   tileSprite: {fileID: -669711239224879310, guid: 84b574f554a00984ba768adbcdb55a1b, type: 3}
   ruleTile: {fileID: 11400000, guid: af43349eb0bbf59498902d48e0cec6f3, type: 2}
-  tileItem: {fileID: 0}
+  tileItem: {fileID: 11400000, guid: 023eae3fd20855a46be0d641b2195ebc, type: 2}
   MultipleLoot: 0
   Loot: []
   TypeToBreak: Hammer

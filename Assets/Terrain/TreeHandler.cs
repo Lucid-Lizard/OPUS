@@ -77,6 +77,7 @@ public class TreeHandler : MonoBehaviour
 
                         if (pos.y >= breakOrigin.y)
                         {
+                            
                             GameManager.Instance.tileEditManager.RemoveTile((int)pos.x, (int)pos.y, "Axe");
                             
 
