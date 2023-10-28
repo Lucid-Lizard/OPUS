@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1359413538}
-  HotbarOffset: {x: -17.5, y: 8.75}
+  HotbarOffset: {x: -26, y: 16}
   MC: {fileID: 540233150}
 --- !u!1 &1610645370
 GameObject:

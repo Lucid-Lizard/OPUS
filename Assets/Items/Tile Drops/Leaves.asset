@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Leaves
   ItemSprite: {fileID: -8362877577660253713, guid: 86468ab813e498f40961cb8c3c9890ca, type: 3}
-  Placeable: 0
-  ItemTile: {fileID: 0}
+  Placeable: 1
+  ItemTile: {fileID: 11400000, guid: 0ea95633caa5a9843b02c586766aa09f, type: 2}
+  MaxStackSize: 99
   DropChance: 0
   CanBreak: 0
+  BreakType: 
+  ItemScaleInHand: {x: 0.05, y: 0.05}

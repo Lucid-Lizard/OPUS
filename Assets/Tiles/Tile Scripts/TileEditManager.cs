@@ -169,7 +169,7 @@ public class TileEditManager : MonoBehaviour
         }
 
         if(worldTiles.ContainsKey(new Vector2(x,y+1))) {
-            if(worldTiles[new Vector2(x,y+1)].Tree)
+            if(worldTiles[new Vector2(x,y+1)].Tree && !worldTiles[new Vector2(x, y )].Tree)
             {
                 return;
             }

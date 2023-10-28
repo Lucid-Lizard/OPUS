@@ -53,6 +53,7 @@ public class TreeHandler : MonoBehaviour
             {
                 if (trackedTiles[i] != new Vector2(-420,-420))
                 {
+                    
                     Kill = false;
                 }
             }

@@ -190,24 +190,25 @@ public class InventoryManager : MonoBehaviour
         {
             if (!ShowInventory)
             {
-                if (SelectedSlot + Input.mouseScrollDelta.y >= 0 && SelectedSlot + Input.mouseScrollDelta.y <= 8)
+                if (SelectedSlot - Input.mouseScrollDelta.y >= 0 && SelectedSlot - Input.mouseScrollDelta.y <= 8)
                 {
-                    SelectedSlot += (int)Input.mouseScrollDelta.y;
+                    SelectedSlot -= (int)Input.mouseScrollDelta.y;
                 }
-            } else
+            }
+            else
             {
-                if (SelectedSlot + Input.mouseScrollDelta.y >= 0 && SelectedSlot + Input.mouseScrollDelta.y <= InventorySize - 1)
+                if (SelectedSlot - Input.mouseScrollDelta.y >= 0 && SelectedSlot - Input.mouseScrollDelta.y <= InventorySize - 1)
                 {
-                    SelectedSlot += (int)Input.mouseScrollDelta.y;
+                    SelectedSlot -= (int)Input.mouseScrollDelta.y;
                 }
             }
         }
 
-        if(!ShowInventory && SelectedSlot >= 8)
+        if (!ShowInventory && SelectedSlot >= 8)
         {
             SelectedSlot = SelectedSlot % 9;
         }
-
+        Debug.Log(SelectedSlot);
         Selector.transform.position = InventoryBars[SelectedSlot].transform.position;
     }
 

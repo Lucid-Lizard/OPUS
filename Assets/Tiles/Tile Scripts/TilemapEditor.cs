@@ -177,8 +177,6 @@ public class TilemapEditor : MonoBehaviour
 
                 else if (InventorySlots[SelectedSlot].CanBreak)
                 {
-                    if (Vector3.Distance(MousePos, Player.transform.position) <= 5f)
-                    {
                         if (InventorySlots[SelectedSlot].BreakType != "Hammer")
                         {
                             if (GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
@@ -199,7 +197,7 @@ public class TilemapEditor : MonoBehaviour
                             GameManager.Instance.tileEditManager.RemoveTile(MousePos.x, MousePos.y, InventorySlots[SelectedSlot].BreakType);
 
                         }
-                    }
+                    
 
                 }
             }
