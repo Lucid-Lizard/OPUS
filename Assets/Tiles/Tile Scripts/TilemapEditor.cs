@@ -186,18 +186,16 @@ public class TilemapEditor : MonoBehaviour
 
                             }
                         }
-                        else
+                    else if(GameManager.Instance.tileEditManager.worldWalls.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
                         {
 
-                        }
+                        GameManager.Instance.tileEditManager.RemoveTile(MousePos.x, MousePos.y, InventorySlots[SelectedSlot].BreakType);
 
-                        if (GameManager.Instance.tileEditManager.worldWalls.ContainsKey(new Vector2(MousePos.x, MousePos.y)))
-                        {
+                    }
 
-                            GameManager.Instance.tileEditManager.RemoveTile(MousePos.x, MousePos.y, InventorySlots[SelectedSlot].BreakType);
 
-                        }
-                    
+
+
 
                 }
             }

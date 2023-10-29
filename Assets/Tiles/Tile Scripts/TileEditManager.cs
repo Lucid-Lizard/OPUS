@@ -199,7 +199,6 @@ public class TileEditManager : MonoBehaviour
                 
             }
         }
-        Debug.Log(SpecType + "    " + Tile.TypeToBreak);
 
         if (Tile != null)
         {
@@ -219,6 +218,17 @@ public class TileEditManager : MonoBehaviour
                 {
                     worldTiles.Remove(new Vector2(x, y));
                     treeMap.SetTile(new Vector3Int(x, y, 0), null);
+
+                    for(int tx = -1; tx != 2; tx++)
+                    {
+                        if(worldTiles.ContainsKey(new Vector2(x + tx, y + 1)))
+                        {
+                            if(worldTiles[new Vector2(x + tx, y + 1)].Tree)
+                            {
+                                RemoveTile(x + tx, y + 1, "Axe");
+                            }
+                        }
+                    }
                 }
                 else if (SpecType == Tile.TypeToBreak)
                 {
