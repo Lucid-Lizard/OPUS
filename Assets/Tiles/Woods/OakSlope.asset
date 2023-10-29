@@ -15,9 +15,14 @@ MonoBehaviour:
   tileName: OakSlope
   tileSprite: {fileID: 21300000, guid: e31b6d85fdc82524b95913f50ea24cd3, type: 3}
   ruleTile: {fileID: 11400000, guid: 5a0eecb5add4f914b9f52ec5406f7bba, type: 2}
-  AutoTile: 0
+  Items: []
+  ItemChance: 
+  TypeToBreak: Pickaxe
   Semisolid: 0
   Slope: 1
   Wall: 0
-  Tree: 0
-  siblings: []
+  Rooted: 0
+  tileItem: {fileID: 0}
+  multiTile: 0
+  multiTiles: []
+  multiTileSize: {x: 1, y: 1}

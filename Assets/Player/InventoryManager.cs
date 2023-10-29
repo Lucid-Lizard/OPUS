@@ -168,7 +168,19 @@ public class InventoryManager : MonoBehaviour
                 SelectedSlot = SelectedSlot;
             }
 
-            
+            if(Input.GetKey(KeyCode.Q))
+            {
+                Vector3Int MousePos = new Vector3Int(Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y), 0);
+
+                if (InventorySlots[SelectedSlot] != null)
+                {
+                    for(int i = 1; i <= InventorySlotQuant[SelectedSlot]; i++)
+                    {
+                        GameManager.Instance.itemManager.SpawnItem(InventorySlots[SelectedSlot], new Vector2(MousePos.x, MousePos.y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));
+                        RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
+                    }
+                }
+            }
 
             if(Input.GetKeyDown(KeyCode.E))
             {

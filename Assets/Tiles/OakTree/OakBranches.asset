@@ -15,13 +15,15 @@ MonoBehaviour:
   tileName: OakBranches
   tileSprite: {fileID: -3393394188124149227, guid: c5dc068ea3e6b8e48b19a7d2023e5375, type: 3}
   ruleTile: {fileID: 11400000, guid: 1db9255248a453f44ada23517e5dcb65, type: 2}
-  tileItem: {fileID: 0}
-  MultipleLoot: 0
-  Loot: []
+  Items:
+  - {fileID: 11400000, guid: e3758ab06851fee478fde90b0151fc5a, type: 2}
+  ItemChance: 05000000
   TypeToBreak: Axe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 1
+  Rooted: 0
+  tileItem: {fileID: 0}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

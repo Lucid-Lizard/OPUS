@@ -15,13 +15,14 @@ MonoBehaviour:
   tileName: OakRoot
   tileSprite: {fileID: 500019704881857345, guid: 089b6affa816804409e986d574b50ec0, type: 3}
   ruleTile: {fileID: 11400000, guid: 0c2d7596957963e4eb3e0664ab16fb9a, type: 2}
-  tileItem: {fileID: 0}
-  MultipleLoot: 0
-  Loot: []
+  Items: []
+  ItemChance: 
   TypeToBreak: Axe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 1
+  Rooted: 0
+  tileItem: {fileID: 0}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

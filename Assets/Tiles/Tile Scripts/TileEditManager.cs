@@ -109,51 +109,27 @@ public class TileEditManager : MonoBehaviour
 
     public void PlaceTile(TileClass Tile, int x, int y)
     {
-        
-        
-            if (Tile != null)
+        if (Tile != null)
+        {
+            if (Tile.Wall)
             {
-                if(Tile.Wall)
+                if (!worldWalls.ContainsKey(new Vector2(x, y)))
                 {
-                    
-                    if (!worldWalls.ContainsKey(new Vector2(x, y)))
-                    {
-
-                        wallMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-                        worldWalls.Add(new Vector2(x, y), Tile);
+                    wallMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                    worldWalls.Add(new Vector2(x, y), Tile);
                 }
-                } else
-                {
-                    
-                    if (!worldTiles.ContainsKey(new Vector2(x, y)))
-                    {
-                        if (Tile.Semisolid)
-                        {
-                            
-                            worldTiles.Add(new Vector2(x, y), Tile);
-                            semiSolidMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-                        }
-                        else if (Tile.Tree)
-                        {
-                            
-                            worldTiles.Add(new Vector2(x, y), Tile);
-                            treeMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-                        } else
-                        {
-                            worldTiles.Add(new Vector2(x, y), Tile);
-                            tileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
-
-                        }
-
-
-                }
-                }      
-                
-
             }
-        
-    }
+            else
+            {
 
+                if (!worldTiles.ContainsKey(new Vector2(x, y)))
+                {
+                    worldTiles.Add(new Vector2(x, y), Tile);
+                    tileMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
+                }
+            }
+        }       
+    }
     public void RemoveTile(int x, int y, string SpecType)
     {
         TileClass Tile;
@@ -169,7 +145,7 @@ public class TileEditManager : MonoBehaviour
         }
 
         if(worldTiles.ContainsKey(new Vector2(x,y+1))) {
-            if(worldTiles[new Vector2(x,y+1)].Tree && !worldTiles[new Vector2(x, y )].Tree)
+            if(worldTiles[new Vector2(x,y+1)].Rooted && !worldTiles[new Vector2(x, y )].Rooted)
             {
                 return;
             }
@@ -177,23 +153,15 @@ public class TileEditManager : MonoBehaviour
 
         if (Tile != null && SpecType == Tile.TypeToBreak)
         {
-            if (Tile.tileItem != null)
+            if (Tile.Items != null)
             {
-                if(Tile.MultipleLoot)
+                for(int l = 0; l < Tile.Items.Length; l++)
                 {
-                    for (int d = 0; d < Tile.Loot.Length; d++)
+                    int RandomRandy = Random.Range(0, Tile.ItemChance[l]);
+                    if(RandomRandy <= 1)
                     {
-
-                        if (Random.Range(0, Tile.Loot[d].DropChance) == 0)
-                        {
-                            GameManager.Instance.itemManager.SpawnItem(Tile.Loot[d], new Vector2(x, y), new Vector2(Random.Range(-1,1), Random.Range(-1, 1)));
-                        }
-
-
+                        GameManager.Instance.itemManager.SpawnItem(Tile.Items[l], new Vector2(x, y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));
                     }
-                } else
-                {
-                    GameManager.Instance.itemManager.SpawnItem(Tile.tileItem, new Vector2(x, y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));
                 }
                 
                 
@@ -207,36 +175,12 @@ public class TileEditManager : MonoBehaviour
                 worldWalls.Remove(new Vector2(x, y));
                 wallMap.SetTile(new Vector3Int(x, y, 0), null);
             }
-            else
+            else if (SpecType == Tile.TypeToBreak)
             {
-                if (SpecType == Tile.TypeToBreak && Tile.Semisolid)
-                {
-                    worldTiles.Remove(new Vector2(x, y));
-                    semiSolidMap.SetTile(new Vector3Int(x, y, 0), null);
-                }
-                else if (SpecType == Tile.TypeToBreak && Tile.Tree)
-                {
-                    worldTiles.Remove(new Vector2(x, y));
-                    treeMap.SetTile(new Vector3Int(x, y, 0), null);
-
-                    for(int tx = -1; tx != 2; tx++)
-                    {
-                        if(worldTiles.ContainsKey(new Vector2(x + tx, y + 1)))
-                        {
-                            if(worldTiles[new Vector2(x + tx, y + 1)].Tree)
-                            {
-                                RemoveTile(x + tx, y + 1, "Axe");
-                            }
-                        }
-                    }
-                }
-                else if (SpecType == Tile.TypeToBreak)
-                {
                     worldTiles.Remove(new Vector2(x, y));
                     tileMap.SetTile(new Vector3Int(x, y, 0), null);
-                }
+                
             }
         }
-
     }
 }

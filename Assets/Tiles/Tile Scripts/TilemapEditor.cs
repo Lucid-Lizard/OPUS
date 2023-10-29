@@ -85,23 +85,9 @@ public class TilemapEditor : MonoBehaviour
 
                                         GameManager.Instance.inventoryManager.RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
                                     }
+                                    GameManager.Instance.tileEditManager.PlaceTile(InventorySlots[SelectedSlot].ItemTile, MousePos.x, MousePos.y);
 
-                                    else if (InventorySlots[SelectedSlot].ItemTile.Tree)
-                                    {
-                                        GameManager.Instance.tileEditManager.PlaceTile(InventorySlots[SelectedSlot].ItemTile, MousePos.x, MousePos.y);
-
-                                        GameManager.Instance.inventoryManager.RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
-                                    }
-
-                                    else
-                                    {
-                                        GameManager.Instance.tileEditManager.PlaceTile(InventorySlots[SelectedSlot].ItemTile, MousePos.x, MousePos.y);
-
-                                        GameManager.Instance.inventoryManager.RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
-                                    }
-
-
-
+                                    GameManager.Instance.inventoryManager.RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
                                 }
                             }
                             else

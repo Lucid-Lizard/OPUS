@@ -15,10 +15,15 @@ MonoBehaviour:
   tileName: OakPlanks
   tileSprite: {fileID: -2477580463036514489, guid: 7b7c5dc18e36a8a49b49938ee96067ff, type: 3}
   ruleTile: {fileID: 11400000, guid: 038363352931a9945b1897f185285ded, type: 2}
-  tileItem: {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  Items:
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  ItemChance: 01000000
+  TypeToBreak: Pickaxe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Rooted: 0
+  tileItem: {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

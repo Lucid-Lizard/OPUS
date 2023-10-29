@@ -15,15 +15,16 @@ MonoBehaviour:
   tileName: OakLeaves
   tileSprite: {fileID: -8362877577660253713, guid: 86468ab813e498f40961cb8c3c9890ca, type: 3}
   ruleTile: {fileID: 11400000, guid: ddb7c4d6174bcda4989995a86406204b, type: 2}
-  tileItem: {fileID: 11400000, guid: cb69f23eb6b5aec4686253ccb1d847eb, type: 2}
-  MultipleLoot: 1
-  Loot:
-  - {fileID: 11400000, guid: cb69f23eb6b5aec4686253ccb1d847eb, type: 2}
+  Items:
+  - {fileID: 11400000, guid: e3758ab06851fee478fde90b0151fc5a, type: 2}
   - {fileID: 11400000, guid: 722f4044cd10ef847b601489abec651b, type: 2}
+  ItemChance: 050000000a000000
   TypeToBreak: Axe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 1
+  Rooted: 0
+  tileItem: {fileID: 11400000, guid: cb69f23eb6b5aec4686253ccb1d847eb, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}
