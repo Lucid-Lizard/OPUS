@@ -39,7 +39,7 @@ public class TerrainGeneration : MonoBehaviour
     public int chunkSize = 16;
     public int dirtLayerHeight = 15;
     public float surfaceValue;
-    public int worldSize = 100;
+    public Vector2Int worldSize = new Vector2Int(500,100);
     public float heightMultiplier = 4f;
     public int heightAddition = 25;
 
@@ -66,7 +66,7 @@ public class TerrainGeneration : MonoBehaviour
         IDictionary<Vector2, TileClass> worldTiles = GameManager.Instance.tileEditManager.worldTiles;
         IDictionary<Vector2, TileClass> worldWalls = GameManager.Instance.tileEditManager.worldWalls;
 
-        for (int x = -1; x <= worldSize + 1; x++)
+        /*for (int x = -1; x <= worldSize + 1; x++)
         {
             for (int y = -1; y <= worldSize + 1; y++)
             {
@@ -75,7 +75,7 @@ public class TerrainGeneration : MonoBehaviour
                     GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirt, x, y);
                 }
             }
-        }
+        }*/
 
         seed = Random.Range(-10000, 10000);
         DrawTextures();
@@ -84,15 +84,15 @@ public class TerrainGeneration : MonoBehaviour
         GenerateWalls();
         GenerateTerrain();
 
-
-        GameManager.Instance.tileEditManager.DigZigZag(worldSize, 2, 1, 3, 12, (int)(worldSize / 2), heightAddition + 10);
+        for(int z = 0; z < 3; z++)
+            GameManager.Instance.tileEditManager.DigZigZag(Random.Range(50,50), Random.Range(1, 3), Random.Range(1, 3), Random.Range(6, 7), Random.Range(7, 12), Random.Range(0, worldSize.x), heightAddition + Random.Range(10, 20));
 
 
     }
 
     public void DrawTextures()
     {
-        biomeMap = new Texture2D(worldSize, worldSize);
+        biomeMap = new Texture2D(worldSize.x, worldSize.y);
         /*caveNoiseTexture = new Texture2D(worldSize, worldSize);
         ores[0].spreadTexture = new Texture2D(worldSize, worldSize);
         ores[1].spreadTexture = new Texture2D(worldSize, worldSize);*/
@@ -103,10 +103,10 @@ public class TerrainGeneration : MonoBehaviour
         GenerateNoiseTexture(caveFreq, surfaceValue, caveNoiseTexture);*/
         for (int i = 0; i < biomes.Length; i++)
         {
-            biomes[i].caveNoiseTexture = new Texture2D(worldSize, worldSize);
+            biomes[i].caveNoiseTexture = new Texture2D(worldSize.x, worldSize.y);
             for (int o = 0; o < biomes[i].ores.Length; o++)
             {
-                biomes[i].ores[o].spreadTexture = new Texture2D(worldSize, worldSize);
+                biomes[i].ores[o].spreadTexture = new Texture2D(worldSize.x, worldSize.y);
             }
 
             GenerateNoiseTexture(biomes[i].caveFreq, biomes[i].surfaceValue, biomes[i].caveNoiseTexture);
@@ -132,9 +132,9 @@ public class TerrainGeneration : MonoBehaviour
                 SelectedBiome = defaultBiome;
                 foreach (BiomeClass Biome in biomes)
                 {
-                    if (x >= (worldSize * (Biome.startGenX / 100)) && x <= (worldSize * (Biome.endGenX / 100)))
+                    if (x >= (worldSize.x * (Biome.startGenX / 100)) && x <= (worldSize.x * (Biome.endGenX / 100)))
                     {
-                        if (y >= (worldSize * (Biome.startGenY / 100)) && y <= (worldSize * (Biome.endGenY / 100)))
+                        if (y >= (worldSize.y * (Biome.startGenY / 100)) && y <= (worldSize.y * (Biome.endGenY / 100)))
                         {
                             SelectedBiome = Biome;
                             break;
@@ -154,7 +154,7 @@ public class TerrainGeneration : MonoBehaviour
 
     public void CreateChunks()
     {
-        int numChunks = worldSize / chunkSize;
+        int numChunks = worldSize.x / chunkSize;
         worldChunks = new GameObject[numChunks];
         for (int i = 0; i < numChunks; i++)
         {
@@ -186,7 +186,7 @@ public class TerrainGeneration : MonoBehaviour
     public void GenerateTerrain()
     {
         TileClass tile;
-        for (int x = 0; x < worldSize; x++)
+        for (int x = 0; x < worldSize.x; x++)
         {
             float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
             for (int y = 0; y < height; y++)
@@ -416,7 +416,7 @@ public class TerrainGeneration : MonoBehaviour
     public void GenerateWalls()
     {
         TileClass tile;
-        for (int x = 0; x < worldSize; x++)
+        for (int x = 0; x < worldSize.x; x++)
         {
             float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
             for (int y = 0; y < height; y++)
@@ -503,10 +503,10 @@ public class TerrainGeneration : MonoBehaviour
     public Texture2D GenerateStructureTexture(int radius,int numWhitePixels, Texture2D texture2D)
 
     {
-        texture2D = new Texture2D(worldSize, worldSize);
+        texture2D = new Texture2D(worldSize.x, worldSize.y); ;
 
         // Set the background color to black
-        Color[] pixels = new Color[worldSize * worldSize];
+        Color[] pixels = new Color[worldSize.x * worldSize.y];
         for (int i = 0; i < pixels.Length; i++)
         {
             pixels[i] = Color.black;
@@ -515,8 +515,8 @@ public class TerrainGeneration : MonoBehaviour
         // Generate random white pixels
         for (int i = 0; i < numWhitePixels; i++)
         {
-            Vector2Int randomPos = RandomPositionWithinRadius(worldSize, radius);
-            int index = randomPos.x + randomPos.y * worldSize;
+            Vector2Int randomPos = RandomPositionWithinRadius((worldSize.x * worldSize.y), radius);
+            int index = randomPos.x + randomPos.y * (worldSize.x * worldSize.y);
             pixels[index] = Color.white;
         }
 

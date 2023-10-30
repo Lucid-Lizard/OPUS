@@ -133,7 +133,8 @@ public class InventoryManager : MonoBehaviour
     public ItemClass SwapLastItem = null;
     public void Update()
     {
-        if(Input.anyKey)
+        Vector3Int MousePos = new Vector3Int(Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y), 0);
+        if (Input.anyKey)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -177,7 +178,7 @@ public class InventoryManager : MonoBehaviour
 
             if(Input.GetKey(KeyCode.Q))
             {
-                Vector3Int MousePos = new Vector3Int(Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x), Mathf.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y), 0);
+                
 
                 if (InventorySlots[SelectedSlot] != null)
                 {
@@ -250,22 +251,28 @@ public class InventoryManager : MonoBehaviour
         {
             SelectedSlot = SelectedSlot % 9;
         }
-
+        
         Selector.transform.position = InventoryBars[SelectedSlot].transform.position;
+        if (InventorySlots[SelectedSlot] != null)
+        {
+            if (InventorySlots[SelectedSlot].name == "Bomb" && Input.GetMouseButtonDown(0))
+            {
+                
+                GameManager.Instance.tileEditManager.RemoveCircle(new Vector2Int(MousePos.x, MousePos.y), 7, true);
+            }
+
+            if(InventorySlots[SelectedSlot].name == "Manashroom" && Input.GetMouseButtonDown(0))
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity +=  new Vector2(0,25f);
+                RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
+            }
+        }
+
+        
     }
     public void SwapItems()
     {
-        if (SwapLastSlot != SwapFirstSlot)
-        {
-            for (int i = 0; i < SwapLastQuant + 1; i++)
-                RemoveItem(SwapLastItem, SwapLastSlot);
-            for (int i = 0; i < SwapFirstQuant + 1; i++)
-                RemoveItem(SwapFirstItem, SwapFirstSlot);
-            if (SwapFirstItem != null)
-                AddItem(SwapFirstItem, SwapLastSlot);
-            if (SwapLastItem != null)
-                AddItem(SwapLastItem, SwapFirstSlot);
-        }
+       
     }
     public void ShowSlot(bool Show, GameObject Slot, int Min)
     {
@@ -274,7 +281,7 @@ public class InventoryManager : MonoBehaviour
             Slot.SetActive(Show);
         }
     }
-    public void AddItem(ItemClass Item, int SpecifiedSlot = -420)
+    public void AddItem(ItemClass Item, int SpecifiedSlot = -420, int quant = 1)
     {
         if(SpecifiedSlot == -420)
         {
@@ -283,7 +290,7 @@ public class InventoryManager : MonoBehaviour
                 int SlotID = FindSlot(Item);
                 InventorySlots[SlotID] = Item;
                 InventoryBarsRend[SlotID].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
-                InventorySlotQuant[SlotID] += 1;
+                InventorySlotQuant[SlotID] += quant;
                 if (InventorySlotQuant[SlotID] < 1000)
                 {
                     UpdateText(InventorySlotQuant[SlotID], SlotID);
@@ -293,7 +300,7 @@ public class InventoryManager : MonoBehaviour
         {
             InventorySlots[SpecifiedSlot] = Item;
             InventoryBarsRend[SpecifiedSlot].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
-            InventorySlotQuant[SpecifiedSlot] += 1;
+            InventorySlotQuant[SpecifiedSlot] += quant;
             if (InventorySlotQuant[SpecifiedSlot] < 1000)
             {
                 UpdateText(InventorySlotQuant[SpecifiedSlot], SpecifiedSlot);
@@ -321,11 +328,11 @@ public class InventoryManager : MonoBehaviour
         return -420;
     }
 
-    public void RemoveItem(ItemClass Item, int Slot)
+    public void RemoveItem(ItemClass Item, int Slot, int quant = -1)
     {
         if(InventorySlotQuant[Slot] != 0)
         {
-            InventorySlotQuant[Slot] -= 1;
+            InventorySlotQuant[Slot] -= quant;
             if (InventorySlotQuant[Slot] < 1000)
             {
                 UpdateText(InventorySlotQuant[Slot], Slot);

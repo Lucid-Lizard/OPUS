@@ -141,6 +141,7 @@ public class TileEditManager : MonoBehaviour
     {
         Vector2 Position = new Vector2(x, y);
         int direction = 1;
+        int vdirection = 1;
         if(Random.RandomRange(0, ZigZaggyNess) <= 1)
         {
             direction *= -1;
@@ -148,20 +149,45 @@ public class TileEditManager : MonoBehaviour
         
         for(int d = 0; d < Length; d++)
         {
-            for (int xh = -(int)(HoleSize ); xh < (int)(HoleSize / 2); xh++)
-            {
-                for (int yh = -(int)(HoleSize); yh < (int)(HoleSize); yh++)
-                {
-                    RemoveTile((int)Position.x + xh, (int)Position.y + yh, "Pickaxe", false);
-                }
-            }
+            int scale = Random.Range(0, 2);
 
-            Position.x += Speed * direction;
-            Position.y -= Drop;
+            RemoveCircle(Position, HoleSize + scale, false);
+
+            Position.x += Speed * direction + Random.Range(-2,2);
+            Position.y -= Drop + Random.Range(-2, 2);
 
             if (Random.RandomRange(0, ZigZaggyNess) <= 1)
             {
                 direction *= -1;
+            }
+            
+        }
+    }
+    public bool inside_circle(Vector2 center, Vector2 tile, float radius)
+    {
+        
+        float dx = center.x - tile.x;
+        float dy = center.y - tile.y;
+        float distance = Mathf.Sqrt((dx * dx) + (dy * dy));
+        Debug.Log(distance);
+        return distance <= radius;
+    }
+    public void RemoveCircle(Vector2 origin, int radius, bool doBreak)
+    {
+        Debug.Log("Remove Circle");
+        Debug.Log(origin);
+        Debug.Log(radius);
+        for(int y = (radius - 1) / -2; y <= (radius - 1) / 2; y++)
+        {
+            for (int x = (radius - 1) / -2; x <= (radius - 1) / 2; x++)
+            {
+                Debug.Log("poop");
+                Debug.Log(new Vector2(origin.x + x, origin.y + y));
+                if (inside_circle(origin, new Vector2(origin.x + x,origin.y + y), radius / 2))
+                {
+                    Debug.Log("in range");
+                    RemoveTile((int)origin.x + x, (int)origin.y + y, "Pickaxe", doBreak);
+                } 
             }
         }
     }
