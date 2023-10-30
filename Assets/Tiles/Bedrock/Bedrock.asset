@@ -17,7 +17,7 @@ MonoBehaviour:
   ruleTile: {fileID: 11400000, guid: b7a50dcf38b90384f9e0036551b02bed, type: 2}
   Items: []
   ItemChance: 
-  TypeToBreak: Pickaxe
+  TypeToBreak: None
   Toughness: 1000
   LvlToBreak: 100
   Semisolid: 0

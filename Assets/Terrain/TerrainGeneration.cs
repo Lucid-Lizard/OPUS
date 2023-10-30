@@ -85,7 +85,7 @@ public class TerrainGeneration : MonoBehaviour
         GenerateTerrain();
 
 
-        
+        GameManager.Instance.tileEditManager.DigZigZag(worldSize, 2, 1, 3, 12, (int)(worldSize / 2), heightAddition + 10);
 
 
     }

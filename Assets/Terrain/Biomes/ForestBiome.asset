@@ -21,8 +21,8 @@ MonoBehaviour:
   dirtLayerHeight: 15
   surfaceValue: 0.25
   heightMultiplier: 8
-  startGenX: 33
-  endGenX: 66
+  startGenX: 0
+  endGenX: 100
   startGenY: 0
   endGenY: 100
   foliageSprites: []
@@ -30,4 +30,7 @@ MonoBehaviour:
   treeChance: 10
   minTreeHeight: 4
   maxTreeHeight: 6
+  GenTrees: 1
+  tops: 1
+  roots: 1
   ores: []

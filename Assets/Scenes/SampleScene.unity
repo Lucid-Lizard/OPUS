@@ -750,10 +750,7 @@ MonoBehaviour:
   worldTreeMap: {fileID: 240873573}
   worldSemiSolidMap: {fileID: 1266524618}
   biomes:
-  - {fileID: 11400000, guid: 5a931fc4211d21e4e84ee6a37d2f51f6, type: 2}
   - {fileID: 11400000, guid: dd826663627ea4949bb0c66d0f5e76f3, type: 2}
-  - {fileID: 11400000, guid: a9afc698867c0e94ea61dae10548767d, type: 2}
-  - {fileID: 11400000, guid: be6bddb60eaa6d849a142f4d37bb3f9a, type: 2}
   defaultBiome: {fileID: 11400000, guid: be6bddb60eaa6d849a142f4d37bb3f9a, type: 2}
   tileAtlas: {fileID: 11400000, guid: 734fc788e8ad05e4f947a73ef26e2097, type: 2}
   treeChance: 12
@@ -799,9 +796,9 @@ MonoBehaviour:
   chunkSize: 16
   dirtLayerHeight: 15
   surfaceValue: 0.25
-  worldSize: 500
+  worldSize: 125
   heightMultiplier: 25
-  heightAddition: 25
+  heightAddition: 50
   caveFreq: 0.08
   terrainFreq: 0.04
   seed: 0

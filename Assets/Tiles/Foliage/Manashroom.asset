@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05ff09934cd122945a4f89be3138912d, type: 2}
   ItemChance: 01000000
   TypeToBreak: Pickaxe
-  Toughness: 1
+  Toughness: -1
   LvlToBreak: 1
   Semisolid: 0
   Slope: 0

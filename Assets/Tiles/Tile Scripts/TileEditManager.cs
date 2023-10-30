@@ -136,7 +136,36 @@ public class TileEditManager : MonoBehaviour
             }
         }       
     }
-    public void RemoveTile(int x, int y, string SpecType)
+
+    public void DigZigZag(int Length,int Speed, int Drop, int HoleSize, int ZigZaggyNess,int x, int y)
+    {
+        Vector2 Position = new Vector2(x, y);
+        int direction = 1;
+        if(Random.RandomRange(0, ZigZaggyNess) <= 1)
+        {
+            direction *= -1;
+        }
+        
+        for(int d = 0; d < Length; d++)
+        {
+            for (int xh = -(int)(HoleSize ); xh < (int)(HoleSize / 2); xh++)
+            {
+                for (int yh = -(int)(HoleSize); yh < (int)(HoleSize); yh++)
+                {
+                    RemoveTile((int)Position.x + xh, (int)Position.y + yh, "Pickaxe", false);
+                }
+            }
+
+            Position.x += Speed * direction;
+            Position.y -= Drop;
+
+            if (Random.RandomRange(0, ZigZaggyNess) <= 1)
+            {
+                direction *= -1;
+            }
+        }
+    }
+    public void RemoveTile(int x, int y, string SpecType, bool DoDrop = true)
     {
         TileClass Tile;
         if (worldTiles.ContainsKey(new Vector2(x, y)))
@@ -150,46 +179,51 @@ public class TileEditManager : MonoBehaviour
             Tile = null;
         }
 
-        if(worldTiles.ContainsKey(new Vector2(x,y+1))) {
+        if(worldTiles.ContainsKey(new Vector2(x,y+1))&& worldTiles.ContainsKey(new Vector2(x, y))) {
             if(worldTiles[new Vector2(x,y+1)].Rooted && !worldTiles[new Vector2(x, y )].Rooted)
             {
                 return;
             }
         }
 
-        if(worldTiles.ContainsKey(new Vector2(x, y))) {
-            if (worldTiles[new Vector2(x, y)].StartTree)
+        if(worldTiles.ContainsKey(new Vector2(x, y))) 
+        { 
+            if (SpecType == Tile.TypeToBreak)
             {
-                worldTiles.Remove(new Vector2(x, y));
-                tileMap.SetTile(new Vector3Int(x, y, 0), null);
-                for (int tx = -1; tx < 2; tx++)
+                if (worldTiles[new Vector2(x, y)].StartTree)
                 {
-                    for(int ty = 0; ty < 2; ty++)
+                    worldTiles.Remove(new Vector2(x, y));
+                    tileMap.SetTile(new Vector3Int(x, y, 0), null);
+                    for (int tx = -1; tx < 2; tx++)
                     {
-                        if (worldTiles.ContainsKey(new Vector2(x + tx, y + ty)))
+                        for (int ty = 0; ty < 2; ty++)
                         {
-                            if (worldTiles[new Vector2(x + tx, y + ty)].tree)
-                                RemoveTile(x + tx, y + ty, "Axe");
+                            if (worldTiles.ContainsKey(new Vector2(x + tx, y + ty)))
+                            {
+                                if (worldTiles[new Vector2(x + tx, y + ty)].tree)
+                                    RemoveTile(x + tx, y + ty, "Axe");
+                            }
                         }
                     }
                 }
-            } 
+            }
         }
 
         if (Tile != null && SpecType == Tile.TypeToBreak)
         {
-            if (Tile.Items != null)
-            {
-                for(int l = 0; l < Tile.Items.Length; l++)
+            if (DoDrop) {
+                if (Tile.Items != null)
                 {
-                    int RandomRandy = Random.Range(0, Tile.ItemChance[l] + 1);
-                    if(RandomRandy <= 1)
+                    for (int l = 0; l < Tile.Items.Length; l++)
                     {
-                        GameManager.Instance.itemManager.SpawnItem(Tile.Items[l], new Vector2(x, y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));
+                        int RandomRandy = Random.Range(0, Tile.ItemChance[l] + 1);
+                        if (RandomRandy <= 1)
+                        {
+                            GameManager.Instance.itemManager.SpawnItem(Tile.Items[l], new Vector2(x, y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));
+                        }
                     }
+
                 }
-                
-                
             }
         }
 
