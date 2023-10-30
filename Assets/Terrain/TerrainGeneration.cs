@@ -65,13 +65,27 @@ public class TerrainGeneration : MonoBehaviour
     {
         IDictionary<Vector2, TileClass> worldTiles = GameManager.Instance.tileEditManager.worldTiles;
         IDictionary<Vector2, TileClass> worldWalls = GameManager.Instance.tileEditManager.worldWalls;
+
+        for (int x = -1; x <= worldSize + 1; x++)
+        {
+            for (int y = -1; y <= worldSize + 1; y++)
+            {
+                if (x == -1 || x == worldSize + 1 || y == -1 || y == worldSize + 1)
+                {
+                    GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirt, x, y);
+                }
+            }
+        }
+
         seed = Random.Range(-10000, 10000);
         DrawTextures();
 
         //CreateChunks();
         GenerateWalls();
         GenerateTerrain();
-        GenerateExtras();
+
+
+        
 
 
     }
@@ -274,10 +288,7 @@ public class TerrainGeneration : MonoBehaviour
         int treeHeight = Random.Range(minTreeHeight, maxTreeHeight);
         List<Vector2> tileToTrack = new List<Vector2>();
 
-        GameObject newTree = new GameObject();
-        newTree.name = biomeClass.biomeName + " Tree";
         
-        newTree.transform.position = new Vector3(x, y, 0);
 
         for (int i = 0; i < treeHeight; i++)
         {

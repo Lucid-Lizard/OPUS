@@ -19,10 +19,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a9ab0026bd16ce4ca916ea480e64fba, type: 2}
   ItemChance: 01000000
   TypeToBreak: Pickaxe
+  Toughness: 0.2
+  LvlToBreak: 1
   Semisolid: 0
   Slope: 0
   Wall: 0
   Rooted: 0
+  StartTree: 0
+  tree: 0
   tileItem: {fileID: 11400000, guid: 2a9ab0026bd16ce4ca916ea480e64fba, type: 2}
   multiTile: 0
   multiTiles: []

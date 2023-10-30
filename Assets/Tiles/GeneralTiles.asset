@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290faa960813284c8cb2f373f0ec272, type: 3}
   m_Name: GeneralTiles
   m_EditorClassIdentifier: 
-  dirt: {fileID: 0}
+  dirt: {fileID: 11400000, guid: 1dfd2962052c68944851882cf5230a5e, type: 2}
   dirtw: {fileID: 0}
   grass: {fileID: 0}
   grassw: {fileID: 0}

@@ -21,7 +21,9 @@ MonoBehaviour:
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Rooted: 0
+  Rooted: 1
+  StartTree: 0
+  tree: 1
   tileItem: {fileID: 0}
   multiTile: 0
   multiTiles: []

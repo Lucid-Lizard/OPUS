@@ -25,7 +25,13 @@ public class TileEditManager : MonoBehaviour
     public GameObject ItemParent;
 
     public bool CanPlace;
+
+    public double BreakTime;
+    public bool CanBreak;
+
     
+
+
 
 
 
@@ -151,13 +157,32 @@ public class TileEditManager : MonoBehaviour
             }
         }
 
+        if(worldTiles.ContainsKey(new Vector2(x, y))) {
+            if (worldTiles[new Vector2(x, y)].StartTree)
+            {
+                worldTiles.Remove(new Vector2(x, y));
+                tileMap.SetTile(new Vector3Int(x, y, 0), null);
+                for (int tx = -1; tx < 2; tx++)
+                {
+                    for(int ty = 0; ty < 2; ty++)
+                    {
+                        if (worldTiles.ContainsKey(new Vector2(x + tx, y + ty)))
+                        {
+                            if (worldTiles[new Vector2(x + tx, y + ty)].tree)
+                                RemoveTile(x + tx, y + ty, "Axe");
+                        }
+                    }
+                }
+            } 
+        }
+
         if (Tile != null && SpecType == Tile.TypeToBreak)
         {
             if (Tile.Items != null)
             {
                 for(int l = 0; l < Tile.Items.Length; l++)
                 {
-                    int RandomRandy = Random.Range(0, Tile.ItemChance[l]);
+                    int RandomRandy = Random.Range(0, Tile.ItemChance[l] + 1);
                     if(RandomRandy <= 1)
                     {
                         GameManager.Instance.itemManager.SpawnItem(Tile.Items[l], new Vector2(x, y), new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)));

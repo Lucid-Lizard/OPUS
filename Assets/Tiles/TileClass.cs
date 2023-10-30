@@ -14,11 +14,15 @@ public class TileClass : ScriptableObject
     public int[] ItemChance;
     [Header("Breakability Stuff")]
     public string TypeToBreak = "Pickaxe";
+    public float Toughness = 1.0f;
+    public int LvlToBreak = 1;
     [Header("Tile Type")]
     public bool Semisolid = false;
     public bool Slope = false;
     public bool Wall = false;
     public bool Rooted = false;
+    public bool StartTree = false;
+    public bool tree = false;
     [Header("Multitile")]
     public ItemClass tileItem;
     public bool multiTile = false;

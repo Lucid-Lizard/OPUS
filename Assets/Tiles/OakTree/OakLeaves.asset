@@ -18,12 +18,14 @@ MonoBehaviour:
   Items:
   - {fileID: 11400000, guid: e3758ab06851fee478fde90b0151fc5a, type: 2}
   - {fileID: 11400000, guid: 722f4044cd10ef847b601489abec651b, type: 2}
-  ItemChance: 050000000a000000
+  ItemChance: 060000000f000000
   TypeToBreak: Axe
   Semisolid: 0
   Slope: 0
   Wall: 0
   Rooted: 0
+  StartTree: 1
+  tree: 1
   tileItem: {fileID: 11400000, guid: cb69f23eb6b5aec4686253ccb1d847eb, type: 2}
   multiTile: 0
   multiTiles: []

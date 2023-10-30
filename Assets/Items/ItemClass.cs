@@ -14,5 +14,7 @@ public class ItemClass : ScriptableObject
     public int DropChance = 0;
     public bool CanBreak;
     public string BreakType = null;
+    public int BreakSpeed = 60;
+    public int BreakLevel = 1;
     public Vector2 ItemScaleInHand = new Vector2(.05f,.05f);
 }

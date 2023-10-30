@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
-  m_Name: Cactus
+  m_Name: Bedrock
   m_EditorClassIdentifier: 
-  tileName: Cactus
-  tileSprite: {fileID: -2650737326432602788, guid: e483896f2b714c74d8f3ff042f35d2c7, type: 3}
-  ruleTile: {fileID: 11400000, guid: a6ebf9f1a1fa4cd4d8e5bc77246bcdbf, type: 2}
-  Items:
-  - {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
-  ItemChance: 01000000
-  TypeToBreak: Axe
+  tileName: Bedrock
+  tileSprite: {fileID: 21300000, guid: c110fc96cb1aab644acf14f1a167687e, type: 3}
+  ruleTile: {fileID: 11400000, guid: b7a50dcf38b90384f9e0036551b02bed, type: 2}
+  Items: []
+  ItemChance: 
+  TypeToBreak: Pickaxe
+  Toughness: 1000
+  LvlToBreak: 100
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Rooted: 1
-  StartTree: 1
-  tree: 1
-  tileItem: {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
+  Rooted: 0
+  StartTree: 0
+  tree: 0
+  tileItem: {fileID: 0}
   multiTile: 0
   multiTiles: []
   multiTileSize: {x: 1, y: 1}
