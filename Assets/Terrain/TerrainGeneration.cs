@@ -255,7 +255,7 @@ public class TerrainGeneration : MonoBehaviour
                     GameManager.Instance.tileEditManager.PlaceTile(tile, x, y);
 
 
-
+                    
                     if (y >= height - 1)
                     {
                         int t = Random.Range(0, GetCurrentBiome(x, y).treeChance);
@@ -274,6 +274,21 @@ public class TerrainGeneration : MonoBehaviour
 
                         }
                     }
+                } else if(GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x,y-1)))
+                {
+                    if(GameManager.Instance.tileEditManager.worldTiles[new Vector2(x, y - 1)].name == "Stone")
+                    {
+                        int t = Random.Range(0, 5);
+                        if (t <= 1)
+                        {
+                            GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.leaf, x, y);
+                        }
+                    }
+                    
+
+
+
+
                 }
 
 

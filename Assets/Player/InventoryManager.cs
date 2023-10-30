@@ -123,7 +123,14 @@ public class InventoryManager : MonoBehaviour
             AddItem(item);
         }
     }
-
+    public bool IsSwapping = false;
+    public bool DoSwap = false;
+    public int SwapFirstSlot = 0;
+    public int SwapLastSlot = 0;
+    public int SwapFirstQuant = 0;
+    public int SwapLastQuant = 0;
+    public ItemClass SwapFirstItem = null;
+    public ItemClass SwapLastItem = null;
     public void Update()
     {
         if(Input.anyKey)
@@ -196,8 +203,31 @@ public class InventoryManager : MonoBehaviour
                     ShowSlot(ShowInventory, InventoryBars[s], 9);
                 }
             }
+            
+            
+                
+            
+            
         }
-
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            
+            SwapFirstItem = InventorySlots[SelectedSlot];
+            SwapFirstSlot = SelectedSlot;
+            SwapFirstQuant = InventorySlotQuant[SelectedSlot];
+            Selector.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            
+                
+                SwapLastItem = InventorySlots[SelectedSlot];
+                SwapLastSlot = SelectedSlot;
+                SwapLastQuant = InventorySlotQuant[SelectedSlot];
+                Selector.GetComponent<SpriteRenderer>().color = Color.white;
+                SwapItems();
+            
+        }
         if (Input.mouseScrollDelta.y != 0)
         {
             if (!ShowInventory)
@@ -223,7 +253,20 @@ public class InventoryManager : MonoBehaviour
 
         Selector.transform.position = InventoryBars[SelectedSlot].transform.position;
     }
-
+    public void SwapItems()
+    {
+        if (SwapLastSlot != SwapFirstSlot)
+        {
+            for (int i = 0; i < SwapLastQuant + 1; i++)
+                RemoveItem(SwapLastItem, SwapLastSlot);
+            for (int i = 0; i < SwapFirstQuant + 1; i++)
+                RemoveItem(SwapFirstItem, SwapFirstSlot);
+            if (SwapFirstItem != null)
+                AddItem(SwapFirstItem, SwapLastSlot);
+            if (SwapLastItem != null)
+                AddItem(SwapLastItem, SwapFirstSlot);
+        }
+    }
     public void ShowSlot(bool Show, GameObject Slot, int Min)
     {
         if (System.Array.IndexOf(InventoryBars, Slot) >= Min )
@@ -231,19 +274,32 @@ public class InventoryManager : MonoBehaviour
             Slot.SetActive(Show);
         }
     }
-    public void AddItem(ItemClass Item)
+    public void AddItem(ItemClass Item, int SpecifiedSlot = -420)
     {
-        if(FindSlot(Item) != -420)
+        if(SpecifiedSlot == -420)
         {
-            int SlotID = FindSlot(Item);
-            InventorySlots[SlotID] = Item;
-            InventoryBarsRend[SlotID].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
-            InventorySlotQuant[SlotID] += 1;
-            if(InventorySlotQuant[SlotID] < 1000)
+            if (FindSlot(Item) != -420)
             {
-                UpdateText(InventorySlotQuant[SlotID], SlotID);
+                int SlotID = FindSlot(Item);
+                InventorySlots[SlotID] = Item;
+                InventoryBarsRend[SlotID].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
+                InventorySlotQuant[SlotID] += 1;
+                if (InventorySlotQuant[SlotID] < 1000)
+                {
+                    UpdateText(InventorySlotQuant[SlotID], SlotID);
+                }
+            }
+        } else
+        {
+            InventorySlots[SpecifiedSlot] = Item;
+            InventoryBarsRend[SpecifiedSlot].GetComponent<SpriteRenderer>().sprite = Item.ItemSprite;
+            InventorySlotQuant[SpecifiedSlot] += 1;
+            if (InventorySlotQuant[SpecifiedSlot] < 1000)
+            {
+                UpdateText(InventorySlotQuant[SpecifiedSlot], SpecifiedSlot);
             }
         }
+        
     }
 
     public int FindSlot(ItemClass Item)

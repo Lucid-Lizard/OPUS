@@ -21,7 +21,7 @@ MonoBehaviour:
   log: {fileID: 0}
   root: {fileID: 0}
   branch: {fileID: 0}
-  leaf: {fileID: 0}
+  leaf: {fileID: 11400000, guid: 3372c9c8cbaccc94390666d473f7a960, type: 2}
   snow: {fileID: 0}
   sand: {fileID: 11400000, guid: 5f39a0c5844c32c4a93e664445f24d0f, type: 2}
   red: {fileID: 11400000, guid: 142e138afcf541e47840471937804709, type: 2}

@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
   ItemChance: 010000000300000005000000
   TypeToBreak: Axe
-  Toughness: 3
+  Toughness: 25
   LvlToBreak: 1
   Semisolid: 0
   Slope: 0
