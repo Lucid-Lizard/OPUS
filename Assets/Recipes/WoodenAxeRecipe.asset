@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd33845870c5224189724ad4a2b0219, type: 3}
+  m_Name: WoodenAxeRecipe
+  m_EditorClassIdentifier: 
+  RecipeType: 1
+  Ingredients:
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  - {fileID: 11400000, guid: 34e0eda2cee72f34db37337d95ca14e4, type: 2}
+  Quants: 0500000005000000
+  Result: {fileID: 11400000, guid: 42ed7013fe9ebb34781a2e151a399676, type: 2}
+  ResultQuant: 1

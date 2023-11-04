@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public ItemManager itemManager;
 
+    public RecipeManager recipeManager;
+
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            //poop
         }
         else
         {

@@ -28,5 +28,14 @@ public class TileClass : ScriptableObject
     public bool multiTile = false;
     public TileBase[] multiTiles;
     public Vector2 multiTileSize = new Vector2(1, 1);
+    [Header("Crafting")]
+    public bool Crafting;
+    public CraftingType craftingType;
+    
+    public enum CraftingType
+    {
+        Crafting,
+        Furnace
+    }
 }
 

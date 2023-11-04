@@ -229,24 +229,26 @@ public class InventoryManager : MonoBehaviour
                 SwapItems();
             
         }
-        if (Input.mouseScrollDelta.y != 0)
+        if (Input.mousePosition.x < Screen.width / 2 && Input.mousePosition.y > (Screen.height / 4 ) * 3|| !ShowInventory)
         {
-            if (!ShowInventory)
+            if (Input.mouseScrollDelta.y != 0)
             {
-                if (SelectedSlot - Input.mouseScrollDelta.y >= 0 && SelectedSlot - Input.mouseScrollDelta.y <= 8)
+                if (!ShowInventory)
                 {
-                    SelectedSlot -= (int)Input.mouseScrollDelta.y;
+                    if (SelectedSlot - Input.mouseScrollDelta.y >= 0 && SelectedSlot - Input.mouseScrollDelta.y <= 8)
+                    {
+                        SelectedSlot -= (int)Input.mouseScrollDelta.y;
+                    }
                 }
-            }
-            else
-            {
-                if (SelectedSlot - Input.mouseScrollDelta.y >= 0 && SelectedSlot - Input.mouseScrollDelta.y <= InventorySize - 1)
+                else
                 {
-                    SelectedSlot -= (int)Input.mouseScrollDelta.y;
+                    if (SelectedSlot - Input.mouseScrollDelta.y >= 0 && SelectedSlot - Input.mouseScrollDelta.y <= InventorySize - 1)
+                    {
+                        SelectedSlot -= (int)Input.mouseScrollDelta.y;
+                    }
                 }
             }
         }
-
         if (!ShowInventory && SelectedSlot >= 8)
         {
             SelectedSlot = SelectedSlot % 9;
@@ -272,7 +274,21 @@ public class InventoryManager : MonoBehaviour
     }
     public void SwapItems()
     {
-       
+        
+        InventorySlots[SwapFirstSlot] = SwapLastItem;
+        InventorySlotQuant[SwapFirstSlot] = SwapLastQuant;
+        if(SwapLastItem != null)
+            InventoryBarsRend[SwapFirstSlot].GetComponent<SpriteRenderer>().sprite = SwapLastItem.ItemSprite;
+        else
+            InventoryBarsRend[SwapFirstSlot].GetComponent<SpriteRenderer>().sprite = null;
+        UpdateText(SwapLastQuant, SwapFirstSlot);
+        InventorySlots[SwapLastSlot] = SwapFirstItem;
+        InventorySlotQuant[SwapLastSlot] = SwapFirstQuant;
+        if (SwapFirstItem != null)
+            InventoryBarsRend[SwapLastSlot].GetComponent<SpriteRenderer>().sprite = SwapFirstItem.ItemSprite;
+        else
+            InventoryBarsRend[SwapLastSlot].GetComponent<SpriteRenderer>().sprite = null;
+        UpdateText(SwapFirstQuant, SwapLastSlot);
     }
     public void ShowSlot(bool Show, GameObject Slot, int Min)
     {

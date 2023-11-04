@@ -168,7 +168,7 @@ public class TileEditManager : MonoBehaviour
         float dx = center.x - tile.x;
         float dy = center.y - tile.y;
         float distance = Mathf.Sqrt((dx * dx) + (dy * dy));
-        Debug.Log(distance);
+        
         return distance <= radius;
     }
     public void RemoveCircle(Vector2 origin, int radius, bool doBreak)
