@@ -1,52 +1,103 @@
 fileFormatVersion: 2
-guid: 39006e028a849aa478bc621397f0976d
+guid: 52788e82f10d71347a7f996e58873f3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3876593737931039398
-    second: Head
+      213: -7571261989006083630
+    second: EpicaPlayerSheet_0
   - first:
-      213: -1154794374659326068
-    second: Chest
+      213: 1925283199965995512
+    second: EpicaPlayerSheet_1
   - first:
-      213: 7868382910451246032
-    second: Thigh 1
+      213: -952485397000724983
+    second: EpicaPlayerSheet_2
   - first:
-      213: -6581065566689348799
-    second: Thigh 2
+      213: 8183696641393589756
+    second: EpicaPlayerSheet_3
   - first:
-      213: -8110698288607117136
-    second: Waist
+      213: -7245717574701563103
+    second: EpicaPlayerSheet_4
   - first:
-      213: -4310065566968346352
-    second: Hand 2
+      213: -6574709319882832797
+    second: EpicaPlayerSheet_5
   - first:
-      213: 7668757699704737975
-    second: Knee 1
+      213: -6897687417960141698
+    second: EpicaPlayerSheet_6
   - first:
-      213: -2576198473526358023
-    second: Knee 2
+      213: 6172501374776077227
+    second: EpicaPlayerSheet_7
   - first:
-      213: 2964637689780319399
-    second: Foot 1
+      213: -3680704405453152245
+    second: EpicaPlayerSheet_8
   - first:
-      213: -3540272233970198358
-    second: Foot 2
+      213: 3593340073035729357
+    second: EpicaPlayerSheet_9
   - first:
-      213: 5730018982372113040
-    second: Shoulder 2
+      213: -2563419454424852450
+    second: EpicaPlayerSheet_10
   - first:
-      213: 1802348670677329435
-    second: Forearm 1
+      213: 6246981485477674164
+    second: EpicaPlayerSheet_11
   - first:
-      213: 8748474748086551358
-    second: Forearm 2
+      213: 3427768436110524670
+    second: EpicaPlayerSheet_12
   - first:
-      213: -3108712332906036054
-    second: Hand 1
+      213: -6097784256688601050
+    second: EpicaPlayerSheet_13
   - first:
-      213: -2498737756332141227
-    second: Shoulder 1
+      213: 5638682664396015490
+    second: EpicaPlayerSheet_14
+  - first:
+      213: 3187627853265262622
+    second: EpicaPlayerSheet_15
+  - first:
+      213: 5363523410638572322
+    second: OpusPlayerSheet_0
+  - first:
+      213: 4706183564447337806
+    second: OpusPlayerSheet_1
+  - first:
+      213: 5756050175831235807
+    second: OpusPlayerSheet_2
+  - first:
+      213: 6178897293019654617
+    second: OpusPlayerSheet_3
+  - first:
+      213: -8759307011785020791
+    second: OpusPlayerSheet_4
+  - first:
+      213: 1888347648029735492
+    second: OpusPlayerSheet_5
+  - first:
+      213: -8803074266416001854
+    second: OpusPlayerSheet_6
+  - first:
+      213: -3953882353187217324
+    second: OpusPlayerSheet_7
+  - first:
+      213: 6494236603861832534
+    second: OpusPlayerSheet_8
+  - first:
+      213: -4285974042871667540
+    second: OpusPlayerSheet_9
+  - first:
+      213: 1137263671034839052
+    second: OpusPlayerSheet_10
+  - first:
+      213: 5625798608015171937
+    second: OpusPlayerSheet_11
+  - first:
+      213: 6934521120356868598
+    second: OpusPlayerSheet_12
+  - first:
+      213: 3952406604516450128
+    second: OpusPlayerSheet_13
+  - first:
+      213: -2422597928364239839
+    second: OpusPlayerSheet_14
+  - first:
+      213: 1533667487091071595
+    second: OpusPlayerSheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,332 +183,341 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Head
+      name: OpusPlayerSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 13
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a222ef277d6cc530800000000000000
-      internalID: 3876593737931039398
+      spriteID: 22b8a93ff101f6a40800000000000000
+      internalID: 5363523410638572322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest
+      name: OpusPlayerSheet_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 13
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 14
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8fbfc572a859ffe0800000000000000
-      internalID: -1154794374659326068
+      spriteID: e4d4aa67409bf4140800000000000000
+      internalID: 4706183564447337806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thigh 1
+      name: OpusPlayerSheet_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 7
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 28
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3633e819c123d60800000000000000
-      internalID: 7868382910451246032
+      spriteID: fdcdeb7532991ef40800000000000000
+      internalID: 5756050175831235807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thigh 2
+      name: OpusPlayerSheet_3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 42
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1433ded2cbb5ba4a0800000000000000
-      internalID: -6581065566689348799
+      spriteID: 9d92f0ec95adfb550800000000000000
+      internalID: 6178897293019654617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Waist
+      name: OpusPlayerSheet_4
       rect:
         serializedVersion: 2
-        x: 10
-        y: 7
-        width: 6
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 56
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b0443bf0e2017f80800000000000000
-      internalID: -8110698288607117136
+      spriteID: 98a27fb7ea0b07680800000000000000
+      internalID: -8759307011785020791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand 2
+      name: OpusPlayerSheet_5
       rect:
         serializedVersion: 2
-        x: 23
-        y: 6
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 70
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019853ad3329f24c0800000000000000
-      internalID: -4310065566968346352
+      spriteID: 44ab1455e22c43a10800000000000000
+      internalID: 1888347648029735492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knee 1
+      name: OpusPlayerSheet_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 84
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b0517f3f76ec6a60800000000000000
-      internalID: 7668757699704737975
+      spriteID: 2cc44ea689235d580800000000000000
+      internalID: -8803074266416001854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knee 2
+      name: OpusPlayerSheet_7
       rect:
         serializedVersion: 2
-        x: 5
-        y: 1
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 98
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ffce8a33218f3cd0800000000000000
-      internalID: -2576198473526358023
+      spriteID: 4502796c2fcf029c0800000000000000
+      internalID: -3953882353187217324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foot 1
+      name: OpusPlayerSheet_8
       rect:
         serializedVersion: 2
-        x: 10
-        y: 1
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 112
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a437138542842920800000000000000
-      internalID: 2964637689780319399
+      spriteID: 653168488c9202a50800000000000000
+      internalID: 6494236603861832534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foot 2
+      name: OpusPlayerSheet_9
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 126
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa8170e092d6edec0800000000000000
-      internalID: -3540272233970198358
+      spriteID: ca4e61ae0592584c0800000000000000
+      internalID: -4285974042871667540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shoulder 2
+      name: OpusPlayerSheet_10
       rect:
         serializedVersion: 2
-        x: 22
-        y: 16
-        width: 3
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 140
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09af880d7ed158f40800000000000000
-      internalID: 5730018982372113040
+      spriteID: c000df7884f58cf00800000000000000
+      internalID: 1137263671034839052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Forearm 1
+      name: OpusPlayerSheet_11
       rect:
         serializedVersion: 2
-        x: 18
-        y: 12
-        width: 3
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 154
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b16ae15119a330910800000000000000
-      internalID: 1802348670677329435
+      spriteID: 161a1a8f60ad21e40800000000000000
+      internalID: 5625798608015171937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Forearm 2
+      name: OpusPlayerSheet_12
       rect:
         serializedVersion: 2
-        x: 22
-        y: 12
-        width: 3
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 168
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e338c269e63d86970800000000000000
-      internalID: 8748474748086551358
+      spriteID: 6f1a052e73e5c3060800000000000000
+      internalID: 6934521120356868598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand 1
+      name: OpusPlayerSheet_13
       rect:
         serializedVersion: 2
-        x: 17
-        y: 6
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 182
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa482489a92abd4d0800000000000000
-      internalID: -3108712332906036054
+      spriteID: 05f5c16bdd4c9d630800000000000000
+      internalID: 3952406604516450128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shoulder 1
+      name: OpusPlayerSheet_14
       rect:
         serializedVersion: 2
-        x: 18
-        y: 16
-        width: 3
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 196
+        y: 0
+        width: 14
+        height: 25
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55557fedf33b25dd0800000000000000
-      internalID: -2498737756332141227
+      spriteID: 12490460504316ed0800000000000000
+      internalID: -2422597928364239839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusPlayerSheet_15
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a11ab247ea84510800000000000000
+      internalID: 1533667487091071595
       vertices: []
       indices: 
       edges: []
