@@ -15,12 +15,20 @@ MonoBehaviour:
   tileName: Furnace
   tileSprite: {fileID: 21300000, guid: 338ac57b6c9b4b5499cfe7aef340055a, type: 3}
   ruleTile: {fileID: 0}
-  tileItem: {fileID: 11400000, guid: bd62ff6c0cd50b44a95ede573bef92e8, type: 2}
-  MultipleLoot: 0
-  Loot: []
+  Items: []
+  ItemChance: 
+  TypeToBreak: Pickaxe
+  Toughness: 1
+  LvlToBreak: 1
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Rooted: 0
+  StartTree: 0
+  tree: 0
+  tileItem: {fileID: 11400000, guid: bd62ff6c0cd50b44a95ede573bef92e8, type: 2}
   multiTile: 1
+  multiTiles: []
   multiTileSize: {x: 2, y: 2}
+  Crafting: 1
+  craftingType: 1

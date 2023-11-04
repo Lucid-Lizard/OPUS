@@ -15,13 +15,19 @@ MonoBehaviour:
   tileName: Sand
   tileSprite: {fileID: -51768659254253517, guid: 24944745e082f394c9390e6eb6a22cb9, type: 3}
   ruleTile: {fileID: 11400000, guid: 60d5c3f6439bdfb4bae701c1cd406739, type: 2}
-  tileItem: {fileID: 11400000, guid: 2a9ab0026bd16ce4ca916ea480e64fba, type: 2}
-  MultipleLoot: 0
-  Loot: []
-  HitsToBreak: 1
+  Items:
+  - {fileID: 11400000, guid: 2a9ab0026bd16ce4ca916ea480e64fba, type: 2}
+  ItemChance: 01000000
+  TypeToBreak: Pickaxe
+  Toughness: 0.2
+  LvlToBreak: 1
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Rooted: 0
+  StartTree: 0
+  tree: 0
+  tileItem: {fileID: 11400000, guid: 2a9ab0026bd16ce4ca916ea480e64fba, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

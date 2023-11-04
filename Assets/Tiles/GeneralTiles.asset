@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c290faa960813284c8cb2f373f0ec272, type: 3}
   m_Name: GeneralTiles
   m_EditorClassIdentifier: 
-  dirt: {fileID: 0}
-  dirtw: {fileID: 0}
-  grass: {fileID: 0}
+  dirt: {fileID: 11400000, guid: 434f15b1778a41e49a7f36b1155a111d, type: 2}
+  dirtw: {fileID: 11400000, guid: 21386d64e6822e145a965f6e6127e1ea, type: 2}
+  grass: {fileID: 11400000, guid: a883de476c53f88458a12d9ec69a8e69, type: 2}
   grassw: {fileID: 0}
-  stone: {fileID: 0}
+  stone: {fileID: 11400000, guid: 6e5e5f3759dee8d439437286d97cec81, type: 2}
   stonew: {fileID: 11400000, guid: 4d3a6b4ca9cb90b418986ea1d5b38c4e, type: 2}
   log: {fileID: 0}
   root: {fileID: 0}
   branch: {fileID: 0}
-  leaf: {fileID: 0}
+  leaf: {fileID: 11400000, guid: 3372c9c8cbaccc94390666d473f7a960, type: 2}
   snow: {fileID: 0}
   sand: {fileID: 11400000, guid: 5f39a0c5844c32c4a93e664445f24d0f, type: 2}
   red: {fileID: 11400000, guid: 142e138afcf541e47840471937804709, type: 2}

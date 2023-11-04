@@ -15,10 +15,15 @@ MonoBehaviour:
   tileName: Cactus Wood
   tileSprite: {fileID: -7352308243140953725, guid: 3b04459c7705c204390b37e56c970fab, type: 3}
   ruleTile: {fileID: 11400000, guid: 87dad8e71b978c84bb675b857f94be10, type: 2}
-  tileItem: {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
+  Items:
+  - {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
+  ItemChance: 01000000
+  TypeToBreak: Pickaxe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Rooted: 0
+  tileItem: {fileID: 11400000, guid: d8ec9cc3f0d09634d92fdf1a4f738a2b, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

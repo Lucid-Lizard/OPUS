@@ -15,13 +15,21 @@ MonoBehaviour:
   tileName: OakLog
   tileSprite: {fileID: 6845242538891931525, guid: 81e3b7ad1997eae449b5b17786118069, type: 3}
   ruleTile: {fileID: 11400000, guid: a4d49d05eb0e9ba4891de23d2a43625d, type: 2}
-  tileItem: {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
-  MultipleLoot: 0
-  Loot: []
+  Items:
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  ItemChance: 010000000300000005000000
   TypeToBreak: Axe
+  Toughness: 25
+  LvlToBreak: 1
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 1
+  Rooted: 1
+  StartTree: 1
+  tree: 1
+  tileItem: {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

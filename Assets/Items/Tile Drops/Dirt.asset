@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: 
   ItemName: Dirt
-  ItemSprite: {fileID: -6324567428539652501, guid: 5969b0bf373fa1e459b456d2328850c1, type: 3}
+  ItemSprite: {fileID: 8333583983154711278, guid: d6eab4929b2c8dd41a00b0fba95effba, type: 3}
   Placeable: 1
   ItemTile: {fileID: 11400000, guid: 434f15b1778a41e49a7f36b1155a111d, type: 2}
   MaxStackSize: 99
   DropChance: 0
   CanBreak: 0
   BreakType: 
+  BreakSpeed: 60
+  BreakLevel: 1
   ItemScaleInHand: {x: 0.05, y: 0.05}

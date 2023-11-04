@@ -15,12 +15,15 @@ MonoBehaviour:
   tileName: Blue
   tileSprite: {fileID: -6614846632450278658, guid: d3941ffc5e530714b98330a9e8d48dd9, type: 3}
   ruleTile: {fileID: 11400000, guid: 58e319a221a02ab4bac4f842b56bb124, type: 2}
-  tileItem: {fileID: 11400000, guid: 6bb0707de33c07c4f9b0769619fe8ed5, type: 2}
-  MultipleLoot: 0
-  Loot: []
+  Items:
+  - {fileID: 11400000, guid: 6bb0707de33c07c4f9b0769619fe8ed5, type: 2}
+  ItemChance: 01000000
+  TypeToBreak: Pickaxe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Rooted: 0
+  tileItem: {fileID: 11400000, guid: 6bb0707de33c07c4f9b0769619fe8ed5, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}

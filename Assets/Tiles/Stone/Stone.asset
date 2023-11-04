@@ -15,11 +15,15 @@ MonoBehaviour:
   tileName: Stone
   tileSprite: {fileID: 5376247285775213358, guid: a0c77c806ee5b4c458947d2b50d54e38, type: 3}
   ruleTile: {fileID: 11400000, guid: f281698b27bea3640a463fc0bb6520e6, type: 2}
-  tileItem: {fileID: 11400000, guid: 34e0eda2cee72f34db37337d95ca14e4, type: 2}
-  Indestructable: 0
+  Items:
+  - {fileID: 11400000, guid: 34e0eda2cee72f34db37337d95ca14e4, type: 2}
+  ItemChance: 01000000
+  TypeToBreak: Pickaxe
   Semisolid: 0
   Slope: 0
   Wall: 0
-  Tree: 0
+  Rooted: 0
+  tileItem: {fileID: 11400000, guid: 34e0eda2cee72f34db37337d95ca14e4, type: 2}
   multiTile: 0
+  multiTiles: []
   multiTileSize: {x: 1, y: 1}
