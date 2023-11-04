@@ -59,12 +59,14 @@ public class TerrainGeneration : MonoBehaviour
     //private List<Vector2> worldTiles = new List<Vector2>();
     public IDictionary<Vector2, TileClass> worldTiles;
     public IDictionary<Vector2, TileClass> worldWalls;
+    public List<Vector2> treePoints = new List<Vector2>();
     private BiomeClass curBiome;
 
     public int[,] tiles;
     void Start()
     {
         IDictionary<Vector2, TileClass> worldTiles = GameManager.Instance.tileEditManager.worldTiles;
+        
         IDictionary<Vector2, TileClass> worldWalls = GameManager.Instance.tileEditManager.worldWalls;
 
         
@@ -74,9 +76,10 @@ public class TerrainGeneration : MonoBehaviour
 
         //CreateChunks();
         caveNoiseTexture = new Texture2D(worldSize.x, worldSize.y);
+        DrawTextures();
         GenerateNoiseTexture(caveFreq, surfaceValue, caveNoiseTexture);
         CellularAutomata();
-
+        PlaceTrees();
         
 
 
@@ -233,9 +236,10 @@ public class TerrainGeneration : MonoBehaviour
 
     public void PlaceMap()
     {
+        TreeCooldown = 0;
         for (int x = 0; x < worldSize.x; x++)
         {
-            
+            TreeCooldown -= 1;
             for (int y = 0; y < worldSize.y; y++)
             {
 
@@ -243,25 +247,67 @@ public class TerrainGeneration : MonoBehaviour
                 if (tiles[x, y] == 1 && y <= height) 
                 {
 
-                    if (y >= height -1)
-                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.grass, x, y);
+                    if (y >= height - 1)
+                    {
+                        GameManager.Instance.tileEditManager.PlaceTile(GetCurrentBiome(x, y).tileAtlas.grass, x, y);
+
+                        int t = Random.Range(0, GetCurrentBiome(x, y).treeChance);
+                        if (t == 1)
+                        {
+                            if (TreeCooldown <= 0)
+                            {
+                                if (GetCurrentBiome(x, y).GenTrees)
+                                {
+                                    treePoints.Add(new Vector2(x,y));
+                                    TreeCooldown = 6;
+                                }
+
+
+                            }
+
+                        }
+                    }
                     else if (y >= height - dirtLayerHeight)
-                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirt, x, y);
+                        GameManager.Instance.tileEditManager.PlaceTile(GetCurrentBiome(x, y).tileAtlas.dirt, x, y);
                     else if (y <= height)
-                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.stone, x, y);
+                        GameManager.Instance.tileEditManager.PlaceTile(GetCurrentBiome(x, y).tileAtlas.stone, x, y);
 
                 }
                 if (y <= height)
                 {
                     if (y >= height)
-                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirtw, x, y);
+                        GameManager.Instance.tileEditManager.PlaceTile(GetCurrentBiome(x, y).tileAtlas.dirtw, x, y);
                     else if (y >= height - dirtLayerHeight)
-                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirtw, x, y);
+                        GameManager.Instance.tileEditManager.PlaceTile(GetCurrentBiome(x, y).tileAtlas.dirtw, x, y);
                     else if (y <= height)
-                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.stonew, x, y);
+                        GameManager.Instance.tileEditManager.PlaceTile(GetCurrentBiome(x, y).tileAtlas.stonew, x, y);
                 }
+                
+                if (GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x, y - 1)))
+                {
+                    if (GameManager.Instance.tileEditManager.worldTiles[new Vector2(x, y - 1)].name == "Stone")
+                    {
+                        int t = Random.Range(0, 17);
+                        if (t <= 1)
+                        {
+                            GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.leaf, x, y);
+                        }
+                    }
 
+
+
+
+
+                }
             }
+        }
+    }
+
+    public void PlaceTrees()
+    {
+        foreach(Vector2 pos in treePoints)
+        {
+            GenerateTree((int)pos.x, (int)pos.y + 1, GetCurrentBiome((int)pos.x, (int)pos.y));
         }
     }
 
@@ -340,7 +386,7 @@ public class TerrainGeneration : MonoBehaviour
         }
         if (biomeClass.roots)
         {
-            if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x - 1, y)))
+            if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x - 1, y)) && GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x - 1, y -1)))
             {
 
                 GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.root, x - 1, y);
@@ -348,7 +394,7 @@ public class TerrainGeneration : MonoBehaviour
                 tileToTrack.Add(new Vector2(x - 1, y));
             }
 
-            if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x + 1, y)))
+            if (!GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x + 1, y)) && GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x + 1, y - 1)))
             {
                 GameManager.Instance.tileEditManager.PlaceTile(biomeClass.tileAtlas.root, x + 1, y);
                 //newTree.GetComponent<TreeHandler>().trackedTiles.Append<Vector2>(new Vector2(x + 1, y));
