@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b1990d0c7ed354787305a798ab5261, type: 3}
-  m_Name: OakPlanks
+  m_Name: Workbench
   m_EditorClassIdentifier: 
-  tileName: OakPlanks
-  tileSprite: {fileID: -2477580463036514489, guid: 7b7c5dc18e36a8a49b49938ee96067ff, type: 3}
-  ruleTile: {fileID: 11400000, guid: 038363352931a9945b1897f185285ded, type: 2}
-  Items:
-  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
-  ItemChance: 01000000
+  tileName: Workbench
+  tileSprite: {fileID: 21300000, guid: df684e3e6cdf06442b67decc785a0432, type: 3}
+  ruleTile: {fileID: 11400000, guid: 89c648f1256df644e80f705000794666, type: 2}
+  Items: []
+  ItemChance: 
   TypeToBreak: Pickaxe
   Toughness: 1
   LvlToBreak: 1
@@ -27,9 +26,9 @@ MonoBehaviour:
   Rooted: 0
   StartTree: 0
   tree: 0
-  tileItem: {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
-  multiTile: 0
+  tileItem: {fileID: 11400000, guid: c4133b11344debc4da574abf877a9110, type: 2}
+  multiTile: 1
   multiTiles: []
-  multiTileSize: {x: 1, y: 1}
-  Crafting: 0
-  craftingType: 0
+  multiTileSize: {x: 2, y: 1}
+  Crafting: 1
+  craftingType: 1

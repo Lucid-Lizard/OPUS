@@ -15,6 +15,21 @@ MonoBehaviour:
   tileName: OakPlatforms
   tileSprite: {fileID: 3696969358981108386, guid: ea7934eb23435984985d1fedad6b37b2, type: 3}
   ruleTile: {fileID: 11400000, guid: 9c1ba68a98a362945898518d7447cfd0, type: 2}
-  AutoTile: 0
+  Items:
+  - {fileID: 11400000, guid: a68851b02325e094bad0b9bb0542fbca, type: 2}
+  ItemChance: 01000000
+  TypeToBreak: Pickaxe
+  Toughness: 1
+  LvlToBreak: 1
   Semisolid: 1
-  siblings: []
+  Slope: 0
+  Wall: 0
+  Rooted: 0
+  StartTree: 0
+  tree: 0
+  tileItem: {fileID: 11400000, guid: a68851b02325e094bad0b9bb0542fbca, type: 2}
+  multiTile: 0
+  multiTiles: []
+  multiTileSize: {x: 1, y: 1}
+  Crafting: 0
+  craftingType: 0

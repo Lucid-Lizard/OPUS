@@ -34,8 +34,10 @@ public class TileClass : ScriptableObject
     
     public enum CraftingType
     {
+        Anywhere,
         Crafting,
-        Furnace
+        Furnace,
+        Anvil
     }
 }
 

@@ -31,4 +31,4 @@ MonoBehaviour:
   multiTiles: []
   multiTileSize: {x: 2, y: 2}
   Crafting: 1
-  craftingType: 1
+  craftingType: 2

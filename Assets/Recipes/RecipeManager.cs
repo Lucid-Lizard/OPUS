@@ -185,7 +185,7 @@ public class RecipeManager : MonoBehaviour
     public void Update()
     {
         
-        if(CheckNearCrafting() && GameManager.Instance.inventoryManager.ShowInventory)
+        if(GameManager.Instance.inventoryManager.ShowInventory)
         {
             int Doables = 0;
             ShowCrafting = true;
@@ -207,14 +207,10 @@ public class RecipeManager : MonoBehaviour
                 }
             }
 
-        } else
-        {
-            ShowCrafting = false;
-            
         }
         for (int s = 0; s < InventoryBars.Length; s++)
         {
-            ShowSlot(ShowCrafting, InventoryBars[s], 0);
+            ShowSlot(GameManager.Instance.inventoryManager.ShowInventory, InventoryBars[s], 0);
         }
 
         if (Input.mousePosition.x < Screen.width / 2 && Input.mousePosition.y < (Screen.height / 4) * 3 && Input.mousePosition.y > (Screen.height / 4) * 2)
@@ -242,7 +238,7 @@ public class RecipeManager : MonoBehaviour
 
 
         }
-        if(ShowCrafting)
+        if(GameManager.Instance.inventoryManager.ShowInventory)
         {
             for (int i = -2; i < 3; i++)
             {
@@ -431,6 +427,8 @@ public class RecipeManager : MonoBehaviour
                 }
             }
         }
+        if (recipe.RecipeType == TileClass.CraftingType.Anywhere)
+            return true;
         return false;
     }
 

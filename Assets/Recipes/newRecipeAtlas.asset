@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: newRecipeAtlas
   m_EditorClassIdentifier: 
   Recipes:
+  - {fileID: 11400000, guid: dbb5bfe465d686a4d8d9164192ba855b, type: 2}
+  - {fileID: 11400000, guid: 3f5f1ad3d3aede84e80d4fb71843d071, type: 2}
   - {fileID: 11400000, guid: 793ece3dc5b811d4b97c1615df88567e, type: 2}
-  - {fileID: 11400000, guid: 46d2326309a0f3140940803146cca1f1, type: 2}
   - {fileID: 11400000, guid: cc0338abe9b1e0d40af75f6d847c0cd1, type: 2}
+  - {fileID: 11400000, guid: 35ee04df68c4e6641bd55c6ef403842a, type: 2}
+  - {fileID: 11400000, guid: bdabb758afe714443aa69c5c48346c7f, type: 2}
+  - {fileID: 11400000, guid: 46d2326309a0f3140940803146cca1f1, type: 2}

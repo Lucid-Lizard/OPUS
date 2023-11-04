@@ -261,6 +261,7 @@ public class InventoryManager : MonoBehaviour
             {
                 
                 GameManager.Instance.tileEditManager.RemoveCircle(new Vector2Int(MousePos.x, MousePos.y), 7, true);
+                RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
             }
 
             if(InventorySlots[SelectedSlot].name == "Manashroom" && Input.GetMouseButtonDown(0))

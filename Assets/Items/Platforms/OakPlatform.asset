@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f1e1ea073d82964ab0bb128b643bc1c, type: 3}
-  m_Name: Furnace
+  m_Name: OakPlatform
   m_EditorClassIdentifier: 
-  ItemName: Furnace
-  ItemSprite: {fileID: 21300000, guid: 338ac57b6c9b4b5499cfe7aef340055a, type: 3}
+  ItemName: Oak Platform
+  ItemSprite: {fileID: 3696969358981108386, guid: ea7934eb23435984985d1fedad6b37b2, type: 3}
   Placeable: 1
-  ItemTile: {fileID: 11400000, guid: 9d609f08e139dd14e919a06a59539609, type: 2}
-  MaxStackSize: 99
+  ItemTile: {fileID: 11400000, guid: 4d95c995ee318e941971642cf87c0731, type: 2}
+  MaxStackSize: 999
   DropChance: 0
   CanBreak: 0
   BreakType: 

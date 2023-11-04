@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd33845870c5224189724ad4a2b0219, type: 3}
-  m_Name: BlueRecipe
+  m_Name: PlatformRecipe
   m_EditorClassIdentifier: 
-  RecipeType: 2
+  RecipeType: 0
   Ingredients:
-  - {fileID: 11400000, guid: d80d23ef55e39ca45b71e3543e19ac40, type: 2}
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
   Quants: 01000000
-  Result: {fileID: 11400000, guid: 6bb0707de33c07c4f9b0769619fe8ed5, type: 2}
-  ResultQuant: 10
+  Result: {fileID: 11400000, guid: a68851b02325e094bad0b9bb0542fbca, type: 2}
+  ResultQuant: 4
