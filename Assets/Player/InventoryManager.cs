@@ -328,7 +328,7 @@ public class InventoryManager : MonoBehaviour
         return -420;
     }
 
-    public void RemoveItem(ItemClass Item, int Slot, int quant = -1)
+    public void RemoveItem(ItemClass Item, int Slot, int quant = 1)
     {
         if(InventorySlotQuant[Slot] != 0)
         {

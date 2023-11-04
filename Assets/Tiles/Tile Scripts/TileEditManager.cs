@@ -10,9 +10,9 @@ public class TileEditManager : MonoBehaviour
     
     public IDictionary<Vector2, TileClass> worldTiles = new Dictionary<Vector2, TileClass>();
     public IDictionary<Vector2, TileClass> worldWalls = new Dictionary<Vector2, TileClass>();
-    public IDictionary<Vector2, GameObject> BreakObjs = new Dictionary<Vector2, GameObject>();
-    public IDictionary<Vector2, int> tileBreaks = new Dictionary<Vector2, int>();
-    public IDictionary<Vector2, int> wallBreaks = new Dictionary<Vector2, int>();
+
+    public IDictionary<Vector2, Color> lightMap = new Dictionary<Vector2, Color>();
+
 
     public List<Vector2> PlayerTiles;
 
@@ -30,10 +30,6 @@ public class TileEditManager : MonoBehaviour
     public bool CanBreak;
 
     
-
-
-
-
 
 
     public void PlaceTileRect(TileClass Tile, Vector2 Origin, Vector2 Size, Tilemap tileMap, bool Fill = true, bool Override = true, bool FillAir = false)
@@ -123,6 +119,7 @@ public class TileEditManager : MonoBehaviour
                 {
                     wallMap.SetTile(new Vector3Int(x, y, 0), Tile.ruleTile);
                     worldWalls.Add(new Vector2(x, y), Tile);
+                    
                 }
             }
             else
@@ -135,6 +132,8 @@ public class TileEditManager : MonoBehaviour
                 }
             }
         }       
+
+
     }
 
     public void DigZigZag(int Length,int Speed, int Drop, int HoleSize, int ZigZaggyNess,int x, int y)

@@ -42,6 +42,7 @@ public class TerrainGeneration : MonoBehaviour
     public Vector2Int worldSize = new Vector2Int(500,100);
     public float heightMultiplier = 4f;
     public int heightAddition = 25;
+    public int SmoothingVal;
 
     [Header("Noise Settings")]
     public float caveFreq = 0.05f;
@@ -60,34 +61,38 @@ public class TerrainGeneration : MonoBehaviour
     public IDictionary<Vector2, TileClass> worldWalls;
     private BiomeClass curBiome;
 
-
+    public int[,] tiles;
     void Start()
     {
         IDictionary<Vector2, TileClass> worldTiles = GameManager.Instance.tileEditManager.worldTiles;
         IDictionary<Vector2, TileClass> worldWalls = GameManager.Instance.tileEditManager.worldWalls;
 
-        /*for (int x = -1; x <= worldSize + 1; x++)
-        {
-            for (int y = -1; y <= worldSize + 1; y++)
-            {
-                if (x == -1 || x == worldSize + 1 || y == -1 || y == worldSize + 1)
-                {
-                    GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirt, x, y);
-                }
-            }
-        }*/
+        
 
         seed = Random.Range(-10000, 10000);
-        DrawTextures();
+        //DrawTextures();
 
         //CreateChunks();
-        GenerateWalls();
-        GenerateTerrain();
+        caveNoiseTexture = new Texture2D(worldSize.x, worldSize.y);
+        GenerateNoiseTexture(caveFreq, surfaceValue, caveNoiseTexture);
+        CellularAutomata();
 
-        for(int z = 0; z < 3; z++)
-            GameManager.Instance.tileEditManager.DigZigZag(Random.Range(50,50), Random.Range(1, 3), Random.Range(1, 3), Random.Range(6, 7), Random.Range(7, 12), Random.Range(0, worldSize.x), heightAddition + Random.Range(10, 20));
+        
 
 
+    }
+
+    void CellularAutomata()
+    {
+        tiles = new int[worldSize.x, worldSize.y];
+        GenerateMap();
+
+        for (int i = 0; i < SmoothingVal; i++)
+            SmoothMap();
+
+        RemoveSecludedCells();
+        RecoverEdgeCells();
+        PlaceMap();
     }
 
     public void DrawTextures()
@@ -183,113 +188,22 @@ public class TerrainGeneration : MonoBehaviour
 
         return defaultBiome;
     }
-    public void GenerateTerrain()
+
+    public void GenerateMap()
     {
-        TileClass tile;
+        
+        //TileClass tile;
         for (int x = 0; x < worldSize.x; x++)
         {
-            float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
-            for (int y = 0; y < height; y++)
+            //float height = Mathf.PerlinNoise((x + seed) * GetCurrentBiome(x, heightAddition).terrainFreq, seed * GetCurrentBiome(x, heightAddition).terrainFreq) * GetCurrentBiome(x, heightAddition).heightMultiplier + heightAddition;
+            for (int y = 0; y < worldSize.y; y++)
             {
 
 
-
-                if (y < height - dirtLayerHeight)
-                {
-                    tile = GetCurrentBiome(x, y).tileAtlas.stone;
-                }
-                else if (y < height - 1)
-                {
-                    tile = GetCurrentBiome(x, y).tileAtlas.dirt;
-                }
+                if (Random.Range(0, 100) > 50 - y / 10)
+                    tiles[x, y] = 1;
                 else
-                {
-                    tile = GetCurrentBiome(x, y).tileAtlas.grass;
-                    TreeCooldown -= 1;
-                }
-
-                /*if (y < height - dirtLayerHeight)
-                {
-
-                    if (GetCurrentBiome(x, y).ores[0].spreadTexture.GetPixel(x, y).r > 0.5f && height - y <= GetCurrentBiome(x, y).ores[0].maxSpawnHeight)
-                        tile = GetCurrentBiome(x, y).tileAtlas.coal;
-                    else if (GetCurrentBiome(x, y).ores[1].spreadTexture.GetPixel(x, y).r > 0.5f && height - y <= GetCurrentBiome(x, y).ores[1].maxSpawnHeight)
-                        tile = GetCurrentBiome(x, y).tileAtlas.copper;
-                    else
-                        tile = GetCurrentBiome(x, y).tileAtlas.stone;
-
-                }
-                else if (y < height - 1) 
-                {
-                    if (GetCurrentBiome(x,y).tileAtlas.snow != null)
-                    {
-                        if (GetCurrentBiome(x, y).ores[2].spreadTexture.GetPixel(x, y).r > 0.5f && height - y <= GetCurrentBiome(x, y).ores[2].maxSpawnHeight)
-                            tile = GetCurrentBiome(x, y).tileAtlas.snow;
-                        else
-                            tile = GetCurrentBiome(x, y).tileAtlas.dirt;
-                    } else
-                    {
-                        tile = GetCurrentBiome(x, y).tileAtlas.dirt;
-                    }
-                    
-                } else
-                {
-                    if (GetCurrentBiome(x, y).tileAtlas.snow != null)
-                    {
-                        if (GetCurrentBiome(x, y).ores[2].spreadTexture.GetPixel(x, y).r > 0.5f && height - y <= GetCurrentBiome(x, y).ores[2].maxSpawnHeight)
-                            tile = GetCurrentBiome(x, y).tileAtlas.snow;
-                        else
-                            tile = GetCurrentBiome(x, y).tileAtlas.grass;
-                    }
-                    else
-                    {
-                        tile = GetCurrentBiome(x, y).tileAtlas.grass;
-                    }
-                    TreeCooldown -= 1;
-                }*/
-
-                if (GetCurrentBiome(x, y).caveNoiseTexture.GetPixel(x, y).r > GetCurrentBiome(x, y).surfaceValue)
-                {
-
-                    //PlaceTile(tile, x, y, null);
-                    GameManager.Instance.tileEditManager.PlaceTile(tile, x, y);
-
-
-                    
-                    if (y >= height - 1)
-                    {
-                        int t = Random.Range(0, GetCurrentBiome(x, y).treeChance);
-                        if (t == 1)
-                        {
-                            if (TreeCooldown <= 0)
-                            {
-                                if (GetCurrentBiome(x, y).GenTrees)
-                                {
-                                    GenerateTree(x, y + 1, GetCurrentBiome(x, y));
-                                    TreeCooldown = 6;
-                                }
-                                
-
-                            }
-
-                        }
-                    }
-                } else if(GameManager.Instance.tileEditManager.worldTiles.ContainsKey(new Vector2(x,y-1)))
-                {
-                    if(GameManager.Instance.tileEditManager.worldTiles[new Vector2(x, y - 1)].name == "Stone")
-                    {
-                        int t = Random.Range(0, 5);
-                        if (t <= 1)
-                        {
-                            GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.leaf, x, y);
-                        }
-                    }
-                    
-
-
-
-
-                }
+                    tiles[x, y] = 0;
 
 
 
@@ -297,6 +211,103 @@ public class TerrainGeneration : MonoBehaviour
         }
     }
 
+    public void SmoothMap()
+    {
+        for (int x = 0; x < worldSize.x; x++)
+        {
+           
+            for (int y = 0; y < worldSize.y; y++)
+            {
+
+
+                if (GetNeighboursCellCount(x, y,  tiles) > 4)
+                    tiles[x, y] = 1;
+                else if (GetNeighboursCellCount(x, y, tiles) < 4)
+                    tiles[x, y] = 0;
+
+
+
+            }
+        }
+    }
+
+    public void PlaceMap()
+    {
+        for (int x = 0; x < worldSize.x; x++)
+        {
+            
+            for (int y = 0; y < worldSize.y; y++)
+            {
+
+                float height = Mathf.PerlinNoise((x + seed) * terrainFreq, seed * terrainFreq) * heightMultiplier + heightAddition;
+                if (tiles[x, y] == 1 && y <= height) 
+                {
+
+                    if (y >= height -1)
+                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.grass, x, y);
+                    else if (y >= height - dirtLayerHeight)
+                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirt, x, y);
+                    else if (y <= height)
+                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.stone, x, y);
+
+                }
+                if (y <= height)
+                {
+                    if (y >= height)
+                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirtw, x, y);
+                    else if (y >= height - dirtLayerHeight)
+                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.dirtw, x, y);
+                    else if (y <= height)
+                        GameManager.Instance.tileEditManager.PlaceTile(tileAtlas.stonew, x, y);
+                }
+
+            }
+        }
+    }
+
+    int GetNeighboursCellCount(int x, int y, int[,] map)
+    {
+        int neighbors = 0;
+        for (int i = -1; i <= 1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                if (x + i != -1 && x + i != worldSize.x  && y + j != -1 && y + j != worldSize.y)
+                {
+                    neighbors += map[i + x, j + y];
+                }
+            }
+        }
+
+        neighbors -= map[x, y];
+
+        return neighbors;
+    }
+
+    void RemoveSecludedCells()
+    {
+        for (int x = 1; x < worldSize.x - 1; x++)
+        {
+            
+            for (int y = 0; y < worldSize.y; y++)
+            {
+                tiles[x, y] = (GetNeighboursCellCount(x, y, tiles) <= 0) ? 0 : tiles[x, y];
+            }
+        }
+    }
+
+    void RecoverEdgeCells()
+    {
+        for (int x = 0; x < worldSize.x; x++)
+        {
+            
+            for (int y = 0; y < worldSize.y; y++)
+            {
+                if (x == 0 || x == worldSize.x - 1 || y == 0 || y == worldSize.y - 1)
+                    tiles[x, y] = 0;
+            }
+        }
+    }
     private void GenerateTree(int x, int y, BiomeClass biomeClass)
     {
 
