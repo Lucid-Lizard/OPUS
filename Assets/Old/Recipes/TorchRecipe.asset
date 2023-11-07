@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd33845870c5224189724ad4a2b0219, type: 3}
-  m_Name: BombRecipe
+  m_Name: TorchRecipe
   m_EditorClassIdentifier: 
-  RecipeType: 3
+  RecipeType: 0
   Ingredients:
-  - {fileID: 11400000, guid: 34e0eda2cee72f34db37337d95ca14e4, type: 2}
-  - {fileID: 11400000, guid: 05ff09934cd122945a4f89be3138912d, type: 2}
-  Quants: 1400000005000000
-  Result: {fileID: 11400000, guid: 401825c8db02b814593ffd0ddbe6cf40, type: 2}
-  ResultQuant: 3
+  - {fileID: 11400000, guid: 0e8a6e5aa6823d14a873ac56a86ec39b, type: 2}
+  - {fileID: 11400000, guid: e3758ab06851fee478fde90b0151fc5a, type: 2}
+  Quants: 0300000001000000
+  Result: {fileID: 0}
+  ResultQuant: 5
