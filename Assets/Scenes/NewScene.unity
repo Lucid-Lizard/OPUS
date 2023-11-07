@@ -169,9 +169,13 @@ MonoBehaviour:
   terrainMaterial: {fileID: 2100000, guid: 257bc716ce3e3eb49b03dcd2a8797e98, type: 2}
   worldSize: {x: 100, y: 100}
   terrainFreq: 0.04
-  heightAddition: 50
+  heightAddition: 75
   heightMultiplier: 25
-  dirtLayerHeight: 10
+  dirtLayerHeight: 15
+  Dirt: {fileID: 21300000, guid: e8a809ab4d8045f40b1edb3dbb4be7ac, type: 3}
+  Stone: {fileID: 21300000, guid: c090afc4feff8a844a273f869514b98f, type: 3}
+  Grass: {fileID: 21300000, guid: 81d2169f562091047ae30ee106e11be3, type: 3}
+  numywumy: 1
 --- !u!1 &1104772590
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104772590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 243.27914, y: 85.07919, z: 0.062768936}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1011676981}
