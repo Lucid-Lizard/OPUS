@@ -1079,8 +1079,6 @@ GameObject:
   - component: {fileID: 826213687}
   - component: {fileID: 826213689}
   - component: {fileID: 826213690}
-  - component: {fileID: 826213692}
-  - component: {fileID: 826213691}
   m_Layer: 6
   m_Name: Terrain
   m_TagString: Ground
@@ -1308,51 +1306,6 @@ MonoBehaviour:
   InventorySlots: []
   SelectedSlot: 0
   StartedClickingPosition: {x: 0, y: 0}
---- !u!66 &826213691
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826213685}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 826213689}
-    m_ColliderPaths: []
-  m_CompositePaths:
-    m_Paths: []
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
---- !u!50 &826213692
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826213685}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
 --- !u!1 &829704773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,6 +2259,7 @@ MonoBehaviour:
   StartingGear:
   - {fileID: 11400000, guid: a4e85ba36e35a2541b45dc08b6594735, type: 2}
   - {fileID: 11400000, guid: 42ed7013fe9ebb34781a2e151a399676, type: 2}
+  - {fileID: 11400000, guid: 401825c8db02b814593ffd0ddbe6cf40, type: 2}
   IsSwapping: 0
   DoSwap: 0
   SwapFirstSlot: 0

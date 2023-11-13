@@ -264,7 +264,7 @@ public class InventoryManager : MonoBehaviour
                 RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);
             }
 
-            if(InventorySlots[SelectedSlot].name == "Manashroom" && Input.GetMouseButtonDown(0))
+            else if(InventorySlots[SelectedSlot].name == "Manashroom" && Input.GetMouseButtonDown(0))
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity +=  new Vector2(0,25f);
                 RemoveItem(InventorySlots[SelectedSlot], SelectedSlot);

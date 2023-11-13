@@ -1,0 +1,1272 @@
+fileFormatVersion: 2
+guid: 102e59d2afdd3864eabf24c432bfe1d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2534633082709445053
+    second: OpusSand_0
+  - first:
+      213: -4363934416514083637
+    second: OpusSand_1
+  - first:
+      213: -8753748272233118531
+    second: OpusSand_2
+  - first:
+      213: 1721864168262996674
+    second: OpusSand_3
+  - first:
+      213: 2650060001685424227
+    second: OpusSand_4
+  - first:
+      213: -7882625791812499084
+    second: OpusSand_5
+  - first:
+      213: -2303154095387017617
+    second: OpusSand_6
+  - first:
+      213: -2413602764787229445
+    second: OpusSand_7
+  - first:
+      213: -8327657677644379792
+    second: OpusSand_8
+  - first:
+      213: -1028696907603260885
+    second: OpusSand_9
+  - first:
+      213: -62044143506765096
+    second: OpusSand_10
+  - first:
+      213: 1762458747548568721
+    second: OpusSand_11
+  - first:
+      213: -4975447633234444157
+    second: OpusSand_12
+  - first:
+      213: 550703178504786493
+    second: OpusSand_13
+  - first:
+      213: -4519352661443139120
+    second: OpusSand_14
+  - first:
+      213: 3721645892441255943
+    second: OpusSand_15
+  - first:
+      213: -8108927384550835565
+    second: OpusSand_16
+  - first:
+      213: 5252599717557187243
+    second: OpusSand_17
+  - first:
+      213: -1028463986267716045
+    second: OpusSand_18
+  - first:
+      213: -3282134110776384604
+    second: OpusSand_19
+  - first:
+      213: 234037019279432406
+    second: OpusSand_20
+  - first:
+      213: -1245541099339161086
+    second: OpusSand_21
+  - first:
+      213: -4190527182065214435
+    second: OpusSand_22
+  - first:
+      213: 8552892850002114441
+    second: OpusSand_23
+  - first:
+      213: 8790595707912819741
+    second: OpusSand_24
+  - first:
+      213: -3771924562559103255
+    second: OpusSand_25
+  - first:
+      213: -3068123549487780858
+    second: OpusSand_26
+  - first:
+      213: 4284466420864654199
+    second: OpusSand_27
+  - first:
+      213: -5099657045567958811
+    second: OpusSand_28
+  - first:
+      213: 2630282144577128481
+    second: OpusSand_29
+  - first:
+      213: 3005078484575936881
+    second: OpusSand_30
+  - first:
+      213: -3216212207795358336
+    second: OpusSand_31
+  - first:
+      213: -5878407988880589992
+    second: OpusSand_32
+  - first:
+      213: 7628081613906818854
+    second: OpusSand_33
+  - first:
+      213: 5426643460205246059
+    second: OpusSand_34
+  - first:
+      213: -2095806751023162724
+    second: OpusSand_35
+  - first:
+      213: -6013051814492681248
+    second: OpusSand_36
+  - first:
+      213: -7464468246851979557
+    second: OpusSand_37
+  - first:
+      213: 3154739854422107323
+    second: OpusSand_38
+  - first:
+      213: -7936096130362845506
+    second: OpusSand_39
+  - first:
+      213: 1782509846704993681
+    second: OpusSand_40
+  - first:
+      213: -8719724106791601141
+    second: OpusSand_41
+  - first:
+      213: 8209256013347974506
+    second: OpusSand_42
+  - first:
+      213: -8260220330367803815
+    second: OpusSand_43
+  - first:
+      213: -7838751527985074835
+    second: OpusSand_44
+  - first:
+      213: -7818969820216165636
+    second: OpusSand_45
+  - first:
+      213: 7461293989364707808
+    second: OpusSand_46
+  - first:
+      213: -6387062074601544649
+    second: OpusSand_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OpusSand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db989d21c53dc2320800000000000000
+      internalID: 2534633082709445053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc49390f4c03073c0800000000000000
+      internalID: -4363934416514083637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db40b546350748680800000000000000
+      internalID: -8753748272233118531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c21ac4965a45e710800000000000000
+      internalID: 1721864168262996674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3684ee9e787e6c420800000000000000
+      internalID: 2650060001685424227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4790fa53b994b9290800000000000000
+      internalID: -7882625791812499084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e78798d8d8900e0800000000000000
+      internalID: -2303154095387017617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfcd4ffb219218ed0800000000000000
+      internalID: -2413602764787229445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079c3f8c6773e6c80800000000000000
+      internalID: -8327657677644379792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ac3c0ec9559b1f0800000000000000
+      internalID: -1028696907603260885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dac2e12e23932ff0800000000000000
+      internalID: -62044143506765096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c89ea94e2857810800000000000000
+      internalID: 1762458747548568721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380c0861db8a3fab0800000000000000
+      internalID: -4975447633234444157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_13
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32d4738f9d74a700800000000000000
+      internalID: 550703178504786493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d927ffe2b80841c0800000000000000
+      internalID: -4519352661443139120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_15
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700b0c69831f5a330800000000000000
+      internalID: 3721645892441255943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39af866b18d477f80800000000000000
+      internalID: -8108927384550835565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba230581d9bf4e840800000000000000
+      internalID: 5252599717557187243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3360b3a14792ab1f0800000000000000
+      internalID: -1028463986267716045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a32bfd6a648372d0800000000000000
+      internalID: -3282134110776384604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da1176dd677f3300800000000000000
+      internalID: 234037019279432406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2026db428f2f6bee0800000000000000
+      internalID: -1245541099339161086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c5263fab148d5c0800000000000000
+      internalID: -4190527182065214435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_23
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987ba5e5bbaf1b670800000000000000
+      internalID: 8552892850002114441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d149736c8387ef970800000000000000
+      internalID: 8790595707912819741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee0819489e67abc0800000000000000
+      internalID: -3771924562559103255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c25c923e5db65d0800000000000000
+      internalID: -3068123549487780858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b1abb728b757b30800000000000000
+      internalID: 4284466420864654199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e09a9aafe06a39b0800000000000000
+      internalID: -5099657045567958811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_29
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1288296bca3a08420800000000000000
+      internalID: 2630282144577128481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_30
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171615bc5fe24b920800000000000000
+      internalID: 3005078484575936881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_31
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08535188908bd53d0800000000000000
+      internalID: -3216212207795358336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b34f94413bb6ea0800000000000000
+      internalID: -5878407988880589992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_33
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627ba9200d36cd960800000000000000
+      internalID: 7628081613906818854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66fa38b97f4f4b40800000000000000
+      internalID: 5426643460205246059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_35
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a166f2dd23ae2e0800000000000000
+      internalID: -2095806751023162724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb4525bb395d8ca0800000000000000
+      internalID: -6013051814492681248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_37
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6743d8da1e86890800000000000000
+      internalID: -7464468246851979557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_38
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4e89dde23e7cb20800000000000000
+      internalID: 3154739854422107323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_39
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6de5edd925dd190800000000000000
+      internalID: -7936096130362845506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195bc7de24fbcb810800000000000000
+      internalID: 1782509846704993681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_41
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cb64bbf115df680800000000000000
+      internalID: -8719724106791601141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_42
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d68d189d22de170800000000000000
+      internalID: 8209256013347974506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_43
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e97f1cf5dcd5d80800000000000000
+      internalID: -8260220330367803815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d26eb4409273390800000000000000
+      internalID: -7838751527985074835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_45
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfaf38c00607d7390800000000000000
+      internalID: -7818969820216165636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_46
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e137d80a57db8760800000000000000
+      internalID: 7461293989364707808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpusSand_47
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734610d12e89c57a0800000000000000
+      internalID: -6387062074601544649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

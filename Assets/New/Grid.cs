@@ -18,7 +18,7 @@ public class Grid : MonoBehaviour
 
     public int dirtLayerHeight;
 
-    int seed;
+    public int seed;
 
     public Sprite Dirt;
     public Sprite Stone;
@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour
     private void Start()
     {
 
-        seed = Random.Range(-10000, 10000);
+        
         CellularAutomata();
 
     }
@@ -56,23 +56,27 @@ public class Grid : MonoBehaviour
         //TileClass tile;
         for (int x = 0; x < worldSize.x; x++)
         {
-            float height = Mathf.PerlinNoise((x + seed) * terrainFreq, seed * terrainFreq) * heightMultiplier + heightAddition;
+            float height = Mathf.PerlinNoise((x + seed ) * terrainFreq, seed * terrainFreq) * heightMultiplier + heightAddition;
 
             for (int y = 0; y < height; y++)
             {
-                int threshold = 50;
+                float threshold = 50;
                 if(y < (worldSize.y / 5) * 3)
                 {
                     threshold = 50;
                 } else if (y < (worldSize.y / 5) * 4)
                 {
-                    threshold = 20;
+                    threshold = 35;
                 } else
                 {
-                    threshold = 5;
+                    threshold = 20;
                 }
 
-                if (Random.Range(0, 100) > threshold)
+                threshold *= 0.01f;
+                bool noodle = false;
+                if(Mathf.PerlinNoise((seed + x) * terrainFreq, (seed + y) * terrainFreq) > .45f && Mathf.PerlinNoise((seed + x) * terrainFreq, (seed + y) * terrainFreq) < .55f) { noodle = true; }
+               // Debug.Log(Mathf.PerlinNoise((x + seed) * terrainFreq, (seed + y) * terrainFreq) * heightMultiplier + heightAddition + "   " + threshold);
+                if (Mathf.PerlinNoise(((x * 3) + seed) * terrainFreq, (seed + (y * 3)) * terrainFreq) > threshold && !noodle) 
                     map[x, y] = 1;
                 else
                     map[x, y] = 0;
@@ -206,6 +210,7 @@ public class Grid : MonoBehaviour
             float height = Mathf.PerlinNoise((x + seed) * terrainFreq, seed * terrainFreq) * heightMultiplier + heightAddition;
             for (int y = 0; y < worldSize.y * 8; y++)
             {
+                
                 Texture2D tileTexture = new Texture2D(8,8);
                 Color color = Color.white;
                 if (y >= height - 1)
